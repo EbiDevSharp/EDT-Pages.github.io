@@ -7356,9 +7356,8 @@
 
         /* 增强型文本编辑器样式 */
         .line-editor {
-            display: flex;
-            gap: 0;
-            align-items: stretch;
+            display: grid;
+            grid-template-columns: 58px minmax(0, 1fr);
             border: 2px solid #e5e7eb;
             border-radius: 12px;
             overflow: hidden;
@@ -7375,112 +7374,57 @@
         }
 
         .line-editor .gutter {
-            display: none;
-            /* 移除旧的独立 gutter */
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid #e5e7eb;
+            background: #f9fafb;
+            color: #9ca3af;
+            font-family: 'Monaco', 'Courier New', monospace !important;
+            font-size: 13px;
+            line-height: 24px;
+            text-align: right;
+            user-select: none;
+        }
+
+        .line-editor .gutter pre {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            margin: 0;
+            padding: 12px 10px 12px 4px;
+            font: inherit;
+            line-height: inherit;
+            white-space: pre;
+            will-change: transform;
         }
 
         .line-editor .editor-area {
             position: relative;
-            flex-grow: 1;
+            min-width: 0;
             background: transparent;
             min-height: 300px;
-            z-index: 1;
         }
 
-        /* 模拟左侧 gutter 背景 - 固定位置 */
-        .line-editor .editor-area::before {
-            content: "";
+        .line-editor .line-shades {
             position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 48px;
-            background: #f9fafb;
-            border-right: 1px solid #e5e7eb;
+            inset: 0;
+            padding: 12px 0;
+            pointer-events: none;
+            will-change: transform;
             z-index: 0;
-            pointer-events: none;
         }
 
-        .line-editor .mirror {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 12px 12px 12px 60px !important;
-            /* 左侧预留给行号 */
-            margin: 0 !important;
-            white-space: pre-wrap !important;
-            word-break: break-all !important;
-            pointer-events: none;
-            font-family: 'Monaco', 'Courier New', monospace !important;
-            font-size: 14px !important;
-            line-height: 24px !important;
-            color: transparent;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            box-sizing: border-box !important;
-            border: none !important;
-            scrollbar-width: none;
-            z-index: 2;
-            width: 100%;
-            /* 初始宽度，后续由 JS 动态调整 */
-            /* 确保在最上层，包括在 textarea 背景之上 */
-        }
-
-        .line-editor .mirror::-webkit-scrollbar {
-            display: none;
-        }
-
-        .line-editor .mirror .logical-line {
-            display: block;
-            margin: 0 !important;
-            padding: 0 !important;
-            position: relative;
-            color: transparent;
-            word-wrap: break-word;
-            min-height: 24px;
-            box-sizing: border-box;
-        }
-
-        .line-editor .mirror .logical-line:nth-child(even) {
-            background: rgba(59, 130, 246, 0.06);
-        }
-
-        html.dark-mode .line-editor .mirror .logical-line:nth-child(even) {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .line-editor .mirror .logical-line::before {
-            content: attr(data-line-number);
-            position: absolute;
-            left: -60px;
-            /* 相对于 mirror 的 padding-left */
-            top: 0;
-            width: 48px;
+        .line-editor .shade-line {
             height: 24px;
-            line-height: 24px;
-            text-align: right;
-            padding-right: 12px;
-            color: #9ca3af;
-            font-size: 13px;
-            box-sizing: border-box;
-            z-index: 1;
         }
 
-        html.dark-mode .line-editor .mirror .logical-line::before {
-            color: #6b7280;
+        .line-editor .shade-line:nth-child(odd) {
+            background: transparent !important;
         }
 
-        /* 在真实换行处显示一个微小的符号 */
-        .line-editor .mirror .logical-line::after {
-            content: "↵";
-            position: absolute;
-            right: -4px;
-            bottom: 0;
-            color: rgba(59, 130, 246, 0.3);
-            font-size: 12px;
-            display: none;
+        .line-editor .shade-line:nth-child(even) {
+            background: rgba(31, 41, 55, 0.035) !important;
         }
 
         .line-editor textarea {
@@ -7488,8 +7432,7 @@
             min-height: 300px;
             border: none !important;
             background: transparent !important;
-            padding: 12px 12px 12px 60px !important;
-            /* 对齐 mirror */
+            padding: 12px !important;
             margin: 0 !important;
             font-family: 'Monaco', 'Courier New', monospace !important;
             font-size: 14px !important;
@@ -7499,12 +7442,48 @@
             outline: none !important;
             box-sizing: border-box !important;
             display: block;
-            white-space: pre-wrap !important;
-            word-break: break-all !important;
+            white-space: pre !important;
+            word-break: normal !important;
             scrollbar-width: thin;
             position: relative;
             z-index: 1;
-            overflow-y: scroll;
+            overflow: auto;
+        }
+
+        .line-editor.line-editor-wrap textarea {
+            white-space: pre-wrap !important;
+            word-break: break-all !important;
+            overflow-wrap: anywhere;
+            overflow-x: hidden;
+        }
+
+        .line-editor .wrap-measure {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 12px !important;
+            margin: 0 !important;
+            border: none !important;
+            box-sizing: border-box !important;
+            color: transparent;
+            font-family: 'Monaco', 'Courier New', monospace !important;
+            font-size: 14px !important;
+            line-height: 24px !important;
+            overflow: hidden;
+            pointer-events: none;
+            visibility: hidden;
+            white-space: pre-wrap !important;
+            word-break: break-all !important;
+            overflow-wrap: anywhere;
+            z-index: 0;
+        }
+
+        .line-editor .wrap-measure-line,
+        .line-editor .gutter-line {
+            display: block;
+            min-height: 24px;
+            line-height: 24px;
         }
 
         html.dark-mode .line-editor {
@@ -7519,16 +7498,16 @@
         }
 
         html.dark-mode .line-editor textarea {
+            background: transparent !important;
             color: var(--text-primary);
         }
 
-        html.dark-mode .line-editor .mirror .logical-line:nth-child(even) {
-            background: rgba(255, 255, 255, 0.02);
+        html.dark-mode .line-editor .shade-line:nth-child(odd) {
+            background: rgba(255, 255, 255, 0.015) !important;
         }
 
-        html.dark-mode .line-editor .editor-area::before {
-            background: rgba(255, 255, 255, 0.03);
-            border-right-color: var(--border-color);
+        html.dark-mode .line-editor .shade-line:nth-child(even) {
+            background: rgba(255, 255, 255, 0.035) !important;
         }
 
         /* 低性能模式（自动触发）：禁用高开销视觉效果，优化无硬件加速场景 */
@@ -7860,11 +7839,15 @@
 
                     <div id="customIPSection" class="form-group hidden-section">
                         <label for="customIPs">自定义优选地址</label>
-                        <div class="line-editor" id="subCustomEditor">
-                            <div class="gutter" aria-hidden="true"></div>
+                        <div class="line-editor line-editor-wrap" id="subCustomEditor">
+                            <div class="gutter" aria-hidden="true">
+                                <pre>1</pre>
+                            </div>
                             <div class="editor-area">
-                                <pre class="mirror" aria-hidden="true"></pre>
-                                <textarea id="customIPs" title="自定义优选地址"
+                                <div class="line-shades" aria-hidden="true">
+                                    <div class="shade-line"></div>
+                                </div>
+                                <textarea id="customIPs" title="自定义优选地址" wrap="soft"
                                     placeholder="注意：
 每行一个地址，如：地址:端口#备注
 IPv6地址需要用中括号括起来，如：[2606:4700::]:2053
@@ -12611,9 +12594,13 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
             <div class="api-results-container">
                 <label class="api-results-label">接口结果:</label>
                 <div class="line-editor" id="apiResultsEditor">
-                    <div class="gutter" aria-hidden="true"></div>
+                    <div class="gutter" aria-hidden="true">
+                        <pre>1</pre>
+                    </div>
                     <div class="editor-area">
-                        <pre class="mirror" aria-hidden="true"></pre>
+                        <div class="line-shades" aria-hidden="true">
+                            <div class="shade-line"></div>
+                        </div>
                         <textarea id="apiOptimizeResults" title="API接口结果" placeholder="接口返回结果将显示在这里，每行一个地址"
                             readonly></textarea>
                     </div>
@@ -15067,54 +15054,130 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
             if (!ta) return;
             const container = ta.closest('.line-editor');
             if (!container) return;
-            const mirror = container.querySelector('.mirror');
+            const lineNumbers = container.querySelector('.gutter pre');
+            const lineShades = container.querySelector('.line-shades');
+            if (!lineNumbers || !lineShades) return;
+            const lineHeight = Number.parseFloat(getComputedStyle(ta).lineHeight) || 24;
+            const isWrapping = container.classList.contains('line-editor-wrap');
+            const editorArea = container.querySelector('.editor-area');
+            const wrapMeasure = isWrapping && editorArea ? document.createElement('div') : null;
+            let renderedLineCount = -1;
+            let renderedShadeCount = -1;
+            let renderedValue = null;
+            let renderedWidth = -1;
+            let wrappedLineHeights = [];
+            let wrappedContentHeight = 0;
+            let renderFrame = 0;
+
+            if (wrapMeasure) {
+                wrapMeasure.className = 'wrap-measure';
+                wrapMeasure.setAttribute('aria-hidden', 'true');
+                editorArea.appendChild(wrapMeasure);
+            }
+
+            function countLines(value) {
+                if (!value) return 0;
+                const breaks = value.match(/\r\n|\r|\n/g);
+                return breaks ? breaks.length + 1 : 1;
+            }
 
             function escapeHtml(str) {
                 return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
             }
 
-            function render() {
+            function renderStraightMeta() {
                 const value = ta.value || '';
-                const lines = value.split(/\r\n|\r|\n/);
+                const lineCount = countLines(value);
+                const displayLines = Math.max(1, lineCount);
 
-                mirror.style.width = ta.clientWidth + 'px';
+                if (displayLines !== renderedLineCount) {
+                    renderedLineCount = displayLines;
+                    lineNumbers.textContent = Array.from({ length: displayLines }, (_, index) => index + 1).join('\n');
+                }
 
-                mirror.innerHTML = lines.map((l, i) => `<div class="logical-line" data-line-number="${i + 1}">${escapeHtml(l) || ' '}</div>`).join('');
+                const visibleLines = Math.ceil((ta.clientHeight || 300) / lineHeight) + 2;
+                const shadeCount = Math.max(displayLines, visibleLines);
+                if (shadeCount !== renderedShadeCount) {
+                    renderedShadeCount = shadeCount;
+                    lineShades.innerHTML = Array.from({ length: shadeCount }, () => '<div class="shade-line"></div>').join('');
+                }
+            }
 
+            function renderWrappedMeta() {
+                if (!wrapMeasure) {
+                    renderStraightMeta();
+                    return;
+                }
+
+                const value = ta.value || '';
+                const width = ta.clientWidth || ta.offsetWidth || 0;
+                if (value !== renderedValue || width !== renderedWidth) {
+                    const lines = value.split(/\r\n|\r|\n/);
+                    const displayLines = lines.length ? lines : [''];
+                    renderedValue = value;
+                    renderedWidth = width;
+                    renderedLineCount = displayLines.length;
+
+                    wrapMeasure.style.width = width ? `${width}px` : '100%';
+                    wrapMeasure.innerHTML = displayLines.map((line) => `<div class="wrap-measure-line">${escapeHtml(line) || ' '}</div>`).join('');
+                    wrappedLineHeights = Array.from(wrapMeasure.children).map((line) => Math.max(lineHeight, line.offsetHeight));
+                    wrappedContentHeight = wrappedLineHeights.reduce((sum, height) => sum + height, 0);
+                    lineNumbers.innerHTML = wrappedLineHeights.map((height, index) => `<span class="gutter-line" style="height:${height}px">${index + 1}</span>`).join('');
+                    renderedShadeCount = -1;
+                }
+
+                const visibleHeight = Math.max(0, (ta.clientHeight || 300) - lineHeight);
+                const fillerLines = Math.max(0, Math.ceil((visibleHeight - wrappedContentHeight) / lineHeight) + 1);
+                const shadeCount = wrappedLineHeights.length + fillerLines;
+                if (shadeCount !== renderedShadeCount) {
+                    renderedShadeCount = shadeCount;
+                    const contentShades = wrappedLineHeights.map((height) => `<div class="shade-line" style="height:${height}px"></div>`).join('');
+                    const fillerShades = Array.from({ length: fillerLines }, () => '<div class="shade-line"></div>').join('');
+                    lineShades.innerHTML = contentShades + fillerShades;
+                }
+            }
+
+            function renderMeta() {
+                if (isWrapping) {
+                    renderWrappedMeta();
+                } else {
+                    renderStraightMeta();
+                }
                 syncScroll();
             }
 
-            function syncScroll() {
-                mirror.scrollTop = ta.scrollTop;
+            function scheduleRender() {
+                cancelAnimationFrame(renderFrame);
+                renderFrame = requestAnimationFrame(() => {
+                    renderFrame = 0;
+                    renderMeta();
+                });
             }
 
-            let throttleTimeout;
-            const debouncedRender = () => {
-                cancelAnimationFrame(throttleTimeout);
-                throttleTimeout = requestAnimationFrame(render);
-            };
+            function syncScroll() {
+                const offset = `translate3d(0, ${-ta.scrollTop}px, 0)`;
+                lineNumbers.style.transform = offset;
+                lineShades.style.transform = offset;
+            }
 
             // 监听输入、滚动
-            ta.addEventListener('input', debouncedRender);
+            ta.addEventListener('input', scheduleRender);
             ta.addEventListener('scroll', syncScroll);
 
             // 监听高度变化（ResizeObserver），解决拖拽角标后的同步问题
             if (window.ResizeObserver) {
-                const ro = new ResizeObserver(() => {
-                    // 当 textarea 高度或宽度变化时，重新渲染以确保宽度同步
-                    render();
-                });
+                const ro = new ResizeObserver(scheduleRender);
                 ro.observe(ta);
             }
 
             // 窗口缩放时也刷新一下
-            window.addEventListener('resize', debouncedRender);
+            window.addEventListener('resize', scheduleRender);
 
             // 暴露渲染函数
-            ta._refreshLineEditor = render;
+            ta._refreshLineEditor = renderMeta;
 
             // 初始渲染
-            render();
+            renderMeta();
         }
 
         function refreshLineEditor(textarea) {
@@ -15457,6 +15520,10 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
                     }
                 }
             });
+
+            if (mode === 'custom') {
+                requestAnimationFrame(() => refreshLineEditor(document.getElementById('customIPs')));
+            }
 
             // 显示或隐藏指定端口
             const portSection = document.getElementById('portSection');
