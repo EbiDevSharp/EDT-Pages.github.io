@@ -8636,8 +8636,8 @@
 					<h1 id="pageTitle">Loading...</h1>
 				</div>
 				<div class="header-buttons">
-					<button type="button" class="btn btn-mode-toggle" id="modeToggleBtn" onclick="toggleUserMode()">🐣
-						我是小白！我想简单点！</button>
+					<button type="button" class="btn btn-mode-toggle" id="modeToggleBtn" onclick="toggleUserMode()">
+						SimpleMode！</button>
 					<button type="button" class="btn btn-danger btn-reset"
 						onclick="resetConfigWithConfirm()">⚠️ Reset configuration</button>
 					<button type="button" class="btn btn-primary" onclick="logout()">👋 Log Out</button>
@@ -19511,11 +19511,11 @@
 
 			if (isSimpleMode) {
 				cardContainer.classList.add('simple-mode');
-				btn.textContent = '🚀 我是高手！我就要折腾！';
+				btn.textContent = '🚀 Advanced Mode';
 				localStorage.setItem('userMode', 'simple');
 			} else {
 				cardContainer.classList.remove('simple-mode');
-				btn.textContent = '🐣 我是小白！我想简单点！';
+				btn.textContent = '🐣 SimpleMode';
 				localStorage.setItem('userMode', 'expert');
 			}
 
