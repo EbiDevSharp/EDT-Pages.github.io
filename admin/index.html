@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
 	<script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 	<style>
-		/* 基础重置 */
+		/* Base reset */
 		* {
 			margin: 0;
 			padding: 0;
@@ -30,7 +30,7 @@
 			background: var(--admin-bg-base)
 		}
 
-		/* 通用动画 */
+		/* Generic animation */
 		@keyframes containerAppear {
 			0% {
 				opacity: 0;
@@ -112,7 +112,7 @@
 			}
 		}
 
-		/* 通用容器包装器 */
+		/* Generic container wrapper */
 		.page-wrapper {
 			position: fixed;
 			top: 0;
@@ -127,7 +127,7 @@
 			overflow-y: auto
 		}
 
-		/* 通用卡片容器 */
+		/* Generic card container */
 		.card-container {
 			background: rgba(255, 255, 255, 0.95);
 			-webkit-backdrop-filter: blur(20px);
@@ -153,7 +153,7 @@
 			animation: gradientShift 3s ease infinite
 		}
 
-		/* 页面标题和图标 */
+		/* Page title and icon */
 		.page-header {
 			margin-bottom: 35px;
 			text-align: center
@@ -198,7 +198,7 @@
 			font-weight: 400
 		}
 
-		/* 表单样式 */
+		/* Form style */
 		.page-form {
 			display: flex;
 			flex-direction: column;
@@ -335,7 +335,7 @@
 			font-family: 'Monaco', 'Courier New', monospace
 		}
 
-		/* 按钮样式 */
+		/* Button style */
 		.btn {
 			padding: 10px 20px;
 			border: 0;
@@ -423,7 +423,7 @@
 			gap: 10px
 		}
 
-		/* 页脚提示 */
+		/* Footer note */
 		.footer-hint {
 			margin-top: 30px;
 			font-size: 13px;
@@ -443,7 +443,7 @@
 			color: #f6821f
 		}
 
-		/* 段落内链接样式 */
+		/* Paragraph inline link style */
 		p a {
 			color: #2196F3;
 			text-decoration: none;
@@ -464,7 +464,7 @@
 			color: #0d47a1
 		}
 
-		/* Modal 中的段落链接样式 */
+		/* Paragraph link style inside Modal */
 		.modal p a {
 			color: #1E88E5;
 			border-bottom-color: rgba(30, 136, 229, 0.3)
@@ -480,7 +480,7 @@
 			color: #0D47A1
 		}
 
-		/* HOSTS badge 样式 */
+		/* HOSTS badge style */
 		.hosts-badge {
 			display: inline-flex;
 			align-items: center;
@@ -509,7 +509,7 @@
 			box-shadow: 0 4px 12px rgba(30, 136, 229, 0.5);
 		}
 
-		/* HOSTS 警告按钮样式 */
+		/* HOSTS warning button style */
 		.btn-hosts-warning {
 			background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%) !important;
 			color: #fff !important;
@@ -541,7 +541,7 @@
 			background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%) !important;
 		}
 
-		/* Toast 通知 */
+		/* Toast notification */
 		.toast {
 			position: fixed;
 			top: 20px;
@@ -1372,7 +1372,7 @@
 			}
 		}
 
-		/* 消息提示 */
+		/* Message toast */
 		.message {
 			margin-top: 24px;
 			font-size: 14px;
@@ -1396,7 +1396,7 @@
 			animation: shake .5s ease-in-out, slideIn .3s ease-out
 		}
 
-		/* 模态框 */
+		/* Modal */
 		.modal-overlay {
 			display: none;
 			position: fixed;
@@ -1566,7 +1566,7 @@
 			color: #1f2937
 		}
 
-		/* SOCKS5 模态框样式 */
+		/* SOCKS5 modal style */
 		#getMoreProxyIPModal .modal,
 		#exploreSocks5Modal .modal,
 		#exploreHTTPModal .modal,
@@ -1601,49 +1601,49 @@
 			transition: all 0.3s ease;
 		}
 
-		/* 移动设备上变为上下布局 - 当屏幕宽度小于等于768px时生效 */
+		/* Switch to stacked layout on mobile - takes effect when screen width <= 768px */
 		@media (max-width: 768px) {
 
-			/* SOCKS5和HTTP弹窗的主容器样式调整 */
+			/* Main container style adjustment for SOCKS5 and HTTP popups */
 			#getMoreProxyIPModal .modal,
 			#exploreSocks5Modal .modal,
 			#exploreHTTPModal .modal,
 			#exploreHTTPSModal .modal {
-				/* 改为上下排列方式（竖直方向） */
+				/* Changed to stacked layout (vertical direction) */
 				flex-direction: column;
-				/* 最大高度：浏览器可视区高度 - 100px（为顶部导航栏和按钮留出空间） */
+				/* Max height: viewport visible height - 100px (leave room for top nav bar and buttons) */
 				max-height: calc(100vh - 100px);
-				/* 设置实际高度为最大高度，充分利用屏幕空间 */
+				/* Set actual height to max height, fully use screen space */
 				height: calc(100vh - 100px);
 			}
 
-			/* 地图区域样式 - 放在上半部分 */
+			/* Map area style - placed in top half */
 			.modal-map-side {
-				/* flex: 1 表示占用所有剩余空间 */
+				/* flex: 1 means take up all remaining space */
 				flex: 1;
-				/* 高度自动计算 */
+				/* Auto height calculation */
 				height: auto;
-				/* 最小高度120px，缩小地图以保护下面的按钮显示空间 */
+				/* Min height 120px, shrink map to preserve button space below */
 				min-height: 120px;
-				/* 最大高度限制，确保下面的下拉框和按钮不会被压挤 */
+				/* Max height limit, ensure dropdown and buttons below aren't squeezed */
 				max-height: calc(100vh - 280px);
-				/* 宽度铺满整个宽度 */
+				/* Full width */
 				width: 100%;
 			}
 
-			/* 内容区域样式 - 放在下半部分（地区和代理选择、按钮） */
+			/* Content area style - placed in bottom half (region/proxy selection, buttons) */
 			.modal-content-side {
-				/* flex: 0 0 auto 表示不伸缩，只占用内容所需高度 */
+				/* flex: 0 0 auto means no stretch, only takes needed content height */
 				flex: 0 0 auto;
-				/* 设置最小高度，确保下拉框和按钮完整显示 */
+				/* Set min height, ensure dropdown and buttons show fully */
 				min-height: 180px;
-				/* 取消最大高度限制，让内容自适应 */
+				/* Remove max-height limit, let content auto-fit */
 				max-height: none;
-				/* 内边距 */
+				/* Padding */
 				padding: 20px;
-				/* 移除左边框（因为已不是左右并排） */
+				/* Remove left border (no longer side-by-side) */
 				border-left: none;
-				/* 内容超过时垂直滚动 */
+				/* Vertical scroll when content overflows */
 				overflow-y: auto;
 			}
 		}
@@ -1679,17 +1679,17 @@
 			color: var(--text-primary, #e5e5e5) !important;
 		}
 
-		/* 地图夜间模式全面修补 */
+		/* Comprehensive map dark-mode patch */
 		html.dark-mode .proxy-map-container {
 			background-color: #1a1a1a !important;
 		}
 
-		/* 强制反转瓦片颜色：浅色底图 -> 深色底图，黑色文字 -> 白色文字 */
+		/* Force-invert tile colors: light basemap -> dark basemap, black text -> white text */
 		html.dark-mode .leaflet-tile-pane {
 			filter: invert(100%) hue-rotate(180deg) brightness(0.85) contrast(1.1) !important;
 		}
 
-		/* 修正 Leaflet Popup 在夜间模式下的样式 */
+		/* Fix Leaflet Popup style in dark mode */
 		html.dark-mode .leaflet-popup-content-wrapper,
 		html.dark-mode .leaflet-popup-tip {
 			background: #2a2a2a !important;
@@ -1702,7 +1702,7 @@
 			height: 100%;
 		}
 
-		/* 隐藏 Leaflet 标识 */
+		/* Hide Leaflet attribution */
 		.leaflet-control-attribution {
 			display: none !important;
 		}
@@ -1732,7 +1732,7 @@
 			width: 100%;
 		}
 
-		/* 社交链接 - 重构为统一风格 */
+		/* Social links - restructured to a unified style */
 		.social-links {
 			display: flex;
 			justify-content: center;
@@ -1809,7 +1809,7 @@
 			transform: scale(1.08)
 		}
 
-		/* 主题图标特殊样式 */
+		/* Special theme icon style */
 		.social-link.theme-toggle .theme-icon {
 			transition: all 0.35s ease
 		}
@@ -1822,7 +1822,7 @@
 			color: #7c3aed
 		}
 
-		/* GitHub图标样式 */
+		/* GitHub icon style */
 		.social-link[title="GitHub"]:hover {
 			color: #1f2937;
 			border-color: rgba(31, 41, 55, 0.4);
@@ -1834,7 +1834,7 @@
 			opacity: 1
 		}
 
-		/* Telegram图标样式 */
+		/* Telegram icon style */
 		.social-link[title="Telegram"]:hover {
 			border-color: rgba(42, 171, 238, 0.4);
 			box-shadow: 0 8px 24px rgba(42, 171, 238, 0.25), 0 4px 12px rgba(34, 158, 217, 0.15)
@@ -1845,7 +1845,7 @@
 			opacity: 1
 		}
 
-		/* 返回顶部图标样式 */
+		/* Back-to-top icon style */
 		.social-link[title="Back to Top"]:hover {
 			color: #10b981;
 			border-color: rgba(16, 185, 129, 0.4);
@@ -2302,7 +2302,7 @@
 			width: 100%;
 		}
 
-		/* 复选框样式 */
+		/* Checkbox style */
 		.checkbox-group {
 			display: flex;
 			align-items: center;
@@ -2385,7 +2385,7 @@
 			display: none !important;
 		}
 
-		/* 响应式设计 - 平板 */
+		/* Responsive design - tablet */
 		@media(max-width:768px) {
 			.checkbox-row {
 				flex-direction: column;
@@ -2490,7 +2490,7 @@
 			}
 		}
 
-		/* 响应式设计 - 手机 */
+		/* Responsive design - phone */
 		@media(max-width:480px) {
 			.social-links {
 				gap: 8px;
@@ -2557,7 +2557,7 @@
 			}
 		}
 
-		/* 响应式设计 - 横屏 */
+		/* Responsive design - landscape */
 		@media(max-height:600px) and (orientation:landscape) {
 			.page-wrapper {
 				padding: 20px;
@@ -2604,7 +2604,7 @@
 			}
 		}
 
-		/* 夜间模式 */
+		/* Dark mode */
 		:root {
 			--bg-primary: #ffffff;
 			--bg-secondary: rgba(255, 255, 255, 0.95);
@@ -3165,7 +3165,7 @@
 			color: #9f7aea !important
 		}
 
-		/* 暗模式段落内链接样式 */
+		/* Dark mode paragraph inline link style */
 		html.dark-mode p a {
 			color: #64B5F6;
 			border-bottom-color: rgba(100, 181, 246, 0.4)
@@ -3181,7 +3181,7 @@
 			color: #42A5F5
 		}
 
-		/* 暗模式 Modal 中的段落链接样式 */
+		/* Dark mode paragraph link style inside Modal */
 		html.dark-mode .modal p a {
 			color: #64B5F6;
 			border-bottom-color: rgba(100, 181, 246, 0.4)
@@ -3693,8 +3693,8 @@
 				max-height: calc(100vh - 220px);
 			}
 
-			/* 📋 获取节点链接 模块移动端优化 */
-			/* 使用新增的subscription-link-wrapper class来精确控制订阅链接的移动端布局 */
+			/* Mobile optimization for "Get node link" module */
+			/* Use new subscription-link-wrapper class to precisely control the subscription link's mobile layout */
 
 			.subscription-link-wrapper {
 				display: flex !important;
@@ -3709,7 +3709,7 @@
 				margin: 0 !important;
 			}
 
-			/* 创建按钮容器div */
+			/* Create button container div */
 			.subscription-link-wrapper .btn-container {
 				display: flex !important;
 				gap: 10px !important;
@@ -3759,7 +3759,7 @@
 			}
 		}
 
-		/* 自定义按钮样式 */
+		/* Custom button style */
 		.btn-mode-toggle {
 			background: #1f2937;
 			color: #fff;
@@ -4534,7 +4534,7 @@
 			box-shadow: 0 2px 10px rgba(139, 92, 246, 0.4);
 		}
 
-		/* API优选模态框样式 */
+		/* API Preferred IP Modal Styles */
 		.api-optimize-modal {
 			overflow-y: auto;
 			width: 90vw;
@@ -4576,7 +4576,7 @@
 			font-size: 14px;
 		}
 
-		/* 并排显示的表单行 */
+		/* Side-by-side form row */
 		.api-form-row-dual {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -4816,7 +4816,7 @@
 			pointer-events: none;
 		}
 
-		/* 移动端适配 */
+		/* Mobile adaptation */
 		@media (max-width: 768px) {
 			.api-form-row-dual {
 				grid-template-columns: 1fr;
@@ -5095,7 +5095,7 @@
 			line-height: 1.4;
 		}
 
-		/* 可视化逻辑链 */
+		/* Visualization logic chain */
 		.auth-logic-flow {
 			display: flex;
 			align-items: center;
@@ -5148,7 +5148,7 @@
 			opacity: 0.1;
 		}
 
-		/* 卡片布局 */
+		/* Card layout */
 		.auth-help-card {
 			background: #fff;
 			border: 1px solid #e2e8f0;
@@ -5198,7 +5198,7 @@
 			color: #475569;
 		}
 
-		/* 重写警示框 */
+		/* Alert box override */
 		.auth-help-tip {
 			margin-top: 12px;
 			padding: 12px 16px;
@@ -5213,7 +5213,7 @@
 			color: #c2410c;
 		}
 
-		/* 暗色模式适配 */
+		/* Dark mode adaptation */
 		html.dark-mode .auth-logic-flow {
 			background: #0f172a;
 			border-color: #334155;
@@ -5323,7 +5323,7 @@
 			margin-top: 24px;
 		}
 
-		/* 路径模板弹窗移动端适配 */
+		/* Path template popup mobile adaptation */
 		@media (max-width: 640px) {
 			#pathTemplateConfigModal .modal {
 				padding-bottom: calc(60px + env(safe-area-inset-bottom, 20px)) !important;
@@ -5907,12 +5907,12 @@
 			color: rgba(255, 255, 255, 0.78);
 		}
 
-		/* 隐藏元素 */
+		/* Hidden element */
 		.hidden-section {
 			display: none;
 		}
 
-		/* 简单模式 - 隐藏高级模块 */
+		/* Simple mode - hide advanced modules */
 		.advanced-module {
 			transition: opacity 0.4s ease-in-out, max-height 0.5s ease-in-out, transform 0.4s ease-in-out, margin 0.5s ease-in-out, padding 0.5s ease-in-out, border-width 0.5s ease-in-out;
 			transform-origin: top;
@@ -5934,13 +5934,13 @@
 			pointer-events: none;
 		}
 
-		/* Cloudflare 配置部分样式 */
+		/* Cloudflare Config Section Styles */
 		#cloudflareEmailSection,
 		#cloudflareAccountIDSection {
 			display: none;
 		}
 
-		/* QRCode 容器 */
+		/* QRCode container */
 		.qrcode-container {
 			margin: 30px 0;
 			display: flex;
@@ -5950,7 +5950,7 @@
 			background: #808080;
 		}
 
-		/* 重置配置弹窗 */
+		/* Reset config popup */
 		.reset-modal-title {
 			color: #ef4444;
 			margin-bottom: 15px;
@@ -5973,7 +5973,7 @@
 			justify-content: space-between;
 		}
 
-		/* 跳过证书验证警告弹窗 */
+		/* Skip certificate verification warning popup */
 		.skipverify-warning-modal {
 			min-width: 400px;
 		}
@@ -6036,7 +6036,7 @@
 			flex: 1;
 		}
 
-		/* 暗模式 - 跳过证书验证警告弹窗 */
+		/* Dark mode - skip certificate verification warning popup */
 		html.dark-mode .skipverify-title {
 			color: #ff6b6b;
 		}
@@ -6049,7 +6049,7 @@
 			color: #42a5f5;
 		}
 
-		/* 日志容器 */
+		/* Log container */
 		.logs-container {
 			margin-bottom: 20px;
 		}
@@ -6074,7 +6074,7 @@
 			margin: 0;
 		}
 
-		/* 日志模态框 */
+		/* Log modal */
 		.logs-modal {
 			overflow-y: auto;
 			width: 90vw;
@@ -6092,7 +6092,7 @@
 			overflow-x: auto;
 		}
 
-		/* 订阅 API 弹窗 */
+		/* Subscription API popup */
 		.subapi-modal-title {
 			margin-bottom: 20px;
 		}
@@ -6139,7 +6139,7 @@
 			}
 		}
 
-		/* 输入字段特殊样式 */
+		/* Special input field style */
 		.subapi-input {
 			cursor: pointer !important;
 			background-color: #fff !important;
@@ -6185,7 +6185,7 @@
 			box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
 		}
 
-		/* 节点链接输入包装器 */
+		/* Node link input wrapper */
 		.link-input-wrapper {
 			display: flex;
 			align-items: center;
@@ -6362,7 +6362,7 @@
 			background: #6b7280;
 		}
 
-		/* 消息通知设置样式 */
+		/* Message notification settings style */
 		.notification-row {
 			display: flex;
 			justify-content: space-between;
@@ -6467,7 +6467,7 @@
 			color: #fff;
 		}
 
-		/* Telegram 按钮状态样式 */
+		/* Telegram button state style */
 		.btn-clear-config.btn-configured {
 			background: linear-gradient(135deg, #ef4444 0, #dc2626 100%);
 			box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
@@ -6487,7 +6487,7 @@
 			box-shadow: 0 4px 15px rgba(209, 213, 219, 0.3);
 		}
 
-		/* ==================== CF 使用统计模块样式 ==================== */
+		/* ==================== CF Usage Stats Module Styles ==================== */
 
 		.cf-usage-module {
 			display: none;
@@ -6501,7 +6501,7 @@
 			padding: 20px 0;
 		}
 
-		/* 统计卡片 */
+		/* Stat cards */
 		.cf-stats-card {
 			background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
 			border-radius: 12px;
@@ -6619,7 +6619,7 @@
 			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 		}
 
-		/* 信息提示框 */
+		/* Info tip box */
 		.cf-info-box {
 			background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(234, 179, 8, 0.05) 100%);
 			border: 1px solid rgba(249, 115, 22, 0.2);
@@ -6650,18 +6650,18 @@
 			color: #f59e0b !important;
 		}
 
-		/* 倒计时数字样式 */
+		/* Countdown number style */
 		.countdown-numbers {
 			color: #f59e0b;
 			font-weight: bold;
 		}
 
-		/* 倒计时文字样式 */
+		/* Countdown text style */
 		.countdown-text {
 			color: #6b7280;
 		}
 
-		/* 响应式布局：桌面端隐藏换行符，移动端显示 */
+		/* Responsive layout: hide line breaks on desktop, show on mobile */
 		@media (min-width: 768px) {
 			.cf-info-text br {
 				display: none;
@@ -6682,7 +6682,7 @@
 			}
 		}
 
-		/* ==================== 深色模式支持 ==================== */
+		/* ==================== Dark Mode Support ==================== */
 
 		html.dark-mode .cf-stats-card {
 			background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
@@ -6727,13 +6727,13 @@
 			color: #fbbf24 !important;
 		}
 
-		/* 深色模式倒计时数字样式 */
+		/* Dark mode countdown number style */
 		html.dark-mode .countdown-numbers {
 			color: #fbbf24;
 			font-weight: bold;
 		}
 
-		/* 深色模式倒计时文字样式 */
+		/* Dark mode countdown text style */
 		html.dark-mode .countdown-text {
 			color: #9ca3af;
 		}
@@ -6742,7 +6742,7 @@
 			background: #808080;
 		}
 
-		/* 网络信息卡片样式 */
+		/* Network info card style */
 		.port-info {
 			margin-top: 30px;
 			padding: 0 20px;
@@ -6926,7 +6926,7 @@
 			}
 		}
 
-		/* IP 详情弹窗样式 */
+		/* IP detail popup style */
 		/* Tech-savvy IP Detail Modal */
 		.ip-detail-modal {
 			position: fixed;
@@ -7294,26 +7294,26 @@
 		@media (max-width: 640px) {
 			.ip-detail-modal {
 				padding: 10px;
-				/* 确保模态框充分利用屏幕空间 */
+				/* Ensure modal fully uses screen space */
 				align-items: flex-end;
 			}
 
 			.ip-detail-content {
-				/* 使用 dvh (动态视口高度) 或回退到 vh，以适应移动浏览器地址栏的动态变化 */
+				/* Use dvh (dynamic viewport height), fallback to vh, to handle mobile browser address bar dynamics */
 				max-height: calc(100dvh - 20px);
 				max-height: calc(100vh - 20px);
-				/* 从底部弹出的样式 */
+				/* Slide-up-from-bottom style */
 				border-radius: 20px 20px 0 0;
 				margin-top: auto;
-				/* 确保内容可滚动 */
+				/* Ensure content is scrollable */
 				overflow-y: auto;
-				/* 为带有刘海屏的设备添加安全区域内边距 */
+				/* Add safe-area padding for notched devices */
 				padding-bottom: env(safe-area-inset-bottom, 0px);
 			}
 
 			.ip-detail-grid-container {
 				padding: 20px;
-				/* 大幅增加底部内边距 */
+				/* Extra bottom padding */
 				padding-bottom: calc(60px + env(safe-area-inset-bottom, 20px));
 				grid-template-columns: 1fr;
 			}
@@ -7325,7 +7325,7 @@
 
 			.ip-detail-map-container {
 				height: 200px;
-				/* 在移动设备上减小地图高度以留出更多空间给内容 */
+				/* Reduce map height on mobile to leave more room for content */
 			}
 
 			.ip-detail-popup-content {
@@ -7342,14 +7342,14 @@
 
 			.ip-detail-header {
 				padding: 16px 20px;
-				/* 粘性头部，防止滚动时遮挡内容 */
+				/* Sticky header, prevent it being covered while scrolling */
 				position: sticky;
 				top: 0;
 				z-index: 10;
 				background: inherit;
 			}
 
-			/* 在移动设备上为 body 添加额外的下内边距，确保底部内容可见 */
+			/* Extra bottom padding on mobile to keep bottom content visible */
 			.ip-detail-body {
 				padding-bottom: 60px;
 			}
@@ -7390,7 +7390,7 @@
 			color: #ef5350;
 		}
 
-		/* IP 类型样式 */
+		/* IP type style */
 		.ip-type-residential {
 			color: #2e7d32;
 			font-weight: bold;
@@ -7427,7 +7427,7 @@
 			font-weight: bold;
 		}
 
-		/* 风险等级文本样式 */
+		/* Risk level text style */
 		.success-text {
 			color: #2e7d32;
 		}
@@ -7452,7 +7452,7 @@
 			color: #ef5350;
 		}
 
-		/* 评分算法说明气泡 */
+		/* Scoring algorithm explanation bubble */
 		.score-help-icon {
 			display: inline-block;
 			width: 18px;
@@ -7495,7 +7495,7 @@
 			line-height: 1.6;
 		}
 
-		/* 气泡位置调整类 */
+		/* Bubble position adjustment class */
 		.score-tooltip.tooltip-bottom {
 			display: none;
 		}
@@ -7750,7 +7750,7 @@
 			left: 0;
 		}
 
-		/* 响应式设计 */
+		/* Responsive design */
 		@media (max-width: 1024px) {
 			.network-cards-container {
 				grid-template-columns: repeat(2, 1fr);
@@ -7794,7 +7794,7 @@
 			}
 		}
 
-		/* 网络信息和延迟测试样式 */
+		/* Network info and latency test style */
 		.network-cards-container {
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
@@ -7878,7 +7878,7 @@
 			padding: 12px 16px;
 			min-height: 80px;
 			flex-direction: row;
-			/* 延迟卡片内部通常是横向排列 header 和 graph */
+			/* Latency card interior is usually a horizontal header + graph layout */
 			align-items: center;
 		}
 
@@ -8253,7 +8253,7 @@
 			filter: drop-shadow(0 0 5px #f6821f);
 		}
 
-		/* GitHub logo 在浅色模式下显示为黑色 */
+		/* GitHub logo shown black in light mode */
 		.latency-card-icon-wrapper[data-site="github"] {
 			color: #181717 !important;
 		}
@@ -8270,7 +8270,7 @@
 			fill: #ffffff !important;
 		}
 
-		/* 加载动画 */
+		/* Loading animation */
 		@keyframes latencyPulse {
 
 			0%,
@@ -8287,7 +8287,7 @@
 			animation: latencyPulse 1.5s ease-in-out infinite;
 		}
 
-		/* HOSTS 编辑模态框样式 */
+		/* HOSTS edit modal style */
 		.hosts-edit-modal {
 			overflow-y: auto;
 			width: 90vw;
@@ -8419,7 +8419,7 @@
 			color: var(--text-primary) !important;
 		}
 
-		/* 增强型文本编辑器样式 */
+		/* Enhanced text editor style */
 		.line-editor {
 			display: grid;
 			grid-template-columns: 58px minmax(0, 1fr);
@@ -8576,7 +8576,7 @@
 			background: rgba(255, 255, 255, 0.075) !important;
 		}
 
-		/* 低性能模式（自动触发）：禁用高开销视觉效果，优化无硬件加速场景 */
+		/* Low performance mode (auto-triggered): disable high-cost visual effects, optimize for no-hardware-acceleration scenes */
 		html.low-performance-mode body {
 			background: var(--admin-bg-base) !important;
 		}
@@ -8625,7 +8625,7 @@
 </head>
 
 <body>
-	<!-- 管理后台容器 -->
+	<!-- Admin panel container -->
 	<div class="page-wrapper">
 		<div class="card-container">
 			<div class="success-message" id="successMsg"></div>
@@ -8644,7 +8644,7 @@
 				</div>
 			</div>
 
-			<!-- Cloudflare Workers/Pages 使用统计模块 -->
+			<!-- Cloudflare Workers/Pages usage stats module -->
 			<div class="module cf-usage-module collapsed" id="cfUsageModule">
 				<div class="module-title" onclick="toggleModule(this)">
 					Workers/Pages Request Usage
@@ -8652,20 +8652,20 @@
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
 				</div>
-				<!-- 进度条 -->
+				<!-- Progress bar -->
 				<div>
 					<div class="cf-progress-bar">
-						<!-- Workers 进度条 (绿色) -->
+						<!-- Workers progress bar (green) -->
 						<div class="cf-bar-segment cf-bar-green" id="cfWorkerBar" title="Workers Requests"></div>
-						<!-- Pages 进度条 (蓝色) -->
+						<!-- Pages progress bar (blue) -->
 						<div class="cf-bar-segment cf-bar-blue" id="cfPagesBar" title="Pages Requests"></div>
-						<!-- 总体百分比文字 (中央) -->
+						<!-- Overall percentage text (center) -->
 						<div class="cf-percentage-center" id="cfPercentageCenter">0%</div>
 					</div>
 				</div>
 				<div class="module-content">
 					<div class="cf-usage-wrapper">
-						<!-- 使用统计卡片 -->
+						<!-- Usage stats card -->
 						<div class="cf-stats-card">
 							<div class="cf-stats-grid">
 								<div class="cf-stat-item">
@@ -8683,7 +8683,7 @@
 							</div>
 						</div>
 
-						<!-- 信息提示 -->
+						<!-- Info tip -->
 						<div class="cf-info-box">
 							<div class="cf-info-icon">ℹ️</div>
 							<div class="cf-info-text">
@@ -8702,7 +8702,7 @@
 				</div>
 			</div>
 
-			<!-- 网络信息模块 -->
+			<!-- Network info module -->
 			<div class="module network-detail-collapsed">
 				<div class="module-title" onclick="toggleNetworkModule(this)">
 					🌍 Current Network Info
@@ -8784,15 +8784,15 @@
 						是由您梯子的 <b>Routing Rules</b> determined by this,<b>Overseas test, Google</b> is determined by your <b>Preferred IP</b> determined by this, while <b>CF, ChatGPT, Twitter</b> 是由您的
 						<b>PROXYIP</b> determined by this.</small>
 					<div class="module-content" style="display: none;" id="network-module-content">
-						<!-- 延迟测试卡片 -->
+						<!-- Latency test card -->
 						<div class="latency-cards" id="latency-cards">
-							<!-- 卡片将通过JavaScript动态生成 -->
+							<!-- Cards will be dynamically generated via JavaScript -->
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- 模块1: 订阅链接 -->
+			<!-- Module 1: Subscription link -->
 			<div class="module">
 				<div class="module-title" onclick="toggleModule(this)">
 					📋 Get Node Link
@@ -8866,7 +8866,7 @@
 				</div>
 			</div>
 
-			<!-- 模块2: 编辑订阅生成 -->
+			<!-- Module 2: Edit subscription generation -->
 			<div class="module" id="preferredSubscriptionModule">
 				<div class="module-title non-collapsible">
 					⚡️ Optimized Subscription Generation
@@ -8945,7 +8945,7 @@
 				</div>
 			</div>
 
-			<!-- 模块3: 详细配置信息 -->
+			<!-- Module 3: Detailed config info -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this)">
 					⚙️ Detailed Configuration
@@ -9118,7 +9118,7 @@
 				</div>
 			</div>
 
-			<!-- 模块3.5: ECH 设置(实验性质) -->
+			<!-- Module 3.5: ECH settings (experimental) -->
 			<div class="module collapsed advanced-module" id="echModule" style="display: none;">
 				<div class="module-title" onclick="toggleModule(this)">
 					🔐 Encrypted Client Hello
@@ -9218,7 +9218,7 @@
 				</div>
 			</div>
 
-			<!-- 模块4: 反代落地设置 -->
+			<!-- Module 4: Reverse-proxy landing settings -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this)">
 					🌐 Cloudflare CDN Access Settings
@@ -9387,7 +9387,7 @@
 				</div>
 			</div>
 
-			<!-- 模块5: 订阅转换配置 -->
+			<!-- Module 5: Subscription conversion config -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this)">
 					🔄 Subscription Conversion Config
@@ -9494,7 +9494,7 @@
 				</div>
 			</div>
 
-			<!-- 模块6: 消息通知设置 -->
+			<!-- Module 6: Notification settings -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this)">
 					🔔 Notification Settings
@@ -9504,7 +9504,7 @@
 				</div>
 				<div class="module-content">
 
-					<!-- Telegram Bot 通知设置 -->
+					<!-- Telegram Bot notification settings -->
 					<div class="form-group notification-row">
 						<label>
 							Telegram Bot Notification Settings
@@ -9522,7 +9522,7 @@
 						</div>
 					</div>
 
-					<!-- Cloudflare 可用请求数统计 -->
+					<!-- Cloudflare available-requests stats -->
 					<div class="form-group notification-row">
 						<label>
 							Cloudflare Workers/Pages Available Request Stats
@@ -9546,7 +9546,7 @@
 				</div>
 			</div>
 
-			<!-- 模块7: 查看所有日志 -->
+			<!-- Module 7: View all logs -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this); loadLogsOnExpand(this)">
 					📋 View Operation Logs
@@ -9566,10 +9566,10 @@
 			</div>
 
 			<div class="social-links">
-				<!-- 主题切换按钮 -->
+				<!-- Theme toggle button -->
 				<button type="button" class="social-link theme-toggle" id="themeToggle" title="Switch to Light Mode"
 					onclick="toggleTheme()">
-					<!-- 太阳图标 (日间模式显示) -->
+					<!-- Sun icon (shown in light mode) -->
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="theme-icon sun-icon">
 						<circle cx="12" cy="12" r="5" fill="currentColor" />
 						<g stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
@@ -9583,12 +9583,12 @@
 							<line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
 						</g>
 					</svg>
-					<!-- 月亮图标 (夜间模式显示) -->
+					<!-- Moon icon (shown in dark mode) -->
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="theme-icon moon-icon">
 						<path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
 					</svg>
 				</button>
-				<!-- GitHub 链接 -->
+				<!-- GitHub link -->
 				<a href="https://github.com/cmliu/edgetunnel" target="_blank" rel="noopener" class="social-link"
 					title="GitHub">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -9596,7 +9596,7 @@
 							d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
 					</svg>
 				</a>
-				<!-- Telegram 链接 -->
+				<!-- Telegram link -->
 				<a href="https://t.me/CMLiussss" target="_blank" rel="noopener" class="social-link" title="Telegram">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 						<path fill="currentColor"
@@ -9608,7 +9608,7 @@
 					style="display: none;">
 					<span id="versionValue"></span>
 				</div>
-				<!-- 返回顶部按钮 -->
+				<!-- Back-to-top button -->
 				<button type="button" class="social-link" title="Back to Top" onclick="scrollToTop()">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 						<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -9619,7 +9619,7 @@
 		</div>
 	</div>
 
-	<!-- 二维码弹窗 -->
+	<!-- QR code popup -->
 	<div class="modal-overlay" id="qrcodeModal" onclick="closeQRCode(event)">
 		<div class="modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeQRCode()">×</button>
@@ -9628,7 +9628,7 @@
 		</div>
 	</div>
 
-	<!-- 版本信息气泡 -->
+	<!-- Version info bubble -->
 	<div class="modal-overlay" id="versionInfoModal" onclick="closeVersionInfoModal(event)">
 		<div class="modal version-info-modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeVersionInfoModal()">×</button>
@@ -9652,7 +9652,7 @@
 		</div>
 	</div>
 
-	<!-- 更新日志弹窗 -->
+	<!-- Changelog popup -->
 	<div class="modal-overlay" id="versionChangelogModal" onclick="closeVersionChangelogModal(event)">
 		<div class="modal version-changelog-modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeVersionChangelogModal()">×</button>
@@ -9668,7 +9668,7 @@
 		</div>
 	</div>
 
-	<!-- 跳过证书验证警告弹窗 -->
+	<!-- Skip certificate verification warning popup -->
 	<div class="modal-overlay" id="skipVerifyWarningModal" onclick="closeSkipVerifyWarning(event)">
 		<div class="modal skipverify-warning-modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeSkipVerifyWarning()">×</button>
@@ -9695,7 +9695,7 @@
 		</div>
 	</div>
 
-	<!-- 重置配置确认弹窗 -->
+	<!-- Reset config confirmation popup -->
 	<div class="modal-overlay" id="resetModal" onclick="closeResetModal(event)">
 		<div class="modal" onclick="event.stopPropagation()">
 			<h2 class="reset-modal-title">⚠️ Reset configuration</h2>
@@ -9708,7 +9708,7 @@
 		</div>
 	</div>
 
-	<!-- 清除Telegram配置确认弹窗 -->
+	<!-- Clear Telegram config confirmation popup -->
 	<div class="modal-overlay" id="clearTelegramModal" onclick="closeClearTelegramModal(event)">
 		<div class="modal" onclick="event.stopPropagation()">
 			<h2 class="reset-modal-title">⚠️ Clear Telegram configuration</h2>
@@ -9722,7 +9722,7 @@
 		</div>
 	</div>
 
-	<!-- 清除Cloudflare配置确认弹窗 -->
+	<!-- Clear Cloudflare config confirmation popup -->
 	<div class="modal-overlay" id="clearCloudflareModal" onclick="closeClearCloudflareModal(event)">
 		<div class="modal" onclick="event.stopPropagation()">
 			<h2 class="reset-modal-title">⚠️ Clear Cloudflare configuration</h2>
@@ -9736,7 +9736,7 @@
 		</div>
 	</div>
 
-	<!-- 日志查看弹窗 -->
+	<!-- Log viewer popup -->
 	<div class="modal-overlay" id="logsModal">
 		<div class="modal logs-modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeLogsModal()">×</button>
@@ -9746,7 +9746,7 @@
 		</div>
 	</div>
 
-	<!-- 订阅转换后端设置弹窗 -->
+	<!-- Subscription conversion backend settings popup -->
 	<div class="modal-overlay" id="subAPIModal">
 		<div class="modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeSubAPIModal()">×</button>
@@ -9771,7 +9771,7 @@
 		</div>
 	</div>
 
-	<!-- TelegramBot 通知设置弹窗 -->
+	<!-- TelegramBot notification settings popup -->
 	<div class="modal-overlay" id="telegramConfigModal">
 		<div class="modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeTelegramConfigModal()">×</button>
@@ -9795,13 +9795,13 @@
 		</div>
 	</div>
 
-	<!-- Cloudflare 通知设置弹窗 -->
+	<!-- Cloudflare notification settings popup -->
 	<div class="modal-overlay" id="cloudflareConfigModal">
 		<div class="modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeCloudflareConfigModal()">×</button>
 			<h2 class="subapi-modal-title">☁️ Workers/Pages available request stats</h2>
 
-			<!-- 请求方案选择 -->
+			<!-- Request plan selection -->
 			<div class="form-group subapi-form-group">
 				<label>Please select a statistics plan</label>
 				<select id="cloudflareAuthMethod" title="Request Stats Method" onchange="updateCloudflareAuthMethod()">
@@ -9811,7 +9811,7 @@
 				</select>
 			</div>
 
-			<!-- Email + Global API Key 方案 -->
+			<!-- Email + Global API Key plan -->
 			<div id="cloudflareEmailSection">
 				<div class="form-group subapi-form-group">
 					<label>Email</label>
@@ -9823,7 +9823,7 @@
 				</div>
 			</div>
 
-			<!-- Account ID + API Token 方案 -->
+			<!-- Account ID + API Token plan -->
 			<div id="cloudflareAccountIDSection" class="hidden-section">
 				<div class="form-group subapi-form-group">
 					<label>Account ID</label>
@@ -9837,7 +9837,7 @@
 				</div>
 			</div>
 
-			<!-- UsageAPI 方案 -->
+			<!-- UsageAPI plan -->
 			<div id="cloudflareUsageAPISection" class="hidden-section">
 				<div class="form-group subapi-form-group">
 					<label>UsageAPI Address</label>
@@ -9849,10 +9849,10 @@
 				</div>
 			</div>
 
-			<!-- 验证状态提示 -->
+			<!-- Verification status message -->
 			<div id="cloudflareStatus" class="subapi-status"></div>
 
-			<!-- 按钮组 -->
+			<!-- Button group -->
 			<div class="subapi-buttons">
 				<button type="button" class="btn btn-primary btn-test-api"
 					onclick="testCloudflareConfig()">Availability Check</button>
@@ -9864,7 +9864,7 @@
 		</div>
 	</div>
 
-	<!-- 在线优选全屏模块 -->
+	<!-- Online preferred-IP fullscreen module -->
 	<div class="modal-overlay" id="onlineOptimizeModal">
 		<div class="online-optimize-fullscreen" onclick="event.stopPropagation()">
 			<button type="button" class="online-optimize-fallback-close" title="Close" aria-label="Close"
@@ -13917,7 +13917,7 @@
 						if (normalized) fixed.push(normalized);
 					}
 
-					// 随机打乱固定IP、CIDR和范围列表，以确保每次选取的候选IP是随机且不同的
+					// Shuffle the fixed IP, CIDR and range lists, so each pick of candidate IPs is random and different
 					for (let i = fixed.length - 1; i > 0; i--) {
 						const j = Math.floor(Math.random() * (i + 1));
 						[fixed[i], fixed[j]] = [fixed[j], fixed[i]];
@@ -14368,13 +14368,13 @@
 
 	</template>
 
-	<!-- API优选模态框 -->
+	<!-- API preferred-IP modal -->
 	<div class="modal-overlay" id="apiOptimizeModal">
 		<div class="modal api-optimize-modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeAPIOptimizeModal()">×</button>
 			<h2 class="api-optimize-modal-title">🔌 Subscription API</h2>
 
-			<!-- API URL 输入 -->
+			<!-- API URL input -->
 			<div class="api-form-group">
 				<div class="api-form-row-item" style="grid-template-columns: auto 1fr;">
 					<label>API URL:</label>
@@ -14383,7 +14383,7 @@
 				</div>
 			</div>
 
-			<!-- 默认端口输入 和 将优选作为PROXYIP勾选框 -->
+			<!-- Default port input and "Use preferred IP as PROXYIP" checkbox -->
 			<div class="api-form-group">
 				<div class="api-form-row-dual">
 					<div class="api-form-row-item">
@@ -14398,7 +14398,7 @@
 				</div>
 			</div>
 
-			<!-- 结果显示区域 -->
+			<!-- Results display area -->
 			<div class="api-results-container">
 				<label class="api-results-label">API Result:</label>
 				<div class="line-editor" id="apiResultsEditor">
@@ -14415,7 +14415,7 @@
 				</div>
 			</div>
 
-			<!-- 按钮组 -->
+			<!-- Button group -->
 			<div class="api-buttons">
 				<button type="button" class="btn btn-verify-api" id="btnVerifyAPI"
 					onclick="verifyAPIOptimize()">Availability Check</button>
@@ -14428,7 +14428,7 @@
 		</div>
 	</div>
 
-	<!-- 链式代理模态框 -->
+	<!-- Chained proxy modal -->
 	<div class="modal-overlay" id="chainProxyModal">
 		<div class="modal api-optimize-modal chain-proxy-modal">
 			<h2 class="api-optimize-modal-title">🔗 Add chained proxy node</h2>
@@ -14479,7 +14479,7 @@
 		</div>
 	</div>
 
-	<!-- 代理验证模态框 -->
+	<!-- Proxy verification modal -->
 	<div class="modal-overlay" id="proxyVerificationModal">
 		<div class="modal" id="proxyVerificationContent" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeProxyVerificationModal()">×</button>
@@ -14510,13 +14510,13 @@
 					Cancel
 				</button>
 			</div>
-			<!-- 用于移动端布局的占位符 -->
+			<!-- Placeholder for mobile layout -->
 			<div class="btn-append-results" style="display: none;"></div>
 		</div>
 	</div>
 	</div>
 
-	<!-- Snippet.js 生成弹窗 -->
+	<!-- Snippet.js generation popup -->
 	<div class="modal-overlay" id="uuidSnippetModal">
 		<div class="modal" onclick="event.stopPropagation()">
 			<h2 id="uuidSnippetTitle">💎 Generate a custom Snippet.js source</h2>
@@ -14551,12 +14551,12 @@
 		</div>
 	</div>
 
-	<!-- ProxyIP 帮助科普弹窗 -->
+	<!-- ProxyIP help/info popup -->
 	<div class="modal-overlay" id="proxyIPHelpModal" onclick="closeProxyIPHelpModal(event)">
 		<div class="modal proxyip-help-modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeProxyIPHelpModal()">×</button>
 
-			<!-- 小白说明 -->
+			<!-- Beginner-mode notes -->
 			<div id="proxyIPHelpSimple" style="display: block;">
 				<div class="api-docs">
 					<h2 class="section-title">🤔 Why is reverse-proxy mode needed? What is PROXYIP?</h2>
@@ -14727,19 +14727,19 @@
 		</div>
 	</div>
 
-	<!-- ECH 帮助模态框 -->
+	<!-- ECH help modal -->
 	<div class="modal-overlay" id="echHelpModal" onclick="closeECHHelpModal(event)">
 		<div class="modal ech-help-modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeECHHelpModal()">×</button>
 
-			<!-- 选项卡 -->
+			<!-- Tabs -->
 			<div class="ech-tabs">
 				<button class="ech-tab active" onclick="switchECHTab(0)">What is ECH?</button>
 				<button class="ech-tab" onclick="switchECHTab(1)">How to use it?</button>
 				<button class="ech-tab" onclick="switchECHTab(2)">How to confirm whether ECH is active?</button>
 			</div>
 
-			<!-- 选项卡内容 -->
+			<!-- Tab content -->
 			<div class="ech-tab-content">
 				<div class="ech-tab-pane active" id="echTab0">
 					<div class="api-docs">
@@ -14978,13 +14978,13 @@
 		</div>
 	</div>
 
-	<!-- 订阅鉴权与 UUID 说明弹窗 -->
+	<!-- Subscription auth and UUID explanation popup -->
 	<div class="modal-overlay" id="authTokenHelpModal" onclick="closeAuthTokenHelpModal(event)">
 		<div class="modal auth-help-modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeAuthTokenHelpModal()">×</button>
 			<h2 id="authTokenHelpTitle" class="auth-help-title"></h2>
 			<div class="api-docs">
-				<!-- TOKEN 说明 -->
+				<!-- TOKEN explanation -->
 				<div id="authTokenTokenSection">
 					<div class="auth-logic-flow">
 						<div class="logic-node node-vars">ADMIN + KEY</div>
@@ -15011,7 +15011,7 @@
 					</div>
 				</div>
 
-				<!-- UUID 说明 -->
+				<!-- UUID explanation -->
 				<div id="authTokenUUIDSection" style="display: none;">
 					<div class="auth-logic-flow">
 						<div class="logic-node node-vars">ADMIN + KEY</div>
@@ -15038,7 +15038,7 @@
 					</div>
 				</div>
 
-				<!-- 自定义优选 填写说明 -->
+				<!-- Custom preferred-IP fill instructions -->
 				<div id="authTokenCustomIPsSection" style="display: none;">
 					<div class="auth-help-summary auth-help-summary-warning">
 						<strong>Tip:</strong>One entry per line; you can add a note after the address with <b>#note</b>. Preferred IPv6 should be written as <b>[2606:4700::]:2053</b>，优选域名/IP 端口不写默认
@@ -15081,7 +15081,7 @@
 		</div>
 	</div>
 
-	<!-- HOSTS 编辑模态框 -->
+	<!-- HOSTS edit modal -->
 	<div class="modal-overlay" id="hostsEditModal">
 		<div class="modal hosts-edit-modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="closeHostsEditModal()">×</button>
@@ -15102,7 +15102,7 @@
 		</div>
 	</div>
 
-	<!-- 路径模板配置弹窗 -->
+	<!-- Path template config popup -->
 	<div class="modal-overlay" id="pathTemplateConfigModal" onclick="closePathTemplateConfigModal(event)">
 		<div class="modal" onclick="event.stopPropagation()" style="max-width: 500px;">
 			<button type="button" class="modal-close" onclick="closePathTemplateConfigModal()">×</button>
@@ -15204,7 +15204,7 @@
 		</div>
 	</div>
 
-	<!-- 获取更多 PROXYIP 弹窗 -->
+	<!-- Get more PROXYIP popup -->
 	<div class="modal-overlay" id="getMoreProxyIPModal">
 		<div class="modal">
 			<div class="modal-map-side">
@@ -15241,7 +15241,7 @@
 
 					<div id="selectedProxyIPsContainer" class="selected-proxies-tags"
 						style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; min-height: 40px; padding: 10px; border: 1px dashed #e5e7eb; border-radius: 8px;">
-						<!-- 已选 IP 标签将显示在这里 -->
+						<!-- Selected IP tags will show here -->
 					</div>
 				</div>
 
@@ -15259,7 +15259,7 @@
 		</div>
 	</div>
 
-	<!-- 探索SOCKS5弹窗 -->
+	<!-- Explore SOCKS5 popup -->
 	<div class="modal-overlay" id="exploreSocks5Modal">
 		<div class="modal">
 			<div class="modal-map-side">
@@ -15309,7 +15309,7 @@
 		</div>
 	</div>
 
-	<!-- 探索HTTP弹窗 -->
+	<!-- Explore HTTP popup -->
 	<div class="modal-overlay" id="exploreHTTPModal">
 		<div class="modal">
 			<div class="modal-map-side">
@@ -15358,7 +15358,7 @@
 		</div>
 	</div>
 
-	<!-- 探索HTTPS弹窗 -->
+	<!-- Explore HTTPS popup -->
 	<div class="modal-overlay" id="exploreHTTPSModal">
 		<div class="modal">
 			<div class="modal-map-side">
@@ -15408,7 +15408,7 @@
 		</div>
 	</div>
 
-	<!-- gRPC 功能提示弹窗 -->
+	<!-- gRPC feature info popup -->
 	<div class="modal-overlay" id="transportGrpcModal" onclick="closeTransportGrpcModal(event)">
 		<div class="modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="hideTransportGrpcTooltip()">×</button>
@@ -15442,7 +15442,7 @@
 		</div>
 	</div>
 
-	<!-- ssTLS 关闭确认弹窗 -->
+	<!-- ssTLS off confirmation popup -->
 	<div class="modal-overlay" id="ssTLSDisableModal" onclick="closeSSTLSDisableModal(event)">
 		<div class="modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="cancelDisableSSTLS()">×</button>
@@ -15490,7 +15490,7 @@
 		</div>
 	</div>
 
-	<!-- HOSTS 检查提示弹窗 -->
+	<!-- HOSTS mismatch warning popup -->
 	<div class="modal-overlay" id="hostsMismatchModal" onclick="closeHostsMismatchModal(event)">
 		<div class="modal" onclick="event.stopPropagation()" style="max-width: 500px;">
 			<button type="button" class="modal-close" onclick="closeHostsMismatchModal()">×</button>
@@ -15721,15 +15721,15 @@
 			schedulePerformanceRecheck();
 		}
 
-		// 延迟测试配置
+		// Latency test config
 		const latencyTestConfig = {
 			count: 16  // 采样和显示数量
 		};
 
-		// 追踪延迟显示的动画状态
+		// Track animation state of the latency display
 		const latencyUIState = {};
 
-		// 标记延迟测试是否已经开始，防止重复执行
+		// Flag whether the latency test has already started, to prevent duplicate runs
 		let latencyTestStarted = false;
 		let latencyTestActive = false;
 		let latencyTestSessionId = 0;
@@ -15739,7 +15739,7 @@
 		const latencyFetchControllers = new Set();
 		const latencyFetchTimeoutMs = 8000;
 
-		// 延迟测试数据
+		// Latency test data
 		const latencySites = [
 			{
 				name: '字节抖音',
@@ -15791,12 +15791,12 @@
 			}
 		];
 
-		// 初始化主题
+		// Init theme
 		function initializeTheme() {
 			const saved = localStorage.getItem('theme');
 			let theme = saved;
 
-			// 如果第一次打开，按系统主题决定
+			// If opened for the first time, decide by system theme
 			if (!saved) {
 				theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 			}
@@ -15804,7 +15804,7 @@
 			applyTheme(theme);
 		}
 
-		// 应用主题
+		// Apply theme
 		function applyTheme(theme) {
 			if (theme === 'dark') {
 				document.documentElement.classList.add('dark-mode');
@@ -15817,13 +15817,13 @@
 			}
 		}
 
-		// 生成延迟卡片
+		// Generate latency card
 		function generateLatencyCards() {
 			const container = document.getElementById('latency-cards');
 			if (!container) return;
 			container.innerHTML = '';
 
-			// 按地区排序：国内优先，然后国际
+			// Sort by region: domestic first, then international
 			const sortedSites = [...latencySites].sort((a, b) => {
 				const aIsChina = a.region === '国内' ? 0 : 1;
 				const bIsChina = b.region === '国内' ? 0 : 1;
@@ -15860,7 +15860,7 @@
 			});
 		}
 
-		// 测试延迟
+		// Test latency
 		async function testLatency(site) {
 			const start = Date.now();
 			const controller = new AbortController();
@@ -15913,7 +15913,7 @@
 			});
 		}
 
-		// 获取延迟颜色
+		// Get the latency color
 		function getLatencyColor(latency) {
 			if (latency === -1) return 'var(--destructive)';
 			if (latency <= 49) return 'var(--latency-49)';
@@ -15923,7 +15923,7 @@
 			return 'var(--latency-1000)';
 		}
 
-		// 更新延迟显示
+		// Update latency display
 		function updateLatencyDisplay(siteName, latencies) {
 			const valueElement = document.getElementById(`latency-${siteName}`);
 			const pathElement = document.getElementById(`path-${siteName}`);
@@ -15931,13 +15931,13 @@
 
 			if (!valueElement || !pathElement) return;
 
-			// 计算平均延迟
+			// Compute average latency
 			const lastLatency = latencies[latencies.length - 1];
 			const validLatencies = latencies.filter(l => l !== -1);
 			let avgLatency = -1;
 
 			if (validLatencies.length > 0) {
-				// 如果有足够的数据，去掉最高和最低延迟以获得更稳定的平均值
+				// If there's enough data, drop the highest and lowest latency for a more stable average
 				if (validLatencies.length > 5) {
 					const sorted = [...validLatencies].sort((a, b) => a - b);
 					const trimmed = sorted.slice(1, -1);
@@ -15949,7 +15949,7 @@
 
 			const targetValue = Math.round(avgLatency);
 
-			// 更新文字显示
+			// Update text display
 			if (validLatencies.length === 0) {
 				if (lastLatency === -1) {
 					valueElement.innerHTML = 'TIMEOUT';
@@ -15962,11 +15962,11 @@
 				const siteState = latencyUIState[siteName] || { current: targetValue, timer: null };
 				latencyUIState[siteName] = siteState;
 
-				// 设置颜色
+				// Set color
 				const avgColor = getLatencyColor(targetValue);
 				valueElement.style.color = avgColor;
 
-				// 如果数值变化较小，直接显示
+				// If the value change is small, show it directly
 				if (isLowPerformanceMode) {
 					if (siteState.timer) {
 						clearInterval(siteState.timer);
@@ -15978,10 +15978,10 @@
 					siteState.current = targetValue;
 					valueElement.innerHTML = `${targetValue}<span class="unit">ms</span>`;
 				} else {
-					// 清除旧的计时器
+					// Clear the old timer
 					if (siteState.timer) clearInterval(siteState.timer);
 
-					// 每 30ms 更新一次数字，实现滚动的动态效果
+					// Update the number every 30ms, for a rolling animation effect
 					const step = () => {
 						if (siteState.current < targetValue) {
 							siteState.current += Math.ceil((targetValue - siteState.current) / 5);
@@ -16001,7 +16001,7 @@
 				}
 			}
 
-			// 更新 SVG 路径
+			// Update SVG path
 			const width = 400;
 			const height = 60;
 			const padding = 10;
@@ -16014,16 +16014,16 @@
 				if (l === -1) {
 					y = height - 5;
 				} else {
-					// 映射 0-500ms 到高度，高延迟在上，低延迟在下？通常ECG是越高表示值越大或者越快？
-					// demo里是 height - padding - (Math.min(l, 500) / 500 * (height - 2 * padding))
-					// 这意味着延迟越低，y越大（越靠下）。延迟越高，y越小（越靠上）。
+					// Map 0-500ms to height, is high latency at top and low at bottom? Usually ECG-style means higher = bigger or faster?
+					// In the demo it's height - padding - (Math.min(l, 500) / 500 * (height - 2 * padding))
+					// This means lower latency -> larger y (further down). Higher latency -> smaller y (further up).
 					y = height - padding - (Math.min(l, 500) / 800 * (height - 2 * padding));
 				}
 				points.push({ x, y });
 			});
 
 			if (points.length > 0) {
-				// 生成平滑曲线路径 (Bezier)
+				// Generate a smooth curve path (Bezier)
 				let d = `M${points[0].x},${points[0].y}`;
 				for (let i = 0; i < points.length - 1; i++) {
 					const x_mid = (points[i].x + points[i + 1].x) / 2;
@@ -16037,7 +16037,7 @@
 				const avgColor = getLatencyColor(targetValue);
 				pathElement.style.stroke = avgColor;
 
-				// 更新光标位置
+				// Update cursor position
 				if (cursorElement) {
 					cursorElement.style.display = 'block';
 					cursorElement.setAttribute('cx', lastPoint.x);
@@ -16047,7 +16047,7 @@
 			}
 		}
 
-		// 开始延迟测试
+		// Start latency test
 		async function startLatencyTest() {
 			if (latencyTestActive) return;
 
@@ -16118,13 +16118,13 @@
 			}, 618 * 3);
 		}
 
-		// 切换主题
+		// Toggle theme
 		function toggleTheme() {
 			const isDark = document.documentElement.classList.contains('dark-mode');
 			applyTheme(isDark ? 'light' : 'dark');
 		}
 
-		// 返回顶部
+		// Back to top
 		function scrollToTop() {
 			const pageWrapper = document.querySelector('.page-wrapper');
 			const behavior = isLowPerformanceMode ? 'auto' : 'smooth';
@@ -16959,7 +16959,7 @@
 			}
 		}
 
-		// 初始化增强型文本编辑器
+		// Init enhanced text editor
 		function initLineEditor(textareaId) {
 			const ta = document.getElementById(textareaId);
 			if (!ta) return;
@@ -17071,23 +17071,23 @@
 				lineShades.style.transform = offset;
 			}
 
-			// 监听输入、滚动
+			// Listen for input, scroll
 			ta.addEventListener('input', scheduleRender);
 			ta.addEventListener('scroll', syncScroll);
 
-			// 监听高度变化（ResizeObserver），解决拖拽角标后的同步问题
+			// Watch height changes (ResizeObserver), fixes sync issue after dragging a corner handle
 			if (window.ResizeObserver) {
 				const ro = new ResizeObserver(scheduleRender);
 				ro.observe(ta);
 			}
 
-			// 窗口缩放时也刷新一下
+			// Also refresh on window zoom
 			window.addEventListener('resize', scheduleRender);
 
-			// 暴露渲染函数
+			// Expose render function
 			ta._refreshLineEditor = renderMeta;
 
-			// 初始渲染
+			// Initial render
 			renderMeta();
 		}
 
@@ -17104,7 +17104,7 @@
 
 		async function loadConfig() {
 			try {
-				// 禁用 Rocket Loader 对该请求的影响
+				// Disable Rocket Loader's effect on this request
 				const response = await fetch('/admin/config.json?_t=' + Date.now(), {
 					method: 'GET',
 					headers: {
@@ -17118,7 +17118,7 @@
 				originalConfig = JSON.parse(JSON.stringify(currentConfig));
 				renderUI();
 				loadVersionByUUID(currentConfig.UUID);
-				// 设置网页标题
+				// Set page title
 				document.title = `${currentConfig.优选订阅生成?.SUBNAME || 'edgetunnel'} 设置页面 - 管理后台`;
 			} catch (error) {
 				updateVersionBadge('');
@@ -17127,10 +17127,10 @@
 		}
 
 		function renderUI() {
-			// 标题
+			// Title
 			document.getElementById('pageTitle').textContent = (currentConfig.优选订阅生成?.SUBNAME || 'edgetunnel') + ' Setting';
 
-			// 检查 CF 使用情况并显示模块
+			// Check CF usage and show the module
 			const cfUsageModule = document.getElementById('cfUsageModule');
 			const cfUsage = currentConfig.CF?.Usage;
 			if (cfUsage && cfUsage.success) {
@@ -17145,10 +17145,10 @@
 				updateCloudflareButtonStates(false);
 			}
 
-			// 检查 CF.UsageAPI 字段是否存在，向下兼容旧版本
+			// Check whether the CF.UsageAPI field exists, backward compatible with old versions
 			const usageapiOption = document.getElementById('usageapiOption');
 			if (usageapiOption) {
-				// 如果 CF.UsageAPI 字段不存在（旧版本），隐藏 UsageAPI 选项
+				// If the CF.UsageAPI field doesn't exist (old version), hide the UsageAPI option
 				if (currentConfig.CF?.UsageAPI === undefined) {
 					usageapiOption.style.display = 'none';
 				} else {
@@ -17156,7 +17156,7 @@
 				}
 			}
 
-			// 订阅链接
+			// Subscription link
 			const token = currentConfig.优选订阅生成?.TOKEN;
 			const host = window.location.host;
 			const link = currentConfig.LINK;
@@ -17166,7 +17166,7 @@
 			document.getElementById('clashLink').value = `https://${host}/sub?token=${token}&clash`;
 			document.getElementById('singboxLink').value = `https://${host}/sub?token=${token}&sb`;
 
-			// 编辑订阅生成
+			// Edit subscription generation
 			const local = currentConfig.优选订阅生成?.local ?? true;
 			const randomIP = currentConfig.优选订阅生成?.本地IP库?.随机IP ?? true;
 
@@ -17176,7 +17176,7 @@
 			} else if (randomIP) {
 				document.getElementById('ipMode').value = 'random';
 				document.getElementById('randomCount').value = currentConfig.优选订阅生成?.本地IP库?.随机数量 || 16;
-				// 设置指定端口
+				// Set the specified port
 				if (currentConfig.优选订阅生成?.本地IP库?.指定端口 !== undefined) {
 					document.getElementById('specifiedPort').value = currentConfig.优选订阅生成.本地IP库.指定端口;
 				}
@@ -17186,24 +17186,24 @@
 			}
 			updateIPMode();
 
-			// 详细配置
+			// Detailed config
 			document.getElementById('subName').value = currentConfig.优选订阅生成?.SUBNAME || '';
 
-			// 检查 HOSTS 数组是否存在
+			// Check whether a HOSTS array exists
 			hasMultipleHosts = Array.isArray(currentConfig.HOSTS) && currentConfig.HOSTS.length > 0;
 
 			const nodeHostInput = document.getElementById('nodeHost');
 			if (hasMultipleHosts) {
-				// 如果存在 HOSTS 数组，用逗号连接显示所有 host
+				// If a HOSTS array exists, join all hosts with commas for display
 				nodeHostInput.value = currentConfig.HOSTS.join('、');
-				// 添加可点击样式和事件
+				// Add clickable style and event
 				nodeHostInput.classList.add('nodeHost-clickable');
 				nodeHostInput.title = '点击 可编辑多个节点域名';
 				nodeHostInput.onclick = openHostsEditModal;
 			} else {
-				// 否则显示单个 HOST
+				// Otherwise show a single HOST
 				nodeHostInput.value = currentConfig.HOST || '';
-				// 移除可点击样式和事件
+				// Remove clickable style and event
 				nodeHostInput.classList.remove('nodeHost-clickable');
 				nodeHostInput.title = '节点域名';
 				nodeHostInput.onclick = null;
@@ -17216,7 +17216,7 @@
 			syncTransportSettingsFromConfig();
 			updateProtocol();
 
-			// 检查跳过证书验证字段是否存在
+			// Check whether the skip-certificate-verification field exists
 			const skipVerifyGroup = document.getElementById('skipVerifyGroup');
 			if (currentConfig['跳过证书验证'] !== undefined) {
 				skipVerifyGroup.style.setProperty('display', 'flex', 'important');
@@ -17225,21 +17225,21 @@
 				skipVerifyGroup.style.setProperty('display', 'none', 'important');
 			}
 
-			// 检查"完整节点路径"字段是否存在，判断PATH是否可编辑
+			// Check whether the "Full Node Path" field exists, to decide if PATH is editable
 			const nodePathInput = document.getElementById('nodePATH');
 			if (currentConfig['完整节点路径'] !== undefined) {
-				// 存在该字段，表示后端支持编辑PATH，移除readonly属性
+				// Field exists, meaning backend supports editing PATH, remove the readonly attribute
 				nodePathInput.removeAttribute('readonly');
 				nodePathInput.title = '节点的伪装路径';
 				nodePathInput.onchange = handlePathChange;
 			} else {
-				// 不存在该字段，PATH保持只读状态
+				// Field doesn't exist, PATH stays read-only
 				nodePathInput.setAttribute('readonly', '');
 				nodePathInput.title = '节点的伪装路径 仅可通过 \'PATH\'环境变量 进行修改';
 				nodePathInput.onchange = null;
 			}
 
-			// 检查Fingerprint字段是否存在
+			// Check whether the Fingerprint field exists
 			const fingerprintGroup = document.getElementById('fingerprintGroup');
 			const fingerprintSelect = document.getElementById('fingerprint');
 			if (currentConfig['Fingerprint'] == undefined) {
@@ -17248,7 +17248,7 @@
 				fingerprintSelect.value = currentConfig['Fingerprint'] || 'chrome';
 			}
 
-			// 检查随机路径字段是否存在
+			// Check whether the random-path field exists
 			const randomPathGroup = document.getElementById('randomPathGroup');
 			const randomPathCheckbox = document.getElementById('randomPath');
 			if (currentConfig['随机路径'] !== undefined) {
@@ -17258,7 +17258,7 @@
 				randomPathGroup.style.setProperty('display', 'none', 'important');
 			}
 
-			// 检查启用0RTT字段是否存在
+			// Check whether the 0RTT-enabled field exists
 			const enable0RTTGroup = document.getElementById('enable0RTTGroup');
 			const enable0RTTCheckbox = document.getElementById('enable0RTT');
 			if (currentConfig['启用0RTT'] !== undefined) {
@@ -17268,7 +17268,7 @@
 				enable0RTTGroup.style.setProperty('display', 'none', 'important');
 			}
 
-			// 检查TLS分片字段是否存在
+			// Check whether the TLS fragmentation field exists
 			const tlsFragmentGroup = document.getElementById('tlsFragmentGroup');
 			const tlsFragmentHappGroup = document.getElementById('tlsFragmentHappGroup');
 			const tlsFragmentShadowrocket = document.getElementById('tlsFragmentShadowrocket');
@@ -17276,7 +17276,7 @@
 			if (currentConfig['TLS分片'] !== undefined) {
 				tlsFragmentGroup.style.setProperty('display', 'flex', 'important');
 				tlsFragmentHappGroup.style.setProperty('display', 'flex', 'important');
-				// 根据当前值设置勾选状态
+				// Set checked state based on the current value
 				tlsFragmentShadowrocket.checked = currentConfig['TLS分片'] === 'Shadowrocket';
 				tlsFragmentHapp.checked = currentConfig['TLS分片'] === 'Happ';
 			} else {
@@ -17284,101 +17284,101 @@
 				tlsFragmentHappGroup.style.setProperty('display', 'none', 'important');
 			}
 
-			// 检查ECH字段是否存在
+			// Check whether the ECH field exists
 			const echModule = document.getElementById('echModule');
 			const enableECHCheckbox = document.getElementById('enableECH');
 			if (currentConfig['ECH'] !== undefined) {
 				echModule.style.display = 'block';
 				enableECHCheckbox.checked = currentConfig['ECH'] || false;
-				// 根据Fingerprint值初始化ECH选项的禁用状态
+				// Init ECH option's disabled state based on the Fingerprint value
 				updateECHOptionState();
 
-				// 填充ECH DNS下拉框
+				// Populate ECH DNS dropdown
 				populateEchDNSSelect();
 
-				// 填充ECH SNI下拉框
+				// Populate ECH SNI dropdown
 				populateEchSNISelect();
 			} else {
 				echModule.style.display = 'none';
 			}
 
-			// 反代落地设置
+			// Reverse-proxy landing settings
 			applyProxyConfigToForm();
 
-			// 订阅转换配置
+			// Subscription conversion config
 			document.getElementById('subAPI').value = currentConfig.订阅转换配置?.SUBAPI || '';
 			document.getElementById('subConfig').value = currentConfig.订阅转换配置?.SUBCONFIG || '';
 			document.getElementById('emoji').checked = currentConfig.订阅转换配置?.SUBEMOJI || false;
 			syncSubListOption();
 
-			// 消息通知设置 - 兼容两种config结构
-			// 优先读取 TG 字段，如果没有则读取 通知.Telegram
+			// Notification settings - compatible with both config structures
+			// Prefer the TG field, fall back to Notification.Telegram if absent
 			const telegramBotToken = currentConfig.TG?.BotToken || currentConfig.通知?.Telegram?.BotToken;
 			const telegramChatID = currentConfig.TG?.ChatID || currentConfig.通知?.Telegram?.ChatID;
 			const telegramCheckbox = document.getElementById('telegramEnabled');
 
-			// 判断TG配置是否完整（BotToken和ChatID都非null且非空字符串）
+			// Check whether TG config is complete (BotToken and ChatID both non-null and non-empty)
 			if (telegramBotToken && telegramChatID) {
-				// 两个都有，启用checkbox，并加载 TG.启用 的状态
+				// If both exist, enable checkbox and load the TG.Enabled state
 				telegramCheckbox.disabled = false;
 				telegramCheckbox.checked = currentConfig.TG?.启用 ?? false;
-				// "参数配置"按钮颜色为绿色，表示已配置
+				// "Parameter Config" button is green, meaning configured
 				updateTelegramButtonStates(true);
-				// "清除配置"按钮为红色，且可点击
+				// "Clear Config" button is red and clickable
 			} else {
-				// 任意一个缺少，禁用checkbox
+				// Disable checkbox if either one is missing
 				telegramCheckbox.disabled = true;
 				telegramCheckbox.checked = false;
-				// "参数配置"按钮颜色为默认色，表示未配置
+				// "Parameter Config" button is default color, meaning not configured
 				updateTelegramButtonStates(false);
-				// "清除配置"按钮为灰色，且不可点击
+				// "Clear Config" button is grey and not clickable
 			}
 
 			modifiedSections.clear();
 			resetAllButtons();
 
-			// 从 localStorage 加载模块展开/折叠状态
+			// Load module expand/collapse state from localStorage
 			loadModuleStates();
 
-			// 填充 SubConfig 下拉框（如果数据已加载，会自动设置选中值）
+			// Populate SubConfig dropdown (if data already loaded, auto-selects the value)
 			populateSubConfigSelect();
 
-			// 检查当前域名是否在 HOSTS 数组中
+			// Check whether the current domain is in the HOSTS array
 			checkHostsMismatch();
 		}
 
-		// CF 使用情况显示函数
+		// CF usage display function
 		function updateCFUsageDisplay(cfUsage) {
 			const workers = cfUsage.workers || 0;
 			const pages = cfUsage.pages || 0;
 			const total = cfUsage.total || 0;
 			const dailyQuota = cfUsage.max || 100000;
 
-			// 更新显示数值
+			// Update displayed value
 			document.getElementById('cfWorkerCount').textContent = workers.toLocaleString();
 			document.getElementById('cfPagesCount').textContent = pages.toLocaleString();
 			document.getElementById('cfDailyQuota').textContent = dailyQuota.toLocaleString();
 			document.getElementById('cfTotalDisplay').textContent = total.toLocaleString();
 
-			// 计算百分比
+			// Compute percentage
 			const percentage = ((total / dailyQuota) * 100).toFixed(2);
 
-			// 计算比例并设置进度条宽度
+			// Compute the ratio and set the progress bar width
 			const workersRatio = (workers / dailyQuota) * 100;
 			const pagesRatio = (pages / dailyQuota) * 100;
 
-			// Workers 进度条：从左边开始
+			// Workers progress bar: starts from the left
 			const workerBarEl = document.getElementById('cfWorkerBar');
 			workerBarEl.style.width = Math.min(workersRatio, 100) + '%';
 			workerBarEl.textContent = '';
 
-			// Pages 进度条：紧跟在 Workers 进度条后面
+			// Pages progress bar: right after the Workers progress bar
 			const pagesBarEl = document.getElementById('cfPagesBar');
 			pagesBarEl.style.width = Math.min(pagesRatio, 100 - workersRatio) + '%';
 			pagesBarEl.style.left = Math.min(workersRatio, 100) + '%';
 			pagesBarEl.textContent = '';
 
-			// 总体百分比文字 (中央)
+			// Overall percentage text (center)
 			const percentageCenterEl = document.getElementById('cfPercentageCenter');
 			percentageCenterEl.textContent = `请求使用进度: ${total.toLocaleString()} (${percentage}%)`;
 		}
@@ -17437,7 +17437,7 @@
 				requestAnimationFrame(() => refreshLineEditor(document.getElementById('customIPs')));
 			}
 
-			// 显示或隐藏指定端口
+			// Show/hide the specified port
 			const portSection = document.getElementById('portSection');
 			if (portSection) {
 				if (mode === 'random' && currentConfig.优选订阅生成?.本地IP库?.指定端口 !== undefined) {
@@ -17449,7 +17449,7 @@
 				}
 			}
 
-			// 显示或隐藏在线优选、订阅接口和链式代理按钮（仅在自定义优选模式下显示）
+			// Show/hide online preferred-IP, subscription-endpoint, and chained-proxy buttons (custom preferred-IP mode only)
 			const onlineOptimizeBtn = document.getElementById('onlineOptimizeBtn');
 			const apiOptimizeBtn = document.getElementById('apiOptimizeBtn');
 			if (onlineOptimizeBtn) {
@@ -17468,7 +17468,7 @@
 			}
 			updateChainProxyButtonVisibility(mode);
 
-			// 当切换到自定义优选时，自动加载现有的ADD.txt内容
+			// When switching to custom preferred-IP, auto-load the existing ADD.txt content
 			if (mode === 'custom') {
 				loadCustomIPs();
 			}
@@ -17489,13 +17489,13 @@
 			}
 		}
 
-		// 处理优选订阅生成器URL
+		// Handle preferred-subscription generator URL
 		function processGeneratorURL() {
 			const input = document.getElementById('generatorURL').value.trim();
 			let domain = '';
 
 			if (input) {
-				// 如果输入不是空的，提取域名
+				// If the input isn't empty, extract the domain
 				domain = extractDomain(input);
 				document.getElementById('generatorURL').value = domain;
 			}
@@ -17503,37 +17503,37 @@
 			markModified('sub');
 		}
 
-		// 提取URL中的纯域名
+		// Extract the bare domain from the URL
 		function extractDomain(url) {
 			try {
 				url = url.trim();
 
-				// 如果不包含协议，尝试识别是否为完整URL或纯域名
+				// If no protocol included, try to detect whether it's a full URL or a bare domain
 				if (!url.includes('://')) {
-					// 检查是否包含路径、查询参数或端口
+					// Check whether it contains a path, query params, or port
 					if (url.includes('/') || url.includes('?') || url.includes(':')) {
-						// 这是一个完整的URL，补充https协议
+						// This is a full URL, prepend https protocol
 						url = 'https://' + url;
 					} else {
-						// 这是纯域名，直接返回
+						// This is a bare domain, return directly
 						return url;
 					}
 				}
 
-				// 解析URL
+				// Parse URL
 				const urlObj = new URL(url);
 
-				// 获取hostname（不包含端口）
+				// Get hostname (without port)
 				let domain = urlObj.hostname;
 
-				// 移除www前缀（如果有）
+				// Remove www prefix (if present)
 				if (domain.startsWith('www.')) {
 					domain = domain.substring(4);
 				}
 
 				return domain;
 			} catch (error) {
-				// 如果URL解析失败，返回原始输入去掉协议部分的结果
+				// If URL parsing fails, return the raw input with protocol stripped
 				let temp = url.trim();
 				if (temp.includes('://')) {
 					temp = temp.split('://')[1];
@@ -17852,29 +17852,29 @@
 				updateTransportGrpcTooltipVisibility(false);
 			}
 
-			// 协议/TLS 变化会影响 ECH 可用性
+			// Protocol/TLS changes affect ECH availability
 			updateECHOptionState();
 		}
 
-		// 处理浏览器指纹变化，联动ECH选项
+		// Handle browser fingerprint change, linked with ECH options
 		function handleFingerprintChange() {
 			updateECHOptionState();
 		}
 
-		// 处理ECH启用状态变化
+		// Handle ECH enabled state change
 		function handleECHEnableChange() {
 			const enableECHCheckbox = document.getElementById('enableECH');
 			const fingerprintSelect = document.getElementById('fingerprint');
 
-			// 支持ECH的指纹类型
+			// Fingerprint types that support ECH
 			const supportECH = ['chrome', 'firefox'];
 
-			// 如果用户开启ECH，但当前指纹不支持ECH，自动切换到chrome
+			// If the user enabled ECH, but the current fingerprint doesn't support it, auto-switch to chrome
 			if (enableECHCheckbox && enableECHCheckbox.checked) {
 				const currentFingerprint = fingerprintSelect?.value;
 				if (currentFingerprint && !supportECH.includes(currentFingerprint)) {
 					fingerprintSelect.value = 'chrome';
-					// 同时标记详细配置模块为已修改
+					// Also mark the detailed config module as modified
 					markModified('config');
 				}
 			}
@@ -17882,32 +17882,32 @@
 			markModified('ech');
 		}
 
-		// 更新ECH选项的状态（禁用/启用）
+		// Update ECH option state (disabled/enabled)
 		function updateECHOptionState() {
 			const fingerprint = document.getElementById('fingerprint')?.value;
 			const enableECHCheckbox = document.getElementById('enableECH');
 			const protocol = document.getElementById('protocol')?.value;
 			const ssTLS = document.getElementById('ssTLS')?.value;
 
-			// 支持ECH的指纹类型
+			// Fingerprint types that support ECH
 			const supportECH = ['chrome', 'firefox'];
 			const isFingerprintSupported = supportECH.includes(fingerprint);
 			const isSSWithoutTLS = protocol === 'ss' && ssTLS === 'false';
 			const shouldDisableECH = !isFingerprintSupported || isSSWithoutTLS;
 
 			if (enableECHCheckbox) {
-				// 当不满足条件时，自动取消勾选
+				// Auto-uncheck when the condition isn't met
 				if (shouldDisableECH && enableECHCheckbox.checked) {
 					enableECHCheckbox.checked = false;
 					markModified('ech');
 				}
 
-				// SS + TLS关闭 或 指纹不支持时，ECH启用不可编辑
+				// ECH enable not editable when SS + TLS off, or fingerprint unsupported
 				enableECHCheckbox.disabled = shouldDisableECH;
 			}
 		}
 
-		// 填充ECH DNS下拉框
+		// Populate ECH DNS dropdown
 		function populateEchDNSSelect() {
 			const formGroup = document.getElementById('echDNSGroup');
 			const select = document.getElementById('echDNSSelect');
@@ -17916,42 +17916,42 @@
 
 			if (!select || !formGroup) return;
 
-			// 检查ECHConfig.DNS字段是否存在
+			// Check whether the ECHConfig.DNS field exists
 			if (currentConfig.ECHConfig?.DNS === undefined) {
 				formGroup.style.display = 'none';
 				return;
 			}
 
-			// 显示form-group和下拉框
+			// Show form-group and dropdown
 			formGroup.style.display = 'grid';
 			select.style.display = 'block';
 
-			// 如果已有保存的DNS值，设置选中状态
+			// If a saved DNS value exists, set it as selected
 			const savedDNS = currentConfig.ECHConfig?.DNS || '';
 			if (savedDNS) {
-				// 尝试在下拉框中找到匹配的选项
+				// Try to find a matching option in the dropdown
 				select.value = savedDNS;
 
-				// 如果没有匹配到（值不在列表中），选择"自定义"并显示输入框
+				// If no match found (value not in the list), select "Custom" and show the input box
 				if (select.value !== savedDNS) {
 					select.value = 'custom';
 					customInput.value = savedDNS;
 					customInput.style.display = 'block';
 					hiddenValue.value = savedDNS;
 				} else {
-					// 匹配成功，隐藏自定义输入框
+					// Match found, hide custom input box
 					customInput.style.display = 'none';
 					customInput.value = '';
 					hiddenValue.value = savedDNS;
 				}
 			} else {
-				// 没有保存值，默认选择"自定义"
+				// No saved value, default to "Custom"
 				select.value = 'custom';
 				customInput.style.display = 'block';
 			}
 		}
 
-		// 填充ECH SNI下拉框
+		// Populate ECH SNI dropdown
 		function populateEchSNISelect() {
 			const formGroup = document.getElementById('echSNIGroup');
 			const select = document.getElementById('echSNISelect');
@@ -17960,50 +17960,50 @@
 
 			if (!select || !formGroup) return;
 
-			// 检查ECHConfig.SNI字段是否存在
+			// Check whether the ECHConfig.SNI field exists
 			if (currentConfig.ECHConfig?.SNI === undefined) {
 				formGroup.style.display = 'none';
 				return;
 			}
 
-			// 显示form-group和下拉框
+			// Show form-group and dropdown
 			formGroup.style.display = 'grid';
 			select.style.display = 'block';
 
-			// 如果已有保存的SNI值，设置选中状态
+			// If a saved SNI value exists, set it as selected
 			const savedSNI = currentConfig.ECHConfig?.SNI;
 			if (savedSNI !== undefined) {
 				if (savedSNI === null) {
-					// 自动获取
+					// Auto-fetch
 					select.value = '__AUTO__';
 					customInput.style.display = 'none';
 					customInput.value = '';
 					hiddenValue.value = null;
 				} else {
-					// 尝试在下拉框中找到匹配的选项
+					// Try to find a matching option in the dropdown
 					select.value = savedSNI;
 
-					// 如果没有匹配到（值不在列表中），选择"自定义"并显示输入框
+					// If no match found (value not in the list), select "Custom" and show the input box
 					if (select.value !== savedSNI) {
 						select.value = 'custom';
 						customInput.value = savedSNI;
 						customInput.style.display = 'block';
 						hiddenValue.value = savedSNI;
 					} else {
-						// 匹配成功，隐藏自定义输入框
+						// Match found, hide custom input box
 						customInput.style.display = 'none';
 						customInput.value = '';
 						hiddenValue.value = savedSNI;
 					}
 				}
 			} else {
-				// 没有保存值，默认选择"自定义"
+				// No saved value, default to "Custom"
 				select.value = 'custom';
 				customInput.style.display = 'block';
 			}
 		}
 
-		// ECH DNS select 变化处理
+		// ECH DNS select change handler
 		function onEchDNSSelectChange() {
 			const select = document.getElementById('echDNSSelect');
 			const customInput = document.getElementById('echDNSCustomInput');
@@ -18018,13 +18018,13 @@
 				hiddenValue.value = select.value;
 			}
 
-			// 检查是否选择了国内DNS，若是则自动调整ECH解析域名
+			// Check whether a domestic DNS is selected, auto-adjust the ECH resolution domain if so
 			const selectedOption = select.options[select.selectedIndex];
 			const region = selectedOption.dataset.region;
 
 			if (region === 'domestic') {
 				const echSNISelect = document.getElementById('echSNISelect');
-				// 如果当前选择是 __AUTO__，自动改为 cloudflare-ech.com
+				// If current selection is __AUTO__, auto-switch to cloudflare-ech.com
 				if (echSNISelect.value === '__AUTO__') {
 					echSNISelect.value = 'cloudflare-ech.com';
 					onEchSNISelectChange();
@@ -18034,7 +18034,7 @@
 			markModified('ech');
 		}
 
-		// ECH DNS 自定义输入框变化处理
+		// ECH DNS custom input change handler
 		function onEchDNSCustomInput() {
 			const customInput = document.getElementById('echDNSCustomInput');
 			const hiddenValue = document.getElementById('echDNSValue');
@@ -18042,7 +18042,7 @@
 			markModified('ech');
 		}
 
-		// ECH SNI select 变化处理
+		// ECH SNI select change handler
 		function onEchSNISelectChange() {
 			const select = document.getElementById('echSNISelect');
 			const customInput = document.getElementById('echSNICustomInput');
@@ -18053,7 +18053,7 @@
 				customInput.value = '';
 				hiddenValue.value = null;
 
-				// 检查当前DNS服务是否为国内DNS
+				// Check whether the current DNS service is a domestic DNS
 				const echDNSSelect = document.getElementById('echDNSSelect');
 				const selectedDNSOption = echDNSSelect.options[echDNSSelect.selectedIndex];
 				const dnsRegion = selectedDNSOption.dataset.region;
@@ -18073,7 +18073,7 @@
 			markModified('ech');
 		}
 
-		// ECH SNI 自定义输入框变化处理
+		// ECH SNI custom input change handler
 		function onEchSNICustomInput() {
 			const customInput = document.getElementById('echSNICustomInput');
 			const hiddenValue = document.getElementById('echSNIValue');
@@ -18081,7 +18081,7 @@
 			markModified('ech');
 		}
 
-		// 处理PROXYIP地址
+		// Handle PROXYIP address
 		function processProxyIP() {
 			const input = document.getElementById('proxyIP').value.trim();
 
@@ -18093,11 +18093,11 @@
 			markModified('proxy');
 		}
 
-		// 提取PROXYIP地址中的纯格式（保留端口号）
+		// Extract the clean format of the PROXYIP address (keep the port)
 		function extractProxyIPAddress(input) {
 			input = input.trim();
 
-			// 首先检查是否包含 "ip=" (包括 proxyip= 和 pyip=)
+			// First check whether it contains "ip=" (including proxyip= and pyip=)
 			const ipPatterns = ['proxyip=', 'pyip=', 'ip='];
 			for (const pattern of ipPatterns) {
 				const index = input.toLowerCase().indexOf(pattern);
@@ -18107,19 +18107,19 @@
 				}
 			}
 
-			// 移除协议前缀 (http:// 或 https://)
+			// Strip protocol prefix (http:// or https://)
 			if (input.toLowerCase().startsWith('http://')) {
 				input = input.substring(7).trim();
 			} else if (input.toLowerCase().startsWith('https://')) {
 				input = input.substring(8).trim();
 			}
 
-			// 移除末尾的斜杠
+			// Strip trailing slash
 			if (input.endsWith('/')) {
 				input = input.substring(0, input.length - 1).trim();
 			}
 
-			// 移除末尾的备注（#符号之后的内容）
+			// Strip trailing note (content after the # symbol)
 			if (input.includes('#')) {
 				input = input.split('#')[0].trim();
 			}
@@ -18127,7 +18127,7 @@
 			return input;
 		}
 
-		// 处理SOCKS5、HTTP、HTTPS、TURN和SSTP代理地址
+		// Handle SOCKS5, HTTP, HTTPS, TURN and SSTP proxy addresses
 		function processProxyAddress(type) {
 			const proxyAddressFieldMap = {
 				socks5: 'socks5Addr',
@@ -18144,23 +18144,23 @@
 				cleanAddress = extractProxyAddress(input, type);
 				document.getElementById(fieldId).value = cleanAddress;
 
-				// 如果输入内容包含协议标识，自动切换反代模式并转移内容
+				// If the input contains a protocol identifier, auto-switch reverse-proxy mode and move the content over
 				switchProxyModeByProtocol(input, cleanAddress);
 			}
 
 			markModified('proxy');
 		}
 
-		// 提取代理地址中的纯格式
+		// Extract the clean format of the proxy address
 		function extractProxyAddress(input, type) {
 			input = input.trim();
 
-			// 移除开头的 "/" 或 "/"
+			// Strip leading "/" or "/"
 			if (input.startsWith('/')) {
 				input = input.substring(1).trim();
 			}
 
-			// 检测并移除协议前缀
+			// Detect and strip the protocol prefix
 			const socks5Prefixes = ['socks5://', 'socks5=', 'socks5://'];
 			const httpPrefixes = ['http://', 'http='];
 			const httpsPrefixes = ['https://', 'https='];
@@ -18202,7 +18202,7 @@
 				}
 			}
 
-			// 移除末尾的备注（#符号之后的内容）
+			// Strip trailing note (content after the # symbol)
 			if (input.includes('#')) {
 				input = input.split('#')[0].trim();
 			}
@@ -18220,7 +18220,7 @@
 			});
 		}
 
-		// 根据协议自动切换反代模式
+		// Auto-switch reverse-proxy mode based on the protocol
 		function switchProxyModeByProtocol(input, cleanAddress) {
 			const lowerInput = input.toLowerCase();
 			const protocolRules = [
@@ -18258,7 +18258,7 @@
 				syncProxyProtocolVisibility(mode);
 			}
 
-			// 根据选择的模式填充对应的数据
+			// Populate the corresponding data based on the selected mode
 			if (populateFromConfig) {
 				if (isProxyIPMode) {
 					document.getElementById('proxyIP').value = currentConfig.反代?.PROXYIP || '';
@@ -18269,31 +18269,31 @@
 				}
 			}
 
-			// 更新 "获取更多PROXYIP" 按钮的显示状态
+			// Update visibility state of the "Get more PROXYIP" button
 			const getMoreBtn = document.getElementById('getMoreProxyIPBtn');
 			if (getMoreBtn) {
 				getMoreBtn.style.display = isProxyIPMode ? 'inline-block' : 'none';
 			}
 
-			// 更新 "探索更多SOCKS5" 按钮的显示状态
+			// Update visibility state of the "Explore more SOCKS5" button
 			const exploreSocks5Btn = document.getElementById('exploreSocks5Btn');
 			if (exploreSocks5Btn) {
 				exploreSocks5Btn.style.display = mode === 'socks5' ? 'inline-block' : 'none';
 			}
 
-			// 更新 "探索更多HTTP" 按钮的显示状态
+			// Update visibility state of the "Explore more HTTP" button
 			const exploreHTTPBtn = document.getElementById('exploreHTTPBtn');
 			if (exploreHTTPBtn) {
 				exploreHTTPBtn.style.display = mode === 'http' ? 'inline-block' : 'none';
 			}
 
-			// 更新 "探索更多HTTPS" 按钮的显示状态
+			// Update visibility state of the "Explore more HTTPS" button
 			const exploreHTTPSBtn = document.getElementById('exploreHTTPSBtn');
 			if (exploreHTTPSBtn) {
 				exploreHTTPSBtn.style.display = mode === 'https' && httpsProxyFeatureEnabled ? 'inline-block' : 'none';
 			}
 
-			// 更新 "路径模板配置" 按钮的显示状态
+			// Update visibility state of the "Path Template Config" button
 			const pathTemplateConfigBtn = document.getElementById('pathTemplateConfigBtn');
 			if (pathTemplateConfigBtn) {
 				const supportsPathTemplate = currentConfig.反代?.路径模板 !== undefined && ['auto', 'socks5', 'http'].includes(mode);
@@ -18382,7 +18382,7 @@
 			const isCollapsed = module.classList.contains('collapsed');
 
 			if (isCollapsed) {
-				// 检查是否是网络模块，如果是则加载数据
+				// Check whether it's the network module, load data if so
 				if (module.querySelector('.network-cards-container') && !networkInfoLoaded) {
 					scheduleNetworkInfoLoad({ delayMs: 0 });
 				}
@@ -18397,11 +18397,11 @@
 				animateSectionHeight(content, false);
 			}
 
-			// 保存模块状态到 localStorage
+			// Save module state to localStorage
 			saveModuleStates();
 		}
 
-		// 网络信息模块的折叠/展开函数
+		// Network info module's collapse/expand function
 		function toggleNetworkModule(titleEl) {
 			const module = titleEl.parentElement;
 			const content = document.getElementById('network-module-content');
@@ -18418,7 +18418,7 @@
 					icon.style.transform = 'rotate(0deg)';
 				}
 
-				// 生成卡片并开始测试
+				// Generate cards and start testing
 				startLatencyTest();
 			} else {
 				// Collapse - hide latency tests
@@ -18432,18 +18432,18 @@
 			}
 		}
 
-		// 规范化PATH字段
+		// Normalize the PATH field
 		function normalizePath(path) {
-			// 如果为空，返回原值
+			// If empty, return the original value
 			if (!path) return path;
 
-			// 移除 '#' 及其之后的所有内容（注释）
+			// Remove '#' and everything after it (comment)
 			let normalizedPath = path.split('#')[0];
 
-			// 去除首尾空格
+			// Trim leading/trailing whitespace
 			normalizedPath = normalizedPath.trim();
 
-			// 如果第一个字符不是 '/'，则添加 '/'
+			// If the first character isn't '/', add '/'
 			if (normalizedPath && !normalizedPath.startsWith('/')) {
 				normalizedPath = '/' + normalizedPath;
 			}
@@ -18451,25 +18451,25 @@
 			return normalizedPath;
 		}
 
-		// 处理PATH输入完成后的规范化
+		// Handle normalization after PATH input completes
 		function handlePathChange() {
 			const nodePathInput = document.getElementById('nodePATH');
 			const originalValue = nodePathInput.value;
 			const normalizedValue = normalizePath(originalValue);
 
-			// 如果规范化后的值与原值不同，更新输入框
+			// If the normalized value differs from the original, update the input box
 			if (normalizedValue !== originalValue) {
 				nodePathInput.value = normalizedValue;
 			}
 
-			// 标记为已修改
+			// Mark as modified
 			markModified('config');
 		}
 
 		function markModified(section) {
 			modifiedSections.add(section);
 
-			// 特殊处理 notification 部分：更新 TG.启用 状态
+			// Special-case the notification section: update TG.Enabled state
 			if (section === 'notification') {
 				const telegramCheckbox = document.getElementById('telegramEnabled');
 				if (!currentConfig.TG) currentConfig.TG = {};
@@ -18480,32 +18480,32 @@
 		}
 
 		function updateButtonStates() {
-			// 订阅生成模块
+			// Subscription generation module
 			const subModified = modifiedSections.has('sub');
 			document.getElementById('saveSubBtn').disabled = !subModified;
 			document.getElementById('cancelSubBtn').disabled = !subModified;
 
-			// 配置信息模块
+			// Config info module
 			const configModified = modifiedSections.has('config');
 			document.getElementById('saveConfigBtn').disabled = !configModified;
 			document.getElementById('cancelConfigBtn').disabled = !configModified;
 
-			// ECH设置模块
+			// ECH settings module
 			const echModified = modifiedSections.has('ech');
 			document.getElementById('saveEchBtn').disabled = !echModified;
 			document.getElementById('cancelEchBtn').disabled = !echModified;
 
-			// 反代设置模块
+			// Reverse-proxy settings module
 			const proxyModified = modifiedSections.has('proxy');
 			document.getElementById('saveProxyBtn').disabled = !proxyModified;
 			document.getElementById('cancelProxyBtn').disabled = !proxyModified;
 
-			// 订阅转换模块
+			// Subscription conversion module
 			const convertModified = modifiedSections.has('convert');
 			document.getElementById('saveConvertBtn').disabled = !convertModified;
 			document.getElementById('cancelConvertBtn').disabled = !convertModified;
 
-			// 通知设置模块
+			// Notification settings module
 			const notificationModified = modifiedSections.has('notification');
 			document.getElementById('saveNotificationBtn').disabled = !notificationModified;
 			document.getElementById('cancelNotificationBtn').disabled = !notificationModified;
@@ -18545,7 +18545,7 @@
 			const container = document.getElementById('qrcodeContainer');
 			container.innerHTML = '';
 
-			// 如果文本过长，使用较低的纠错等级来支持更长的内容
+			// If the text is too long, use a lower error-correction level to support more content
 			let correctLevel = QRCode.CorrectLevel.H;
 			if (text.length > 1500) {
 				correctLevel = QRCode.CorrectLevel.M;
@@ -18565,7 +18565,7 @@
 				});
 				document.getElementById('qrcodeModal').classList.add('show');
 			} catch (error) {
-				// 如果文本过长，显示错误提示
+				// If the text is too long, show an error
 				console.error('二维码生成失败:', error);
 				showToast('链接过长，无法生成二维码。联系项目作者修复问题。', 'error');
 				container.innerHTML = '<div style="padding:20px;text-align:center;color:#f44336;">QR code generation failed: content too long</div>';
@@ -18585,7 +18585,7 @@
 					return;
 				}
 
-				// 显示警告弹窗
+				// Show warning popup
 				event.target.checked = false; // 先取消勾选
 				document.getElementById('skipVerifyWarningModal').classList.add('show');
 			} else {
@@ -18605,13 +18605,13 @@
 			closeSkipVerifyWarning();
 		}
 
-		// HOSTS 编辑模态框相关函数
+		// HOSTS edit modal related functions
 		function openHostsEditModal(event) {
 			if (event) event.stopPropagation();
 			const modal = document.getElementById('hostsEditModal');
 			const textarea = document.getElementById('hostsEditTextarea');
 
-			// 将 HOSTS 数组内容填入文本框，每行一个
+			// Fill the textbox with the HOSTS array content, one per line
 			if (currentConfig.HOSTS && Array.isArray(currentConfig.HOSTS)) {
 				textarea.value = currentConfig.HOSTS.join('\n');
 			} else {
@@ -18632,9 +18632,9 @@
 			const textarea = document.getElementById('hostsEditTextarea');
 			const nodeHostInput = document.getElementById('nodeHost');
 
-			// 将文本框内容按 逗号、中文逗号 和 换行 分割成数组
+			// Split textbox content by comma, Chinese comma, and newline into an array
 			const text = textarea.value;
-			// 使用正则表达式，将 , 、， 和 \n 都作为分隔符
+			// Use regex, treat , 、， and \n all as separators
 			const items = text.split(/[ ,，。\n]+/)
 				.map(item => cleanHostDomain(item.trim()))
 				.filter(item => item.length > 0);
@@ -18644,37 +18644,37 @@
 				return;
 			}
 
-			// 更新 currentConfig.HOSTS 数组
+			// Update currentConfig.HOSTS array
 			currentConfig.HOSTS = items;
 
-			// 更新输入框显示（用逗号连接）
+			// Update input box display (comma-joined)
 			nodeHostInput.value = items.join('、');
 
-			// 关闭模态框
+			// Close modal
 			closeHostsEditModal();
 
-			// 标记配置已修改
+			// Mark config as modified
 			markModified('config');
 
 			showToast('域名列表已更新，请保存配置', 'success');
 		}
 
-		// 清理域名格式：去掉协议、路径、端口号，只保留纯域名
+		// Clean up domain format: strip protocol, path, port, keep just the bare domain
 		function cleanHostDomain(input) {
 			if (!input) return '';
 
 			let domain = input;
 
-			// 去掉协议前缀 (http:// 或 https://)
+			// Strip protocol prefix (http:// or https://)
 			domain = domain.replace(/^https?:\/\//i, '');
 
-			// 去掉路径部分（第一个 / 及之后的内容）
+			// Strip path portion (first / and everything after)
 			const slashIndex = domain.indexOf('/');
 			if (slashIndex !== -1) {
 				domain = domain.substring(0, slashIndex);
 			}
 
-			// 去掉端口号（: 及之后的数字）
+			// Strip port number (: and everything after)
 			domain = domain.replace(/:\d+$/, '');
 
 			return domain.trim();
@@ -18683,7 +18683,7 @@
 		async function saveSub() {
 			const mode = document.getElementById('ipMode').value;
 
-			// 检查文本框内容是否为空
+			// Check whether the textbox content is empty
 			if (mode === 'random') {
 				const randomCount = document.getElementById('randomCount').value.trim();
 				if (!randomCount) {
@@ -18713,7 +18713,7 @@
 				TOKEN: currentConfig.优选订阅生成.TOKEN
 			};
 
-			// 如果指定端口存在，添加到本地IP库
+			// If a specific port exists, add it to the local IP pool
 			if (currentConfig.优选订阅生成?.本地IP库?.指定端口 !== undefined) {
 				updates.本地IP库.指定端口 = parseInt(document.getElementById('specifiedPort').value);
 			}
@@ -18750,7 +18750,7 @@
 			if (currentConfig['gRPCUserAgent'] !== undefined) {
 				const grpcUserAgentInput = document.getElementById('grpcUserAgent');
 				if (grpcUserAgentInput) {
-					// 保存前兜底：如果去除空格后为空，自动填入当前UA
+					// Fallback before saving: if empty after trimming, auto-fill with current UA
 					if (!grpcUserAgentInput.value.replace(/\s+/g, '')) {
 						grpcUserAgentInput.value = navigator.userAgent || '';
 					}
@@ -18759,27 +18759,27 @@
 			}
 			currentConfig.跳过证书验证 = document.getElementById('skipVerify').checked;
 
-			// 保存PATH（如果"完整节点路径"字段存在，表示后端支持编辑PATH）
+			// Save PATH (if the "Full Node Path" field exists, meaning backend supports editing PATH)
 			if (currentConfig['完整节点路径'] !== undefined) {
 				currentConfig.PATH = document.getElementById('nodePATH').value;
 			}
 
-			// 保存Fingerprint（如果字段存在）
+			// Save Fingerprint (if the field exists)
 			if (currentConfig['Fingerprint'] !== undefined) {
 				currentConfig['Fingerprint'] = document.getElementById('fingerprint').value;
 			}
 
-			// 保存随机路径（如果字段存在）
+			// Save random path (if the field exists)
 			if (currentConfig['随机路径'] !== undefined) {
 				currentConfig['随机路径'] = document.getElementById('randomPath').checked;
 			}
 
-			// 保存启用0RTT（如果字段存在）
+			// Save 0RTT enabled (if the field exists)
 			if (currentConfig['启用0RTT'] !== undefined) {
 				currentConfig['启用0RTT'] = document.getElementById('enable0RTT').checked;
 			}
 
-			// 保存TLS分片（如果字段存在）
+			// Save TLS fragmentation (if the field exists)
 			if (currentConfig['TLS分片'] !== undefined) {
 				const shadowrocket = document.getElementById('tlsFragmentShadowrocket').checked;
 				const happ = document.getElementById('tlsFragmentHapp').checked;
@@ -18794,16 +18794,16 @@
 			}
 
 			await saveConfigToServer('config');
-			// 更新网页标题
+			// Update page title
 			document.title = `${currentConfig.优选订阅生成?.SUBNAME || 'edgetunnel'}设置页面 - 管理后台`;
 		}
 
 		async function saveEch() {
-			// 保存ECH（如果字段存在）
+			// Save ECH (if the field exists)
 			if (currentConfig['ECH'] !== undefined) {
 				currentConfig['ECH'] = document.getElementById('enableECH').checked;
 
-				// 保存ECHConfig.DNS（如果存在）
+				// Save ECHConfig.DNS (if present)
 				if (currentConfig.ECHConfig?.DNS !== undefined) {
 					const dnsValue = document.getElementById('echDNSValue').value;
 					if (dnsValue) {
@@ -18811,7 +18811,7 @@
 					}
 				}
 
-				// 保存ECHConfig.SNI（如果存在）
+				// Save ECHConfig.SNI (if present)
 				if (currentConfig.ECHConfig?.SNI !== undefined) {
 					const sniValue = document.getElementById('echSNIValue').value;
 					currentConfig.ECHConfig.SNI = sniValue === '' ? null : sniValue;
@@ -18828,7 +18828,7 @@
 			let globalProxy = false;
 			let proxyIP = currentConfig.反代.PROXYIP;
 
-			// 检查文本框内容是否为空
+			// Check whether the textbox content is empty
 			if (mode === 'auto') {
 				socksEnabled = null;
 				const autoProxy = document.getElementById('autoProxy').checked;
@@ -18914,7 +18914,7 @@
 			await saveConfigToServer('proxy');
 		}
 
-		// 加载SubConfig JSON数据
+		// Load SubConfig JSON data
 		async function loadSubConfigData() {
 			try {
 				const url = 'https://raw.githubusercontent.com/cmliu/cmliu/main/SUBCONFIG.json';
@@ -18924,22 +18924,22 @@
 				console.log('[订阅转换配置列表] SUBCONFIG 数据加载成功');
 			} catch (error) {
 				console.error('Error loading SubConfig:', error);
-				// 加载失败时，仍然显示下拉框（只有自定义选项）
+				// If loading fails, still show the dropdown (custom option only)
 				subConfigData = null;
 				populateSubConfigSelect();
 			}
 		}
 
-		// 填充SubConfig下拉框
+		// Populate SubConfig dropdown
 		function populateSubConfigSelect() {
 			const select = document.getElementById('subConfigSelect');
 			const customInput = document.getElementById('subConfigCustomInput');
 			if (!select) return; // 元素还不存在，等待后续调用
 
-			// 始终添加"自定义"选项作为第一项
+			// Always add "Custom" as the first option
 			select.innerHTML = '<option value="custom">&nbsp;&nbsp;&nbsp;&nbsp;Custom</option>';
 
-			// 如果有数据，添加分组选项
+			// If there's data, add a group option
 			if (subConfigData && Array.isArray(subConfigData)) {
 				subConfigData.forEach(group => {
 					const optgroup = document.createElement('optgroup');
@@ -18958,41 +18958,41 @@
 				});
 			}
 
-			// 显示下拉框
+			// Show dropdown
 			select.style.display = 'block';
 
-			// 如果已有保存的配置值，设置选中状态
+			// If a saved config value exists, set it as selected
 			const savedSubConfig = currentConfig.订阅转换配置?.SUBCONFIG || '';
 			if (savedSubConfig) {
-				// 尝试在下拉框中找到匹配的选项
+				// Try to find a matching option in the dropdown
 				select.value = savedSubConfig;
 
-				// 如果没有匹配到（值不在列表中），选择"自定义"并显示输入框
+				// If no match found (value not in the list), select "Custom" and show the input box
 				if (select.value !== savedSubConfig) {
 					select.value = 'custom';
 					customInput.value = savedSubConfig;
 					customInput.style.display = 'block';
 					document.getElementById('subConfig').value = savedSubConfig;
 				} else {
-					// 匹配成功，隐藏自定义输入框
+					// Match found, hide custom input box
 					customInput.style.display = 'none';
 					customInput.value = '';
 					document.getElementById('subConfig').value = savedSubConfig;
 				}
 			} else {
-				// 没有保存值，默认选择"自定义"
+				// No saved value, default to "Custom"
 				select.value = 'custom';
 				customInput.style.display = 'block';
 			}
 
-			// 设置change事件监听
+			// Set change event listener
 			select.onchange = function () {
 				if (this.value === 'custom') {
-					// 选择自定义，显示输入框
+					// Custom selected, show input box
 					customInput.style.display = 'block';
 					document.getElementById('subConfig').value = customInput.value;
 				} else {
-					// 选择预设值，隐藏输入框并更新值
+					// Preset value selected, hide input box and update value
 					customInput.style.display = 'none';
 					customInput.value = '';
 					document.getElementById('subConfig').value = this.value;
@@ -19001,7 +19001,7 @@
 			};
 		}
 
-		// 自定义输入框变化时的处理
+		// Handler for custom input box changes
 		function onSubConfigCustomInput() {
 			const customInput = document.getElementById('subConfigCustomInput');
 			document.getElementById('subConfig').value = customInput.value;
@@ -19053,7 +19053,7 @@
 				: false;
 		}
 
-		// UDP/XUDP 联动：XUDP 依赖 UDP，勾选 XUDP 自动勾选 UDP，取消 UDP 自动取消 XUDP
+		// UDP/XUDP linkage: XUDP depends on UDP, checking XUDP auto-checks UDP, unchecking UDP auto-unchecks XUDP
 		document.getElementById('xudp').addEventListener('change', function () {
 			if (this.checked) {
 				document.getElementById('udp').checked = true;
@@ -19124,7 +19124,7 @@
 		function cancelEdit(section) {
 			currentConfig = JSON.parse(JSON.stringify(originalConfig));
 
-			// 只重置该模块的值，不调用 renderUI 以保持展开状态
+			// Only reset this module's values, don't call renderUI, to keep it expanded
 			if (section === 'sub') {
 				const local = currentConfig.优选订阅生成?.local ?? true;
 				const randomIP = currentConfig.优选订阅生成?.本地IP库?.随机IP ?? true;
@@ -19135,7 +19135,7 @@
 				} else if (randomIP) {
 					document.getElementById('ipMode').value = 'random';
 					document.getElementById('randomCount').value = currentConfig.优选订阅生成?.本地IP库?.随机数量 || 16;
-					// 设置指定端口
+					// Set the specified port
 					if (currentConfig.优选订阅生成?.本地IP库?.指定端口 !== undefined) {
 						document.getElementById('specifiedPort').value = currentConfig.优选订阅生成.本地IP库.指定端口;
 					}
@@ -19154,7 +19154,7 @@
 				syncTransportSettingsFromConfig();
 				document.getElementById('skipVerify').checked = currentConfig.跳过证书验证 || false;
 
-				// 处理PATH字段的只读状态
+				// Handle read-only state of the PATH field
 				const nodePathInput = document.getElementById('nodePATH');
 				if (currentConfig['完整节点路径'] !== undefined) {
 					nodePathInput.removeAttribute('readonly');
@@ -19166,38 +19166,38 @@
 					nodePathInput.onchange = null;
 				}
 
-				// 重置随机路径（如果字段存在）
+				// Reset random path (if the field exists)
 				if (currentConfig['随机路径'] !== undefined) {
 					document.getElementById('randomPath').checked = currentConfig['随机路径'] || false;
 				}
 
-				// 重置启用0RTT（如果字段存在）
+				// Reset 0RTT-enabled (if the field exists)
 				if (currentConfig['启用0RTT'] !== undefined) {
 					document.getElementById('enable0RTT').checked = currentConfig['启用0RTT'] || false;
 				}
 
-				// 重置TLS分片（如果字段存在）
+				// Reset TLS fragmentation (if the field exists)
 				if (currentConfig['TLS分片'] !== undefined) {
 					document.getElementById('tlsFragmentShadowrocket').checked = currentConfig['TLS分片'] === 'Shadowrocket';
 					document.getElementById('tlsFragmentHapp').checked = currentConfig['TLS分片'] === 'Happ';
 				}
 
-				// 重置ECH（如果字段存在）
+				// Reset ECH (if the field exists)
 				if (currentConfig['ECH'] !== undefined) {
 					document.getElementById('enableECH').checked = currentConfig['ECH'] || false;
 
-					// 重置ECHConfig的下拉框
+					// Reset ECHConfig's dropdown
 					populateEchDNSSelect();
 					populateEchSNISelect();
 				}
 
 				updateProtocol();
 			} else if (section === 'ech') {
-				// 重置ECH设置
+				// Reset ECH settings
 				if (currentConfig['ECH'] !== undefined) {
 					document.getElementById('enableECH').checked = currentConfig['ECH'] || false;
 
-					// 重置ECHConfig的下拉框
+					// Reset ECHConfig's dropdown
 					populateEchDNSSelect();
 					populateEchSNISelect();
 				}
@@ -19208,7 +19208,7 @@
 				document.getElementById('subConfig').value = currentConfig.订阅转换配置?.SUBCONFIG || '';
 				document.getElementById('emoji').checked = currentConfig.订阅转换配置?.SUBEMOJI || false;
 				syncSubListOption();
-				// 重新填充下拉框以恢复正确的选中状态
+				// Repopulate the dropdown to restore the correct selected state
 				populateSubConfigSelect();
 			}
 
@@ -19216,12 +19216,12 @@
 			updateButtonStates();
 		}
 
-		// 保存模块展开/折叠状态到 localStorage
+		// Save module expand/collapse state to localStorage
 		function saveModuleStates() {
 			const states = {};
 			document.querySelectorAll('.module').forEach((module, index) => {
 				const title = module.querySelector('.module-title')?.textContent?.trim() || ('module-' + index);
-				// 不保存"查看操作日志"和"当前网络信息"模块的状态
+				// Don't persist "View Logs" and "Current Network Info" module state
 				if (title !== '📋 查看操作日志' && title !== '🌍 当前网络信息' && module.id !== 'preferredSubscriptionModule') {
 					states[title] = !module.classList.contains('collapsed');
 				}
@@ -19229,19 +19229,19 @@
 			localStorage.setItem('adminModuleStates', JSON.stringify(states));
 		}
 
-		// 从 localStorage 加载模块展开/折叠状态
+		// Load module expand/collapse state from localStorage
 		function loadModuleStates() {
 			const savedStates = localStorage.getItem('adminModuleStates');
 			const states = savedStates ? JSON.parse(savedStates) : {};
 
-			// 如果是第一次访问（localStorage中没有保存状态），所有模块默认折叠
+			// If this is the first visit (no saved state in localStorage), all modules collapse by default
 			const isFirstVisit = !savedStates;
 
 			document.querySelectorAll('.module').forEach((module, index) => {
 				const title = module.querySelector('.module-title')?.textContent?.trim() || ('module-' + index);
 				let shouldBeExpanded;
 
-				// "查看操作日志"模块始终保持折叠状态，"当前网络信息"模块始终展开
+				// "View Logs" module always stays collapsed, "Current Network Info" module always stays expanded
 				if (title === '📋 查看操作日志') {
 					shouldBeExpanded = false;
 				} else if (title === '🌍 当前网络信息') {
@@ -19256,7 +19256,7 @@
 				const content = module.querySelector('.module-content');
 
 				if (shouldBeExpanded && isCurrentlyCollapsed) {
-					// 需要展开
+					// Needs to expand
 					module.classList.remove('collapsed');
 					if (content) {
 						clearHeightTransition(content);
@@ -19265,7 +19265,7 @@
 						content.style.overflow = 'visible';
 					}
 				} else if (!shouldBeExpanded && !isCurrentlyCollapsed) {
-					// 需要折叠
+					// Needs to collapse
 					module.classList.add('collapsed');
 					if (content) {
 						clearHeightTransition(content);
@@ -19300,7 +19300,7 @@
 				closeResetModal();
 				showToast('配置已重置为默认值', 'success');
 
-				// 延迟1秒后刷新页面，让用户看到成功提示
+				// Refresh page after a 1-second delay, so the user sees the success message
 				setTimeout(() => {
 					window.location.reload();
 				}, 1000);
@@ -19519,13 +19519,13 @@
 				localStorage.setItem('userMode', 'expert');
 			}
 
-			// 使用 requestAnimationFrame 确保动画流畅
+			// Use requestAnimationFrame to ensure smooth animation
 			requestAnimationFrame(() => {
 				void cardContainer.offsetHeight;
 			});
 		}
 
-		// 切换用户模式（小白模式 / 高手模式）
+		// Toggle user mode (beginner mode / advanced mode)
 		function toggleUserMode() {
 			const cardContainer = document.querySelector('.card-container');
 
@@ -19541,29 +19541,29 @@
 			);
 		}
 
-		// 初始化用户模式
+		// Init user mode
 		function initUserMode() {
 			const userMode = localStorage.getItem('userMode') || 'simple'; // 默认为小白模式
 			applyUserMode(userMode);
 		}
 
 		function showToast(message, type = 'info') {
-			// 移除现有的toast
+			// Remove existing toast
 			const existingToast = document.querySelector('.toast');
 			if (existingToast) {
 				existingToast.remove();
 			}
 
-			// 创建新的toast
+			// Create new toast
 			const toast = document.createElement('div');
 			toast.className = `toast toast-${type}`;
 			toast.textContent = message;
 			document.body.appendChild(toast);
 
-			// 显示动画
+			// Show animation
 			setTimeout(() => toast.classList.add('show'), 10);
 
-			// 自动隐藏
+			// Auto-hide
 			setTimeout(() => {
 				toast.classList.remove('show');
 				setTimeout(() => toast.remove(), 300);
@@ -20495,9 +20495,9 @@
 				copyNodeUUIDValue(nodeUUIDInput);
 			});
 		}
-		// 日志类型翻译
+		// Log type translations
 		function translateLogType(type, ua = '') {
-			// 如果是 Get_SUB 类型，检查 UA 是否包含 subconverter
+			// If it's a Get_SUB type, check whether the UA contains subconverter
 			if (type === 'Get_SUB') {
 				const uaLowercase = (ua || '').toLowerCase();
 				if (uaLowercase.includes('subconverter')) {
@@ -20515,7 +20515,7 @@
 			return typeMap[type] || { text: type, color: '#6b7280' };
 		}
 
-		// 格式化时间戳为 UTC+8
+		// Format timestamp to UTC+8
 		function formatTime(timestamp) {
 			const date = new Date(timestamp + 8 * 3600 * 1000);
 			const year = date.getUTCFullYear();
@@ -20527,19 +20527,19 @@
 			return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 		}
 
-		// 在展开日志模块时加载日志
+		// Load logs when the log module is expanded
 		let logsLoaded = false;
 		function loadLogsOnExpand(titleEl) {
 			const module = titleEl.parentElement;
 			const isCollapsed = module.classList.contains('collapsed');
 
-			// 如果是展开状态且还未加载过日志，则加载
+			// If expanded and logs haven't been loaded yet, load them
 			if (!isCollapsed && !logsLoaded) {
 				loadLogs();
 			}
 		}
 
-		// 加载最近8条日志
+		// Load the most recent 8 log entries
 		async function loadLogs() {
 			try {
 				const response = await fetch('/admin/log.json?_t=' + Date.now(), {
@@ -20553,7 +20553,7 @@
 				const logs = await response.json();
 				logsLoaded = true;
 
-				// 按时间从新到旧排序，取前6条
+				// Sort by time, newest to oldest, take the first 6
 				const recentLogs = logs.sort((a, b) => b.TIME - a.TIME).slice(0, 6);
 
 				const container = document.getElementById('logsContainer');
@@ -20562,15 +20562,15 @@
 					return;
 				}
 
-				// 检查是否为移动设备
+				// Check whether it's a mobile device
 				const isMobile = window.innerWidth <= 768;
 
 				let html = '<table style="width: 100%; border-collapse: collapse;">';
 				if (isMobile) {
-					// 移动设备：显示时间、IP、操作
+					// Mobile: show time, IP, actions
 					html += '<thead><tr style="border-bottom: 2px solid #e5e7eb;"><th style="text-align: left; padding: 10px; font-weight: 600;">Time (UTC+8)</th><th style="text-align: left; padding: 10px; font-weight: 600;">IP</th><th style="text-align: left; padding: 10px; font-weight: 600;">Action</th></tr></thead>';
 				} else {
-					// 桌面设备：显示时间、IP、地区、操作
+					// Desktop: show time, IP, region, actions
 					html += '<thead><tr style="border-bottom: 2px solid #e5e7eb;"><th style="text-align: left; padding: 10px; font-weight: 600;">Time (UTC+8)</th><th style="text-align: left; padding: 10px; font-weight: 600;">IP</th><th style="text-align: left; padding: 10px; font-weight: 600;">Region</th><th style="text-align: left; padding: 10px; font-weight: 600;">Action</th></tr></thead>';
 				}
 				html += '<tbody>';
@@ -20582,10 +20582,10 @@
 					const ip = log.IP || '未知';
 
 					if (isMobile) {
-						// 移动设备：不显示地区
+						// Mobile: don't show region
 						html += `<tr style="border-bottom: 1px solid #f3f4f6;"><td style="padding: 10px; font-size: 12px;">${timeStr}</td><td style="padding: 10px; font-family: monospace; font-size: 12px;">${ip}</td><td style="padding: 10px;"><span style="display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; color: #fff; background-color: ${logType.color};">${logType.text}</span></td></tr>`;
 					} else {
-						// 桌面设备：显示地区
+						// Desktop: show region
 						html += `<tr style="border-bottom: 1px solid #f3f4f6;"><td style="padding: 10px;">${timeStr}</td><td style="padding: 10px; font-family: monospace; font-size: 12px;">${ip}</td><td style="padding: 10px;">${cc}</td><td style="padding: 10px;"><span style="display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 12px; color: #fff; background-color: ${logType.color};">${logType.text}</span></td></tr>`;
 					}
 				});
@@ -20598,7 +20598,7 @@
 			}
 		}
 
-		// 显示全部日志
+		// Show all logs
 		async function showAllLogs() {
 			try {
 				const response = await fetch('/admin/log.json?_t=' + Date.now(), {
@@ -20611,7 +20611,7 @@
 				if (!response.ok) throw new Error('加载日志失败');
 				const logs = await response.json();
 
-				// 按时间从新到旧排序
+				// Sort by time, newest to oldest
 				const sortedLogs = logs.sort((a, b) => b.TIME - a.TIME);
 
 				const container = document.getElementById('allLogsContainer');
@@ -20639,15 +20639,15 @@
 			}
 		}
 
-		// 关闭日志模态框
+		// Close log modal
 		function closeLogsModal(event) {
 			if (event && event.target.id !== 'logsModal') return;
 			document.getElementById('logsModal').classList.remove('show');
 		}
 
-		// ==================== 代理验证模态框函数 ====================
+		// ==================== Proxy verification modal functions ====================
 
-		// 全局变量存储当前验证的代理类型
+		// Global variable storing the currently verifying proxy type
 		let currentProxyType = null;
 		let currentProxyFieldId = null;
 		const proxyVerificationConfigs = {
@@ -20697,22 +20697,22 @@
 			currentProxyType = config.type;
 			currentProxyFieldId = config.fieldId;
 
-			// 设置模态框标题和标签
+			// Set modal title and label
 			document.getElementById('proxyVerificationTitle').textContent = config.title;
 			document.getElementById('proxyVerificationLabel').textContent = config.label;
 			document.getElementById('proxyVerificationInput').placeholder = config.placeholder;
 
-			// 设置输入框的当前值
+			// Set the input box's current value
 			const currentValue = document.getElementById(currentProxyFieldId).value;
 			document.getElementById('proxyVerificationInput').value = currentValue;
 
-			// 重置状态
+			// Reset state
 			document.getElementById('proxyVerificationStatus').style.display = 'none';
 			document.getElementById('proxyVerificationStatus').textContent = '';
 			document.getElementById('proxyConfirmBtn').disabled = true;
 			document.getElementById('proxyConfirmBtn').style.opacity = '0.5';
 
-			// 显示模态框
+			// Show modal
 			document.getElementById('proxyVerificationModal').classList.add('show');
 		}
 
@@ -20731,7 +20731,7 @@
 				return;
 			}
 
-			// 预处理代理地址
+			// Preprocess the proxy address
 			const processedAddress = processProxyAddressForValidation(input, currentProxyType);
 			if (!processedAddress) {
 				showProxyVerificationStatus('代理地址格式无效', 'error');
@@ -20750,11 +20750,11 @@
 				statusEl.style.padding = '16px';
 				statusEl.style.borderRadius = '8px';
 
-				// 构建请求参数
+				// Build request params
 				const params = new URLSearchParams();
 				params.append(currentProxyType, processedAddress);
 
-				// 创建 AbortController 实现 5 秒超时
+				// Create an AbortController for a 5-second timeout
 				const controller = new AbortController();
 				const timeoutId = setTimeout(() => controller.abort(), 12000);
 
@@ -20767,7 +20767,7 @@
 
 				const data = await response.json();
 
-				// 检查是否有 success 字段
+				// Check whether there's a success field
 				if (!data.hasOwnProperty('success')) {
 					statusEl.style.background = 'linear-gradient(135deg, #ef4444 0, #dc2626 100%)';
 					statusEl.style.padding = '16px';
@@ -20793,7 +20793,7 @@
 					statusEl.style.borderRadius = '8px';
 					statusEl.innerHTML = `
 						<div style="display: flex; flex-direction: column; gap: 10px; font-family: 'Inter', system-ui, sans-serif;">
-							<!-- 顶部标题栏 -->
+							<!-- Top title bar -->
 							<div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 8px; margin-bottom: 2px;">
 								<div style="display: flex; align-items: center; gap: 8px;">
 									<div style="width: 8px; height: 8px; background: #fff; border-radius: 50%; box-shadow: 0 0 8px #fff; animation: pulse 2s infinite;"></div>
@@ -20802,7 +20802,7 @@
 								<span style="font-size: 10px; opacity: 0.7; font-family: 'Fira Code', monospace; color: #fff;">STATUS: 200 OK</span>
 							</div>
 							
-							<!-- 信息网格 -->
+							<!-- Info grid -->
 							<div style="display: grid; grid-template-columns: 0.4fr 1.2fr; gap: 8px;">
 								<div style="background: rgba(0,0,0,0.15); padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); min-width: 0; max-width: 100px;">
 									<div style="font-size: 10px; opacity: 0.7; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; color: #fff;">Region</div>
@@ -20817,7 +20817,7 @@
 								</div>
 							</div>
 							
-							<!-- 底部延迟栏 -->
+							<!-- Bottom latency bar -->
 							<div style="background: rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; border-left: 3px solid #fff;">
 								<div style="display: flex; align-items: center; gap: 6px;">
 									<span style="font-size: 14px;">⏱️</span>
@@ -20830,11 +20830,11 @@
 						</div>
 					`;
 
-					// 启用确定按钮
+					// Enable confirm button
 					document.getElementById('proxyConfirmBtn').disabled = false;
 					document.getElementById('proxyConfirmBtn').style.opacity = '1';
 
-					// 存储验证后的地址以备后用
+					// Store the validated address for later use
 					document.getElementById('proxyConfirmBtn').dataset.validAddress = processedAddress;
 				}
 			} catch (error) {
@@ -20842,7 +20842,7 @@
 				statusEl.style.padding = '16px';
 				statusEl.style.borderRadius = '8px';
 
-				// 判断是否为超时错误
+				// Check whether it's a timeout error
 				if (error.name === 'AbortError') {
 					statusEl.innerHTML = `❌ <strong>Verification timed out</strong><br/><small style="opacity: 0.9;">Request had no response after 10 seconds, please check the proxy connection</small>`;
 				} else {
@@ -20859,12 +20859,12 @@
 		function processProxyAddressForValidation(input, type) {
 			input = input.trim();
 
-			// 移除开头的 "/" 或 "/"
+			// Strip leading "/" or "/"
 			if (input.startsWith('/')) {
 				input = input.substring(1).trim();
 			}
 
-			// 检测并移除协议前缀
+			// Detect and strip the protocol prefix
 			const socks5Prefixes = ['socks5://', 'socks5=', 'socks5://'];
 			const httpPrefixes = ['http://', 'http='];
 			const httpsPrefixes = ['https://', 'https='];
@@ -20906,7 +20906,7 @@
 				}
 			}
 
-			// 移除末尾的备注（#符号之后的内容）
+			// Strip trailing note (content after the # symbol)
 			if (input.includes('#')) {
 				input = input.split('#')[0].trim();
 			}
@@ -20961,7 +20961,7 @@
 
 				const data = await response.json();
 
-				// 显示详情弹窗
+				// Show details popup
 				showIpDetailModal(data);
 			} catch (error) {
 				showToast('❌ 查询IP详细信息失败');
@@ -21445,7 +21445,7 @@
 			document.getElementById('subAPIConfirmBtn').style.opacity = '0.5';
 			document.getElementById('subAPIModal').classList.add('show');
 
-			// 加载 SUBAPI 列表
+			// Load SUBAPI list
 			loadSubAPIList(currentValue);
 		}
 
@@ -21468,10 +21468,10 @@
 
 				const apiList = JSON.parse(jsonText);
 
-				// 清空选项
+				// Clear options
 				selectEl.innerHTML = '';
 
-				// 添加 API 列表的选项
+				// Add options to the API list
 				apiList.forEach(item => {
 					const option = document.createElement('option');
 					option.value = item.value;
@@ -21479,31 +21479,31 @@
 					selectEl.appendChild(option);
 				});
 
-				// 添加自定义选项
+				// Add custom option
 				const customOption = document.createElement('option');
 				customOption.value = 'custom';
 				customOption.textContent = '🔧 自定义';
 				selectEl.appendChild(customOption);
 
-				// 尝试匹配当前值（大小写不敏感比较）
+				// Try to match the current value (case-insensitive)
 				if (currentValue && currentValue.trim()) {
 					const currentValueLower = currentValue.trim().toLowerCase();
 					const matchedOption = Array.from(selectEl.options).find(
 						opt => opt.value.toLowerCase() === currentValueLower
 					);
 					if (matchedOption) {
-						// 找到了匹配的选项
+						// Found a matching option
 						selectEl.value = matchedOption.value;
 						document.getElementById('customSubAPIInputGroup').style.display = 'none';
 						document.getElementById('testSubAPIInput').value = '';
 					} else {
-						// 没有找到匹配的选项，说明是自定义的
+						// No matching option found, means it's custom
 						selectEl.value = 'custom';
 						document.getElementById('testSubAPIInput').value = currentValue.trim();
 						document.getElementById('customSubAPIInputGroup').style.display = 'block';
 					}
 				} else {
-					// 没有当前值，显示第一个选项
+					// No current value, show the first option
 					selectEl.value = '';
 					document.getElementById('customSubAPIInputGroup').style.display = 'none';
 					document.getElementById('testSubAPIInput').value = '';
@@ -21535,7 +21535,7 @@
 			}
 		}
 
-		// ProxyIP 帮助模态框函数
+		// ProxyIP help modal function
 		function showProxyIPHelpModal() {
 			const simpleDiv = document.getElementById('proxyIPHelpSimple');
 			if (simpleDiv) simpleDiv.style.display = 'block';
@@ -21547,7 +21547,7 @@
 			document.getElementById('proxyIPHelpModal').classList.remove('show');
 		}
 
-		// 路径模板配置函数
+		// Path template config function
 		let pathTemplatePresets = [];
 		let pathTemplateOriginal = {};
 
@@ -21555,30 +21555,30 @@
 			const modal = document.getElementById('pathTemplateConfigModal');
 			modal.classList.add('show');
 
-			// 初始化原始值
+			// Init original values
 			pathTemplateOriginal = JSON.parse(JSON.stringify(currentConfig.反代?.路径模板 || {}));
 
-			// 加载预设模板
+			// Load preset templates
 			await loadPathTemplatePresets();
 
-			// 填充当前配置到文本框（添加"/"前缀用于显示）
+			// Populate current config into the textbox (add "/" prefix for display)
 			document.getElementById('proxyIPTemplateInput').value = '/' + (currentConfig.反代?.路径模板?.PROXYIP || '');
 			document.getElementById('socks5StandardTemplateInput').value = '/' + (currentConfig.反代?.路径模板?.SOCKS5?.标准 || '');
 			document.getElementById('socks5GlobalTemplateInput').value = '/' + (currentConfig.反代?.路径模板?.SOCKS5?.全局 || '');
 			document.getElementById('httpStandardTemplateInput').value = '/' + (currentConfig.反代?.路径模板?.HTTP?.标准 || '');
 			document.getElementById('httpGlobalTemplateInput').value = '/' + (currentConfig.反代?.路径模板?.HTTP?.全局 || '');
 
-			// 初始化验证状态
+			// Init verification state
 			validatePathTemplate('proxyIPTemplateInput', currentConfig.反代?.路径模板?.PROXYIP || '');
 			validatePathTemplate('socks5StandardTemplateInput', currentConfig.反代?.路径模板?.SOCKS5?.标准 || '');
 			validatePathTemplate('socks5GlobalTemplateInput', currentConfig.反代?.路径模板?.SOCKS5?.全局 || '');
 			validatePathTemplate('httpStandardTemplateInput', currentConfig.反代?.路径模板?.HTTP?.标准 || '');
 			validatePathTemplate('httpGlobalTemplateInput', currentConfig.反代?.路径模板?.HTTP?.全局 || '');
 
-			// 禁用保存按钮
+			// Disable save button
 			document.getElementById('pathTemplateSaveBtn').disabled = true;
 
-			// 重置预设模板选择
+			// Reset preset template selection
 			document.getElementById('presetTemplateSelect').value = 'custom';
 		}
 
@@ -21594,12 +21594,12 @@
 				pathTemplatePresets = JSON.parse(text);
 
 				const select = document.getElementById('presetTemplateSelect');
-				// 清除除"自定义"外的所有选项
+				// Clear all options except "Custom"
 				while (select.options.length > 1) {
 					select.remove(1);
 				}
 
-				// 添加预设模板选项
+				// Add preset template option
 				pathTemplatePresets.forEach(preset => {
 					const option = document.createElement('option');
 					option.value = preset.项目名;
@@ -21620,47 +21620,47 @@
 				return;
 			}
 
-			// 找到对应的预设
+			// Found the corresponding preset
 			const preset = pathTemplatePresets.find(p => p.项目名 === selectedValue);
 			if (!preset) return;
 
-			// 显示提示消息
+			// Show toast message
 			showToast(preset.提示消息, 'info');
 
-			// 填充模板（添加"/"前缀用于显示）
+			// Populate template (add "/" prefix for display)
 			document.getElementById('proxyIPTemplateInput').value = '/' + (preset.路径模板.PROXYIP || '');
 			document.getElementById('socks5StandardTemplateInput').value = '/' + (preset.路径模板.SOCKS5.标准 || '');
 			document.getElementById('socks5GlobalTemplateInput').value = '/' + (preset.路径模板.SOCKS5.全局 || '');
 			document.getElementById('httpStandardTemplateInput').value = '/' + (preset.路径模板.HTTP.标准 || '');
 			document.getElementById('httpGlobalTemplateInput').value = '/' + (preset.路径模板.HTTP.全局 || '');
 
-			// 验证填充后的内容
+			// Validate the filled-in content
 			validatePathTemplate('proxyIPTemplateInput', preset.路径模板.PROXYIP || '');
 			validatePathTemplate('socks5StandardTemplateInput', preset.路径模板.SOCKS5.标准 || '');
 			validatePathTemplate('socks5GlobalTemplateInput', preset.路径模板.SOCKS5.全局 || '');
 			validatePathTemplate('httpStandardTemplateInput', preset.路径模板.HTTP.标准 || '');
 			validatePathTemplate('httpGlobalTemplateInput', preset.路径模板.HTTP.全局 || '');
 
-			// 亮起保存按钮
+			// Highlight save button
 			document.getElementById('pathTemplateSaveBtn').disabled = false;
 		}
 
 		function onPathTemplateInput() {
-			// 获取所有模板输入框的值（去掉开头的"/"用于对比）
+			// Get the values of all template input boxes (strip the leading "/" for comparison)
 			const proxyIP = document.getElementById('proxyIPTemplateInput').value.replace(/^\//, '');
 			const socks5Standard = document.getElementById('socks5StandardTemplateInput').value.replace(/^\//, '');
 			const socks5Global = document.getElementById('socks5GlobalTemplateInput').value.replace(/^\//, '');
 			const httpStandard = document.getElementById('httpStandardTemplateInput').value.replace(/^\//, '');
 			const httpGlobal = document.getElementById('httpGlobalTemplateInput').value.replace(/^\//, '');
 
-			// 验证每个输入框是否包含占位符，没有则标记为invalid
+			// Validate that every input box contains the placeholder, mark invalid if not
 			validatePathTemplate('proxyIPTemplateInput', proxyIP);
 			validatePathTemplate('socks5StandardTemplateInput', socks5Standard);
 			validatePathTemplate('socks5GlobalTemplateInput', socks5Global);
 			validatePathTemplate('httpStandardTemplateInput', httpStandard);
 			validatePathTemplate('httpGlobalTemplateInput', httpGlobal);
 
-			// 检查是否有任何内容发生变化
+			// Check whether anything actually changed
 			const hasChanged =
 				proxyIP !== (pathTemplateOriginal.PROXYIP || '') ||
 				socks5Standard !== (pathTemplateOriginal.SOCKS5?.标准 || '') ||
@@ -21668,7 +21668,7 @@
 				httpStandard !== (pathTemplateOriginal.HTTP?.标准 || '') ||
 				httpGlobal !== (pathTemplateOriginal.HTTP?.全局 || '');
 
-			// 控制保存按钮的启用/禁用
+			// Control the save button's enabled/disabled state
 			document.getElementById('pathTemplateSaveBtn').disabled = !hasChanged;
 		}
 
@@ -21676,11 +21676,11 @@
 			const inputElement = document.getElementById(inputId);
 			const wrapper = inputElement.closest('.path-template-input-wrapper');
 
-			// 生成对应的错误提示的ID
+			// Generate the ID for the corresponding error message
 			const errorId = inputId.replace('Input', 'Error');
 			const errorElement = document.getElementById(errorId);
 
-			// 如果内容不为空且不包含占位符，添加invalid样式并显示错误提示
+			// If content isn't empty and doesn't contain the placeholder, add invalid style and show error
 			if (value.trim() && !value.includes('{{IP:PORT}}')) {
 				wrapper.classList.add('invalid');
 				if (errorElement) {
@@ -21695,7 +21695,7 @@
 		}
 
 		async function savePathTemplateConfig() {
-			// 获取输入框的值并去掉开头的"/"
+			// Get the input box value and strip the leading "/"
 			const proxyIP = document.getElementById('proxyIPTemplateInput').value.replace(/^\//, '');
 			const socks5Standard = document.getElementById('socks5StandardTemplateInput').value.replace(/^\//, '');
 			const socks5Global = document.getElementById('socks5GlobalTemplateInput').value.replace(/^\//, '');
@@ -21703,7 +21703,7 @@
 			const httpGlobal = document.getElementById('httpGlobalTemplateInput').value.replace(/^\//, '');
 
 			try {
-				// 验证是否包含{{IP:PORT}}占位符
+				// Validate that it contains the {{IP:PORT}} placeholder
 				const templates = [proxyIP, socks5Standard, socks5Global, httpStandard, httpGlobal].filter(t => t);
 				if (templates.length > 0) {
 					const hasPlaceholder = templates.every(t => t.includes('{{IP:PORT}}'));
@@ -21713,7 +21713,7 @@
 					}
 				}
 
-				// 更新currentConfig中的路径模板数据（不包含开头的"/"）
+				// Update path template data in currentConfig (without the leading "/")
 				if (!currentConfig.反代) {
 					currentConfig.反代 = {};
 				}
@@ -21731,10 +21731,10 @@
 					全局: httpGlobal
 				};
 
-				// 通过saveConfigToServer保存到服务器
+				// Save to server via saveConfigToServer
 				await saveConfigToServer('pathTemplate');
 
-				// 关闭模态框
+				// Close modal
 				closePathTemplateConfigModal();
 			} catch (error) {
 				console.error('保存路径模板失败:', error);
@@ -21742,7 +21742,7 @@
 			}
 		}
 
-		// 防止输出"#"字符，允许输入"?"
+		// Prevent typing "#", but allow "?"
 		function preventInvalidChars(input) {
 			input.value = input.value.replace(/#/g, '');
 		}
@@ -21753,43 +21753,43 @@
 			}
 		}
 
-		// 确保路径以"/"开头（虽然显示中已有前缀，但防止意外删除）
+		// Keep the path starting with "/" (already prefixed in display, but guards against accidental removal)
 		function ensurePathPrefix(input) {
-			// 不在这里强制，而是在防删除函数中处理
+			// Not enforced here, handled in the anti-delete function instead
 		}
 
-		// 防止删除路径前缀"/"
+		// Prevent deleting the path prefix "/"
 		function preventPathPrefixDeletion(event, input) {
-			// 只在删除键时处理
+			// Only handle on delete key
 			if (event.key === 'Backspace' || event.key === 'Delete') {
-				// 如果选中的文本包括位置0（开头），阻止删除
+				// If the selected text includes position 0 (the start), block deletion
 				if (input.selectionStart === 0 && event.key === 'Backspace') {
 					event.preventDefault();
 					return false;
 				}
-				// 如果光标在开头且按下Delete，防止删除
+				// If cursor is at the start and Delete is pressed, prevent deletion
 				if (input.selectionStart === 0 && event.key === 'Delete') {
 					event.preventDefault();
 					return false;
 				}
 			}
-			// 防止在开头输入任何内容
+			// Prevent typing anything at the start
 			if (input.selectionStart === 0 && event.key && event.key.length === 1 && event.key !== '/') {
-				// 将光标移动到位置1
+				// Move cursor to position 1
 				setTimeout(() => {
 					input.setSelectionRange(1, 1);
 				}, 0);
 			}
 		}
 
-		// ECH 帮助模态框函数
+		// ECH help modal function
 		function showECHHelpModal() {
 			document.getElementById('echHelpModal').classList.add('show');
 
-			// 计算并设置内容高度以适应浏览器高度
+			// Compute and set content height to fit the browser height
 			setTimeout(() => {
 				calculateECHContentHeight();
-				// 窗口大小改变时重新计算
+				// Recalculate on window resize
 				window.addEventListener('resize', calculateECHContentHeight);
 			}, 0);
 		}
@@ -21803,21 +21803,21 @@
 
 			if (!modal || !tabContent) return;
 
-			// 获取浏览器视口高度
+			// Get the browser viewport height
 			const viewportHeight = window.innerHeight;
 
-			// 计算各个元素的高度（带上下文margin/padding）
+			// Compute the height of each element (with margin/padding context)
 			const modalPadding = 20; // 模态框内边距
 			const tabsHeight = tabs ? tabs.offsetHeight + 15 : 50; // 选项卡高度 + margin
 			const closeBtnHeight = 40; // 关闭按钮高度
 			const bottomBtnHeight = bottomBtn ? bottomBtn.offsetHeight + 20 : 60; // 底部按钮高度 + margin
 			const headerHeight = 20; // 其他上边距
 
-			// 计算可用的内容高度
-			// viewportHeight - (顶部padding + 选项卡 + 底部按钮 + 底部padding)
+			// Compute the available content height
+			// viewportHeight - (top padding + tabs + bottom button + bottom padding)
 			const availableHeight = viewportHeight - (modalPadding * 2 + tabsHeight + bottomBtnHeight + headerHeight);
 
-			// 设置最大高度，确保不超出视口
+			// Set max height, ensure it doesn't exceed the viewport
 			tabContent.style.maxHeight = Math.max(200, availableHeight) + 'px';
 		}
 
@@ -21864,7 +21864,7 @@
 		}
 
 		function switchECHTab(tabIndex) {
-			// 切换选项卡按钮状态
+			// Switch tab button state
 			const tabs = document.querySelectorAll('.ech-tab');
 			tabs.forEach((tab, index) => {
 				if (index === tabIndex) {
@@ -21874,7 +21874,7 @@
 				}
 			});
 
-			// 切换选项卡内容
+			// Switch tab content
 			const panes = document.querySelectorAll('.ech-tab-pane');
 			panes.forEach((pane, index) => {
 				if (index === tabIndex) {
@@ -21884,7 +21884,7 @@
 				}
 			});
 
-			// 自动滚动到活跃选项卡
+			// Auto-scroll to the active tab
 			const activeTab = tabs[tabIndex];
 			if (activeTab) {
 				const tabsContainer = document.querySelector('.ech-tabs');
@@ -21894,7 +21894,7 @@
 			}
 		}
 
-		// ECH 选项卡拖拽功能
+		// ECH tab drag functionality
 		function initECHTabsDrag() {
 			const tabsContainer = document.querySelector('.ech-tabs');
 			if (!tabsContainer) return;
@@ -21905,7 +21905,7 @@
 			let isDragged = false;
 
 			tabsContainer.addEventListener('mousedown', (e) => {
-				// 如果点击的是按钮，不启动拖拽
+				// Don't start dragging if a button was clicked
 				if (e.target.closest('.ech-tab')) {
 					isDown = true;
 					isDragged = false;
@@ -21939,7 +21939,7 @@
 				tabsContainer.scrollLeft = scrollLeft - walk;
 			});
 
-			// 触摸设备支持
+			// Touch device support
 			tabsContainer.addEventListener('touchstart', (e) => {
 				isDown = true;
 				isDragged = false;
@@ -21964,7 +21964,7 @@
 				tabsContainer.scrollLeft = scrollLeft - walk;
 			});
 
-			// 为选项卡按钮添加点击拦截，防止拖拽时误触发
+			// Add click interception to tab buttons, to prevent accidental triggers while dragging
 			const tabs = document.querySelectorAll('.ech-tab');
 			tabs.forEach(tab => {
 				tab.addEventListener('click', (e) => {
@@ -21977,7 +21977,7 @@
 			});
 		}
 
-		// 在模态框显示时初始化拖拽
+		// Init dragging when modal is shown
 		const echHelpModalOriginal = showECHHelpModal;
 		showECHHelpModal = function () {
 			echHelpModalOriginal.call(this);
@@ -22011,10 +22011,10 @@
 			const selectEl = document.getElementById('subAPISelect');
 
 			if (selectEl.value === 'custom' || !selectEl.value) {
-				// 如果是自定义或未选择，从输入框获取
+				// If custom or unselected, read from the input box
 				input = document.getElementById('testSubAPIInput').value.trim();
 			} else {
-				// 否则从下拉框获取
+				// Otherwise get it from the dropdown
 				input = selectEl.value.trim();
 				document.getElementById('testSubAPIInput').value = input;
 			}
@@ -22100,11 +22100,11 @@
 			closeSubAPIModal();
 		}
 
-		// ==================== 消息通知设置相关函数 ====================
+		// ==================== Notification settings related functions ====================
 
-		// 更新 Telegram 按钮状态和颜色
+		// Update Telegram button state and color
 		function updateTelegramButtonStates(isConfigured) {
-			// 获取 Telegram 按钮元素（第一组通知按钮是 Telegram）
+			// Get the Telegram button element (the first notification button group is Telegram)
 			const buttons = document.querySelectorAll('.notification-controls');
 
 			if (buttons.length > 0) {
@@ -22113,12 +22113,12 @@
 				const clearBtn = telegramControls.querySelector('.btn-clear-config');
 
 				if (isConfigured) {
-					// 已配置：参数配置按钮为绿色，清除配置按钮为红色且可点击
+					// Configured: parameter-config button green, clear-config button red and clickable
 					clearBtn.classList.remove('btn-not-configured');
 					clearBtn.classList.add('btn-configured');
 					clearBtn.disabled = false;
 				} else {
-					// 未配置：参数配置按钮保持绿色，清除配置按钮为灰色且禁用
+					// Configured: parameter-config button stays green, clear-config button grey and disabled
 					clearBtn.classList.remove('btn-configured');
 					clearBtn.classList.add('btn-not-configured');
 					clearBtn.disabled = true;
@@ -22126,7 +22126,7 @@
 			}
 		}
 
-		// 清除 Telegram 配置
+		// Clear Telegram config
 		async function clearTelegramConfig() {
 			if (confirm('确定要清除 Telegram 配置吗？')) {
 				currentConfig.TG = {
@@ -22148,9 +22148,9 @@
 			}
 		}
 
-		// 更新 Cloudflare 按钮状态和颜色
+		// Update Cloudflare button state and color
 		function updateCloudflareButtonStates(isConfigured) {
-			// 获取 Cloudflare 按钮元素（第二组通知按钮是 Cloudflare）
+			// Get the Cloudflare button element (the second notification button group is Cloudflare)
 			const buttons = document.querySelectorAll('.notification-controls');
 
 			if (buttons.length > 1) {
@@ -22158,12 +22158,12 @@
 				const clearBtn = cloudflareControls.querySelector('.btn-clear-config');
 
 				if (isConfigured) {
-					// 已配置：清除配置按钮为红色且可点击
+					// Configured: clear-config button red and clickable
 					clearBtn.classList.remove('btn-not-configured');
 					clearBtn.classList.add('btn-configured');
 					clearBtn.disabled = false;
 				} else {
-					// 未配置：清除配置按钮为灰色且禁用
+					// Not configured: clear-config button grey and disabled
 					clearBtn.classList.remove('btn-configured');
 					clearBtn.classList.add('btn-not-configured');
 					clearBtn.disabled = true;
@@ -22171,7 +22171,7 @@
 			}
 		}
 
-		// 清除 Cloudflare 配置
+		// Clear Cloudflare config
 		async function clearCloudflareConfig() {
 			if (confirm('确定要清除 Cloudflare 配置吗？')) {
 				currentConfig.CF = {
@@ -22189,28 +22189,28 @@
 			}
 		}
 
-		// 打开 TelegramBot 配置模态框
+		// Open TelegramBot config modal
 		function openTelegramConfigModal() {
 			document.getElementById('telegramConfigModal').classList.add('show');
-			// 只加载Chat ID，不加载Bot Token（因为Bot Token是敏感信息）
+			// Only load Chat ID, not Bot Token (Bot Token is sensitive)
 			const chatID = currentConfig.TG?.ChatID || currentConfig.通知?.Telegram?.ChatID || '';
 			document.getElementById('telegramBotToken').value = '';
 			document.getElementById('telegramChatID').value = chatID;
 
-			// 重置状态和保存按钮
+			// Reset state and save button
 			document.getElementById('telegramStatus').style.display = 'none';
 			document.getElementById('telegramStatus').textContent = '';
 			document.getElementById('telegramConfirmBtn').disabled = true;
 			document.getElementById('telegramConfirmBtn').style.opacity = '0.5';
 		}
 
-		// 关闭 TelegramBot 配置模态框
+		// Close TelegramBot config modal
 		function closeTelegramConfigModal(event) {
 			if (event && event.target.id !== 'telegramConfigModal') return;
 			document.getElementById('telegramConfigModal').classList.remove('show');
 		}
 
-		// 测试 TelegramBot 连接
+		// Test TelegramBot connection
 		async function testTelegramConfig() {
 			const token = document.getElementById('telegramBotToken').value.trim();
 			const chatID = document.getElementById('telegramChatID').value.trim();
@@ -22246,7 +22246,7 @@
 						}
 
 						if (!response.ok) {
-							// 401/400 等业务错误通常会携带 JSON，属于“接口可达”，不走备用接口。
+							// 401/400 business errors usually carry JSON, count as "endpoint reachable", don't fall back
 							if (data && typeof data === 'object' && data.ok === false) {
 								return { data, base };
 							}
@@ -22288,14 +22288,14 @@
 				statusEl.style.background = 'linear-gradient(135deg, #3b82f6 0, #1d4ed8 100%)';
 				statusEl.style.color = '#fff';
 
-				// 第一步：验证 Bot Token 的有效性
+				// Step 1: verify the Bot Token is valid
 				const getMeResult = await requestTelegram('getMe');
 				const getMeData = getMeResult.data;
 				if (!getMeData.ok) {
 					throw new Error('Bot Token 无效: ' + (getMeData.description || '未知错误'));
 				}
 
-				// 第二步：通过Bot Token向Chat ID推送测试消息
+				// Step 2: push a test message to the Chat ID via the Bot Token
 				const sendUrlParams = new URLSearchParams({
 					chat_id: chatID,
 					text: '✅ Telegram 通知配置已验证成功！'
@@ -22308,7 +22308,7 @@
 
 				console.log(`[TelegramBot] 验证成功，当前接口: ${sendResult.base}`);
 
-				// 验证成功
+				// Verification succeeded
 				statusEl.style.background = 'linear-gradient(135deg, #10b981 0, #059669 100%)';
 				statusEl.textContent = '✅ Bot Token 和 Chat ID 均有效';
 				confirmBtn.disabled = false;
@@ -22324,13 +22324,13 @@
 			}
 		}
 
-		// 保存 TelegramBot 配置
+		// Save TelegramBot config
 		async function confirmTelegramConfig() {
 			const token = document.getElementById('telegramBotToken').value.trim();
 			const chatID = document.getElementById('telegramChatID').value.trim();
 			const confirmBtn = document.getElementById('telegramConfirmBtn');
 
-			// 检查按钮是否禁用（必须先通过验证）
+			// Check whether the button is disabled (must pass verification first)
 			if (confirmBtn.disabled) {
 				showToast('请先点击"可用性验证"按钮验证配置', 'error');
 				return;
@@ -22345,7 +22345,7 @@
 				confirmBtn.disabled = true;
 				confirmBtn.textContent = '保存中...';
 
-				// 提交到后端
+				// Submit to backend
 				const response = await fetch('/admin/tg.json', {
 					method: 'POST',
 					headers: {
@@ -22362,7 +22362,7 @@
 					showToast('✅ TelegramBot 配置已保存', 'success');
 					closeTelegramConfigModal();
 
-					// 更新按钮状态
+					// Update button state
 					currentConfig.TG = {
 						BotToken: token,
 						ChatID: chatID,
@@ -22370,7 +22370,7 @@
 					};
 					updateTelegramButtonStates(true);
 
-					// 1秒后刷新页面
+					// Refresh page after 1 second
 					setTimeout(() => {
 						location.reload();
 					}, 1000);
@@ -22387,22 +22387,22 @@
 			}
 		}
 
-		// 打开 Cloudflare 配置模态框
+		// Open Cloudflare config modal
 		function openCloudflareConfigModal() {
 			document.getElementById('cloudflareConfigModal').classList.add('show');
 
-			// 默认选择第一个方案
+			// Default to selecting the first plan
 			document.getElementById('cloudflareAuthMethod').value = 'accountid';
 			updateCloudflareAuthMethod();
 
-			// 清空输入框
+			// Clear the input box
 			document.getElementById('cloudflareEmail').value = '';
 			document.getElementById('cloudflareGlobalAPIKey').value = '';
 			document.getElementById('cloudflareAccountID').value = '';
 			document.getElementById('cloudflareAPIToken').value = '';
 			document.getElementById('cloudflareUsageAPI').value = '';
 
-			// 重置状态和保存按钮
+			// Reset state and save button
 			document.getElementById('cloudflareStatus').style.display = 'none';
 			document.getElementById('cloudflareStatus').textContent = '';
 			document.getElementById('cloudflareConfirmBtn').disabled = true;
@@ -22410,16 +22410,16 @@
 			document.getElementById('cloudflareConfirmBtn').dataset.testPassed = 'false';
 		}
 
-		// 更新 Cloudflare 认证方法选择时的显示
+		// Update display when Cloudflare auth method selection changes
 		function updateCloudflareAuthMethod() {
 			const method = document.getElementById('cloudflareAuthMethod').value;
 
-			// 隐藏所有方案的输入框
+			// Hide all plans' input boxes
 			document.getElementById('cloudflareEmailSection').style.display = 'none';
 			document.getElementById('cloudflareAccountIDSection').style.display = 'none';
 			document.getElementById('cloudflareUsageAPISection').style.display = 'none';
 
-			// 显示选中方案的输入框
+			// Show input box for selected plan
 			if (method === 'email') {
 				document.getElementById('cloudflareEmailSection').style.display = 'block';
 			} else if (method === 'accountid') {
@@ -22428,7 +22428,7 @@
 				document.getElementById('cloudflareUsageAPISection').style.display = 'block';
 			}
 
-			// 切换方案时重置验证状态和保存按钮
+			// Reset validation state and save button when switching plans
 			document.getElementById('cloudflareStatus').style.display = 'none';
 			document.getElementById('cloudflareStatus').textContent = '';
 			document.getElementById('cloudflareConfirmBtn').disabled = true;
@@ -22436,12 +22436,12 @@
 			document.getElementById('cloudflareConfirmBtn').dataset.testPassed = 'false';
 		}
 
-		// 关闭 Cloudflare 配置模态框
+		// Close Cloudflare config modal
 		function closeCloudflareConfigModal(event) {
 			if (event && event.target.id !== 'cloudflareConfigModal') return;
 			document.getElementById('cloudflareConfigModal').classList.remove('show');
 
-			// 清空输入框和状态
+			// Clear the input box and state
 			document.getElementById('cloudflareEmail').value = '';
 			document.getElementById('cloudflareGlobalAPIKey').value = '';
 			document.getElementById('cloudflareAccountID').value = '';
@@ -22451,7 +22451,7 @@
 			document.getElementById('cloudflareStatus').textContent = '';
 		}
 
-		// 测试 Cloudflare 连接
+		// Test Cloudflare connection
 		async function testCloudflareConfig() {
 			const method = document.getElementById('cloudflareAuthMethod').value;
 			let email = '', globalAPIKey = '', accountID = '', apiToken = '', usageAPI = '';
@@ -22460,7 +22460,7 @@
 			const confirmBtn = document.getElementById('cloudflareConfirmBtn');
 			const testBtn = event.target;
 
-			// 根据选择的方案获取输入值
+			// Get the input value for the selected plan
 			if (method === 'email') {
 				email = document.getElementById('cloudflareEmail').value.trim();
 				globalAPIKey = document.getElementById('cloudflareGlobalAPIKey').value.trim();
@@ -22514,10 +22514,10 @@
 				let response;
 
 				if (method === 'usageapi') {
-					// UsageAPI 方案：直接请求外部 API
+					// UsageAPI plan: request external API directly
 					response = await fetch(usageAPI);
 				} else {
-					// 构建请求 URL
+					// Build request URL
 					let queryParams = new URLSearchParams();
 					if (method === 'email') {
 						queryParams.append('Email', email);
@@ -22537,7 +22537,7 @@
 				const data = await response.json();
 
 				if (data.success) {
-					// 验证成功
+					// Verification succeeded
 					statusEl.style.background = 'linear-gradient(135deg, #10b981 0, #059669 100%)';
 					const maxQuota = data.max || 100000;
 					const percentage = (data.total / maxQuota * 100).toFixed(2);
@@ -22546,7 +22546,7 @@
 					confirmBtn.style.opacity = '1';
 					confirmBtn.dataset.testPassed = 'true';
 
-					// 保存验证通过的数据供后续保存使用
+					// Save the validated data for later use
 					confirmBtn.dataset.method = method;
 					confirmBtn.dataset.email = email;
 					confirmBtn.dataset.globalAPIKey = globalAPIKey;
@@ -22554,7 +22554,7 @@
 					confirmBtn.dataset.apiToken = apiToken;
 					confirmBtn.dataset.usageAPI = usageAPI;
 				} else {
-					// 验证失败
+					// Verification failed
 					statusEl.style.background = 'linear-gradient(135deg, #ef4444 0, #dc2626 100%)';
 					statusEl.textContent = '❌ 验证失败：' + (data.msg || '凭证无效或无权限');
 					confirmBtn.disabled = true;
@@ -22572,11 +22572,11 @@
 			}
 		}
 
-		// 保存 Cloudflare 配置
+		// Save Cloudflare config
 		async function confirmCloudflareConfig() {
 			const confirmBtn = document.getElementById('cloudflareConfirmBtn');
 
-			// 检查是否通过了验证
+			// Check whether verification passed
 			if (confirmBtn.dataset.testPassed !== 'true') {
 				showToast('请先点击"可用性验证"按钮通过验证', 'error');
 				return;
@@ -22593,7 +22593,7 @@
 				confirmBtn.disabled = true;
 				confirmBtn.textContent = '保存中...';
 
-				// 构建请求体
+				// Build request body
 				let payload;
 				if (method === 'usageapi') {
 					payload = {
@@ -22613,7 +22613,7 @@
 					};
 				}
 
-				// 提交到后端
+				// Submit to backend
 				const response = await fetch('/admin/cf.json', {
 					method: 'POST',
 					headers: {
@@ -22626,7 +22626,7 @@
 					showToast('✅ Cloudflare 配置已保存', 'success');
 					closeCloudflareConfigModal();
 
-					// 1秒后刷新页面
+					// Refresh page after 1 second
 					setTimeout(() => {
 						location.reload();
 					}, 1000);
@@ -22643,14 +22643,14 @@
 			}
 		}
 
-		// 保存通知设置
+		// Save notification settings
 		async function saveNotification() {
 			try {
-				// 只更新 TG.启用 字段
+				// Only update the TG.Enabled field
 				if (!currentConfig.TG) currentConfig.TG = {};
 				currentConfig.TG.启用 = document.getElementById('telegramEnabled').checked;
 
-				// 提交到服务器，但整个 currentConfig
+				// Submit to server, but the whole currentConfig
 				const response = await fetch('/admin/config.json', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
@@ -22667,8 +22667,8 @@
 			}
 		}
 
-		// 清除 Telegram 配置
-		// 清除 Telegram 配置
+		// Clear Telegram config
+		// Clear Telegram config
 		function clearTelegramConfig() {
 			document.getElementById('clearTelegramModal').classList.add('show');
 		}
@@ -22703,7 +22703,7 @@
 			}
 		}
 
-		// 清除 Cloudflare 配置
+		// Clear Cloudflare config
 		function clearCloudflareConfig() {
 			document.getElementById('clearCloudflareModal').classList.add('show');
 		}
@@ -22738,16 +22738,16 @@
 			}
 		}
 
-		// 取消通知设置编辑
+		// Cancel notification settings edit
 		function cancelEdit(section) {
 			if (section === 'notification') {
-				// 重置通知启用状态为原始值
+				// Reset notification-enabled state to the original value
 				const telegramCheckbox = document.getElementById('telegramEnabled');
 				const originalEnabled = originalConfig.TG?.启用 ?? false;
 				telegramCheckbox.checked = originalEnabled;
 				currentConfig.TG.启用 = originalEnabled;
 			} else {
-				// 原有的cancelEdit逻辑
+				// Original cancelEdit logic
 				currentConfig = JSON.parse(JSON.stringify(originalConfig));
 
 				if (section === 'sub') {
@@ -22789,7 +22789,7 @@
 			updateButtonStates();
 		}
 
-		// 更新倒计时
+		// Update countdown
 		function updateCountdown(forceUpdate = false) {
 			const countdownEl = document.getElementById('countdown');
 			if (!countdownEl) return;
@@ -22840,9 +22840,9 @@
 			countdownEl.textContent = `距离重置还有 ${hours}小时${minutes}分${seconds}秒`;
 		}
 
-		// ==================== 在线优选相关函数 ====================
+		// ==================== Online preferred-IP related functions ====================
 
-		// 打开在线优选全屏模块
+		// Open online preferred-IP fullscreen module
 		function openOnlineOptimizeModal() {
 			const modal = document.getElementById('onlineOptimizeModal');
 			const frame = document.getElementById('onlineOptimizeFrame');
@@ -22865,7 +22865,7 @@
 			modal.classList.add('show');
 		}
 
-		// 关闭在线优选全屏模块
+		// Close online preferred-IP fullscreen module
 		function closeOnlineOptimizeModal(event) {
 			if (event && event.target !== event.currentTarget) return;
 			const modal = document.getElementById('onlineOptimizeModal');
@@ -22922,29 +22922,29 @@
 			}
 		});
 
-		// ==================== API优选相关函数 ====================
+		// ==================== API preferred-IP related functions ====================
 
-		// 打开API优选模态框
+		// Open API preferred-IP modal
 		function openAPIOptimizeModal() {
 			document.getElementById('apiOptimizeModal').classList.add('show');
-			// 重置表单
+			// Reset the form
 			document.getElementById('apiOptimizeURL').value = '';
 			document.getElementById('apiOptimizePort').value = '443';
 			document.getElementById('apiOptimizeResults').value = '';
 			document.getElementById('useProxyIPCheckbox').checked = false;
 			document.getElementById('btnAppendAPI').disabled = true;
 			document.getElementById('btnAppendResults').disabled = true;
-			// 初始化line-editor
+			// Init line-editor
 			initLineEditor('apiOptimizeResults');
 		}
 
-		// 关闭API优选模态框
+		// Close API preferred-IP modal
 		function closeAPIOptimizeModal(event) {
 			if (event && event.target !== event.currentTarget) return;
 			document.getElementById('apiOptimizeModal').classList.remove('show');
 		}
 
-		// 验证和规范化端口号
+		// Validate and normalize the port number
 		function validateAndNormalizePort(port) {
 			let num = parseInt(port, 10);
 			if (isNaN(num)) return '443';
@@ -22953,7 +22953,7 @@
 			return num.toString();
 		}
 
-		// 验证API URL格式
+		// Validate the API URL format
 		function isValidURL(url) {
 			try {
 				new URL(url);
@@ -22963,15 +22963,15 @@
 			}
 		}
 
-		// 将GitHub链接转换为raw格式
+		// Convert GitHub link to raw format
 		function convertGitHubURLToRaw(url) {
 			if (!url.includes('github.com')) {
 				return url;
 			}
 
-			// 将 https://github.com/user/repo/blob/branch/path 转换为 https://raw.githubusercontent.com/user/repo/refs/heads/branch/path
+			// Convert https://github.com/user/repo/blob/branch/path to https://raw.githubusercontent.com/user/repo/refs/heads/branch/path
 			if (url.includes('/blob/')) {
-				// 提取分支和文件路径
+				// Extract branch and file path
 				const match = url.match(/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.*)/);
 				if (match) {
 					const [, user, repo, branch, filePath] = match;
@@ -22979,7 +22979,7 @@
 				}
 			}
 
-			// 将 https://github.com/user/repo/tree/branch/path 转换为 https://raw.githubusercontent.com/user/repo/refs/heads/branch/path
+			// Convert https://github.com/user/repo/tree/branch/path to https://raw.githubusercontent.com/user/repo/refs/heads/branch/path
 			if (url.includes('/tree/')) {
 				const match = url.match(/github\.com\/([^/]+)\/([^/]+)\/tree\/([^/]+)\/(.*)/);
 				if (match) {
@@ -22991,7 +22991,7 @@
 			return url;
 		}
 
-		// 实时自动转换GitHub链接
+		// Real-time auto-convert GitHub links
 		function autoConvertGitHubURL() {
 			const urlInput = document.getElementById('apiOptimizeURL');
 			const url = urlInput.value.trim();
@@ -23004,7 +23004,7 @@
 			}
 		}
 
-		// 自动检测URL中的port参数并填充到默认端口字段
+		// Auto-detect the port param in the URL and fill it into the default port field
 		function autoDetectPortFromURL() {
 			const urlInput = document.getElementById('apiOptimizeURL').value.trim();
 			const portInput = document.getElementById('apiOptimizePort');
@@ -23016,17 +23016,17 @@
 				const portParam = urlObj.searchParams.get('port');
 
 				if (portParam) {
-					// 检测到port参数，验证并规范化
+					// Port param detected, validate and normalize it
 					const normalizedPort = validateAndNormalizePort(portParam);
 					portInput.value = normalizedPort;
 				}
 			} catch (error) {
-				// URL格式错误，忽略
+				// URL format error, ignore
 				console.log('URL格式检查失败:', error);
 			}
 		}
 
-		// 可用性验证
+		// Availability verification
 		async function verifyAPIOptimize() {
 			let urlInput = document.getElementById('apiOptimizeURL').value.trim();
 			const portInput = document.getElementById('apiOptimizePort').value.trim();
@@ -23036,7 +23036,7 @@
 				return;
 			}
 
-			// 自动转换GitHub链接为raw格式
+			// Auto-convert GitHub link to raw format
 			const convertedURL = convertGitHubURLToRaw(urlInput);
 			if (convertedURL !== urlInput) {
 				document.getElementById('apiOptimizeURL').value = convertedURL;
@@ -23049,7 +23049,7 @@
 				return;
 			}
 
-			// 检测和提取URL中的port参数
+			// Detect and extract the port param from the URL
 			let detectedPort = null;
 			let cleanURL = urlInput;
 
@@ -23058,17 +23058,17 @@
 				const portParam = urlObj.searchParams.get('port');
 
 				if (portParam) {
-					// 识别到port参数
+					// Port param detected
 					detectedPort = validateAndNormalizePort(portParam);
 
-					// 移除port参数
+					// Remove port param
 					urlObj.searchParams.delete('port');
 					cleanURL = urlObj.toString();
 
-					// 更新URL输入框（移除port参数）
+					// Update URL input box (remove port param)
 					document.getElementById('apiOptimizeURL').value = cleanURL;
 
-					// 更新端口输入框
+					// Update port input box
 					document.getElementById('apiOptimizePort').value = detectedPort;
 
 					showToast(`✅ 已自动识别URL中的端口号: ${detectedPort}，并已移除port参数`, 'success');
@@ -23077,15 +23077,15 @@
 				console.log('URL port参数提取失败:', error);
 			}
 
-			// 规范化端口（如果没有从URL中检测到端口，则使用输入框中的值）
+			// Normalize the port (use the input box value if no port was detected from the URL)
 			const normalizedPort = detectedPort || validateAndNormalizePort(portInput);
 			document.getElementById('apiOptimizePort').value = normalizedPort;
 
-			// 使用清理后的URL构建完整URL
+			// Build the full URL using the cleaned URL
 			const urlObj = new URL(cleanURL);
 			urlObj.searchParams.set('port', normalizedPort);
 
-			// 如果勾选了"将优选作为PROXYIP"，添加proxyip参数
+			// If "Use preferred IP as PROXYIP" is checked, add the proxyip param
 			const useProxyIP = document.getElementById('useProxyIPCheckbox').checked;
 			if (useProxyIP) {
 				urlObj.searchParams.set('proxyip', 'true');
@@ -23093,10 +23093,10 @@
 
 			const completeURL = urlObj.toString();
 
-			// URL编码
+			// URL encoding
 			const encodedURL = encodeURIComponent(completeURL);
 
-			// 构建请求URL
+			// Build request URL
 			const requestURL = `/admin/getADDAPI?url=${encodedURL}`;
 
 			try {
@@ -23108,10 +23108,10 @@
 				const data = await response.json();
 
 				if (data.success && data.data && Array.isArray(data.data)) {
-					// 接口可用
+					// Endpoint available
 					const results = data.data.join('\n');
 					document.getElementById('apiOptimizeResults').value = results;
-					// 刷新line-editor行数
+					// Refresh line-editor line count
 					const resultsTA = document.getElementById('apiOptimizeResults');
 					if (resultsTA._refreshLineEditor) {
 						resultsTA._refreshLineEditor();
@@ -23120,9 +23120,9 @@
 					document.getElementById('btnAppendResults').disabled = false;
 					showToast('✅ API接口验证成功！', 'success');
 				} else {
-					// 接口不可用
+					// Endpoint unavailable
 					document.getElementById('apiOptimizeResults').value = '❌ 接口不可用，请检查URL和端口是否正确';
-					// 刷新line-editor行数
+					// Refresh line-editor line count
 					const resultsTA = document.getElementById('apiOptimizeResults');
 					if (resultsTA._refreshLineEditor) {
 						resultsTA._refreshLineEditor();
@@ -23134,7 +23134,7 @@
 			} catch (error) {
 				console.error('API验证错误:', error);
 				document.getElementById('apiOptimizeResults').value = `❌ 验证出错: ${error.message}`;
-				// 刷新line-editor行数
+				// Refresh line-editor line count
 				const resultsTA = document.getElementById('apiOptimizeResults');
 				if (resultsTA._refreshLineEditor) {
 					resultsTA._refreshLineEditor();
@@ -23149,7 +23149,7 @@
 			}
 		}
 
-		// 追加API到自定义优选地址
+		// Append API to the custom preferred-IP address
 		function appendAPIToCustom() {
 			let urlInput = document.getElementById('apiOptimizeURL').value.trim();
 			const portInput = document.getElementById('apiOptimizePort').value.trim();
@@ -23160,7 +23160,7 @@
 				return;
 			}
 
-			// 移除URL中可能存在的port参数和proxyip参数
+			// Remove any port and proxyip params that may exist in the URL
 			try {
 				const urlObj = new URL(urlInput);
 				urlObj.searchParams.delete('port');
@@ -23170,11 +23170,11 @@
 				console.log('URL处理失败:', error);
 			}
 
-			// 构建完整URL
+			// Build the full URL
 			const urlObj = new URL(urlInput);
 			urlObj.searchParams.set('port', portInput);
 
-			// 如果勾选了"将优选作为PROXYIP"，添加proxyip参数
+			// If "Use preferred IP as PROXYIP" is checked, add the proxyip param
 			if (useProxyIP) {
 				urlObj.searchParams.set('proxyip', 'true');
 			}
@@ -23184,26 +23184,26 @@
 			const customIPsTextarea = document.getElementById('customIPs');
 			const currentValue = customIPsTextarea.value.trim();
 
-			// 追加到文本框
+			// Append to the textbox
 			if (currentValue) {
 				customIPsTextarea.value = currentValue + '\n' + completeURL;
 			} else {
 				customIPsTextarea.value = completeURL;
 			}
 
-			// 刷新line-editor行数
+			// Refresh line-editor line count
 			if (customIPsTextarea._refreshLineEditor) {
 				customIPsTextarea._refreshLineEditor();
 			}
 
-			// 标记为已修改
+			// Mark as modified
 			markModified('sub');
 
 			showToast('✅ API URL已追加到自定义优选地址', 'success');
 			closeAPIOptimizeModal();
 		}
 
-		// 追加结果到自定义优选地址
+		// Append results to the custom preferred-IP address
 		function appendResultsToCustom() {
 			const resultsTextarea = document.getElementById('apiOptimizeResults');
 			const results = resultsTextarea.value.trim();
@@ -23216,26 +23216,26 @@
 			const customIPsTextarea = document.getElementById('customIPs');
 			const currentValue = customIPsTextarea.value.trim();
 
-			// 追加到文本框
+			// Append to the textbox
 			if (currentValue) {
 				customIPsTextarea.value = currentValue + '\n' + results;
 			} else {
 				customIPsTextarea.value = results;
 			}
 
-			// 刷新line-editor行数
+			// Refresh line-editor line count
 			if (customIPsTextarea._refreshLineEditor) {
 				customIPsTextarea._refreshLineEditor();
 			}
 
-			// 标记为已修改
+			// Mark as modified
 			markModified('sub');
 
 			showToast('✅ API结果已追加到自定义优选地址', 'success');
 			closeAPIOptimizeModal();
 		}
 
-		// 智能镜像拉取函数 - 原始地址与镜像并发抢占，谁先成功就用谁
+		// Smart mirror-fetch function - race the original URL against mirrors, use whichever succeeds first
 		async function fetchWithAutoMirror(originalUrl, description = '资源') {
 			const rawGithubPrefix = 'https://raw.githubusercontent.com';
 			const mirrorDomains = [
@@ -23300,7 +23300,7 @@
 			}
 		}
 
-		// 初始化
+		// Init
 		initializeTheme();
 		window.addEventListener('DOMContentLoaded', () => {
 			initializePerformanceMode().catch(err => console.warn('Performance mode initialization failed:', err));
@@ -23308,17 +23308,17 @@
 			initUserMode();
 			initLineEditor('customIPs');
 			initNodeUUIDEasterEgg();
-			// 独立预加载 SubConfig 数据，不阻塞主流程
+			// Preload SubConfig data independently, without blocking the main flow
 			loadSubConfigData().catch(err => console.error('SubConfig预加载失败:', err));
 		});
 
-		// 启动倒计时更新
+		// Start countdown update
 		setInterval(updateCountdown, 1000);
 		updateCountdown(); // 立即执行一次
 
-		// ==================== 网络信息相关函数 ====================
+		// ==================== Network info related functions ====================
 
-		// 设置状态指示器
+		// Set status indicator
 		function setStatus(id, status) {
 			const indicator = document.getElementById(id);
 			if (indicator) {
@@ -23326,7 +23326,7 @@
 			}
 		}
 
-		// 网络信息默认脱敏显示（点击卡片可显示真实值）
+		// Network info is masked by default (click the card to show real values)
 		let networkPrivacyVisible = false;
 		const NETWORK_FIELD_CONFIGS = [
 			{ id: 'ipip-ip', type: 'ip' },
@@ -23596,7 +23596,7 @@
 			fieldElement.dataset.displayState = 'ready';
 			renderNetworkFieldDisplay(fieldElement);
 
-			// IP 字段加载完成后立即就绪点击查询，不等待其它卡片
+			// Ready to click-query as soon as IP field finishes loading, don't wait for other cards
 			if (maskType === 'ip') {
 				makeIpClickable();
 			}
@@ -23656,7 +23656,7 @@
 			});
 		}
 
-		// 根据卡片内国家缩写设置国旗角标
+		// Set the flag corner based on the card's country code
 		function applyNetworkCardFlag(countryElementId) {
 			const countryElement = document.getElementById(countryElementId);
 			if (!countryElement) return;
@@ -23678,7 +23678,7 @@
 			networkCard.classList.add('has-flag-badge');
 		}
 
-		// JSONP 请求工具（用于无 CORS 的接口）
+		// JSONP request tool (for CORS-less endpoints)
 		function createJsonpRequest(url, callbackParam, timeoutMs = NETWORK_API_TIMEOUT_MS) {
 			let settled = false;
 			let timeoutId = null;
@@ -23759,7 +23759,7 @@
 			};
 		}
 
-		// 统一调用 IP 详情接口（按 IP 查询）
+		// Call the unified IP detail endpoint (query by IP)
 		async function fetchIpInfoByIp(ip) {
 			const requestIp = String(ip || '').trim();
 			if (!requestIp) {
@@ -23871,7 +23871,7 @@
 			}
 		}
 
-		// 获取国内测试数据（HEAD 优先，失败后再用 JSONP 兜底）
+		// Get domestic test data (HEAD first, fall back to JSONP on failure)
 		async function fetchIpipData() {
 			setStatus('status-ipip', 'loading');
 
@@ -23969,10 +23969,10 @@
 			}
 		}
 
-		// 获取国外测试数据
+		// Get international test data
 		async function fetchOverseasTestData() {
 			setStatus('status-overseas', 'loading');
-			// API 配置：URL + 字段映射
+			// API config: URL + field mapping
 			const apis = [
 				{
 					url: `https://api.ipapi.is`,
@@ -24019,7 +24019,7 @@
 				requestTasks.forEach(task => task.cancel && task.cancel());
 			}
 
-			// 所有 API 都失败
+			// All APIs failed
 			setNetworkFieldError('overseas-ip', '加载失败');
 			clearNetworkFieldValue('overseas-country');
 			applyNetworkCardFlag('overseas-country');
@@ -24027,11 +24027,11 @@
 			console.error('国外测试 所有API都失败');
 		}
 
-		// CloudFlare ProxyIP 卡片状态（支持双出口切换）
+		// CloudFlare ProxyIP card status (supports dual-exit switching)
 		let cloudFlareEntries = [];
 		let cloudFlareActiveIndex = 0;
 
-		// 墙外测试卡片状态（支持多来源切换）
+		// Wall-bypass test card status (supports switching between multiple sources)
 		let twitterEntries = [];
 		let twitterActiveIndex = 0;
 
@@ -24049,7 +24049,7 @@
 			const value = String(ip || '').trim().replace(/^\[|\]$/g, '');
 			if (!value || !value.includes(':')) return false;
 			try {
-				// 借助 URL 解析器校验 IPv6 格式，兼容缩写写法
+				// Validate IPv6 format using the URL parser, compatible with abbreviated notation
 				new URL(`http://[${value}]/`);
 				return true;
 			} catch {
@@ -24155,7 +24155,7 @@
 			renderCloudFlareSubtitle();
 		}
 
-		// 获取 CloudFlare 数据（并发请求多个接口，按实际返回 IP 判定类型）
+		// Get CloudFlare data (concurrently query multiple endpoints, determine type by the actual returned IP)
 		async function fetchCloudFlareData() {
 			setStatus('status-cf', 'loading');
 			cloudFlareEntries = [];
@@ -24243,8 +24243,8 @@
 			}
 		}
 
-		// 获取墙外测试数据（后台并发取最快可用源）
-		// 获取墙外测试数据（后台并发取所有可用源，支持切换显示）
+		// Get wall-bypass test data (fetch the fastest available source in the background)
+		// Get wall-bypass test data (concurrently fetch all available sources in the background, support switching display)
 		async function fetchTwitterData() {
 			setStatus('status-twitter', 'loading');
 			const statusElement = document.querySelector('#status-twitter');
@@ -24398,7 +24398,7 @@
 					return { cancel: task.cancel, promise: taskPromise };
 				});
 
-				// 等所有来源完成（不再取消慢的那个）
+				// Wait for all sources to finish (no longer cancel the slower one)
 				const results = await Promise.allSettled(requestTasks.map(t => t.promise));
 
 				const successfulResults = [];
@@ -24412,7 +24412,7 @@
 					throw new Error('all outside entry sources failed');
 				}
 
-				// 为每个成功的来源查询 IP 详情
+				// Query IP details for every successful source
 				const detailPromises = successfulResults.map(async ({ source, result }) => {
 					try {
 						const info = await fetchIpInfoByIp(result.requestIp);
@@ -24434,7 +24434,7 @@
 				twitterEntries = detailedEntries;
 				twitterActiveIndex = 0;
 
-				// 渲染第一个（默认选中第一个）
+				// Render the first one (select it by default)
 				renderTwitterActiveEntry();
 				setStatus('status-twitter', 'success');
 
@@ -24452,21 +24452,21 @@
 				console.error('墙外测试接口错误:', error);
 			}
 		}
-		// 网络信息加载标志
+		// Network info loading flag
 		let networkInfoLoaded = false;
 
-		// 加载网络信息
+		// Load network info
 		async function loadNetworkInfo() {
 			if (networkInfoLoadPromise) {
 				return networkInfoLoadPromise;
 			}
 
-			// 检查容器是否存在
+			// Check whether the container exists
 			const container = document.querySelector('.network-cards-container');
 			if (!container) return;
 			bindNetworkCardPrivacyToggle();
 
-			// 设置加载标志
+			// Set the loading flag
 			networkInfoLoaded = true;
 
 			const networkTasks = [
@@ -24481,7 +24481,7 @@
 					await runNetworkInfoBackgroundTask(networkTasks[i], i);
 				}
 
-				// 所有网络信息加载完成后,使 IP 可点击
+				// Once all network info has loaded, make the IP clickable
 				setTimeout(() => {
 					makeIpClickable();
 				}, 500);
@@ -24490,17 +24490,17 @@
 			return networkInfoLoadPromise;
 		}
 
-		// 页面加载完成并进入空闲状态后，在后台获取网络信息，避免影响前台初始化
+		// After the page finishes loading and goes idle, fetch network info in the background, to avoid impacting initial foreground load
 		scheduleNetworkInfoLoad();
 
-		// IP 点击查询详情功能
+		// IP click-to-query details functionality
 		function makeIpClickable() {
 			const ipElements = document.querySelectorAll('.ip-text');
 
 			ipElements.forEach(element => {
 				const rawIpText = String(element.dataset.rawValue || element.textContent || '').trim();
 
-				// 跳过已经标记为错误、加载中、未知的元素
+				// Skip elements already marked as error, loading, or unknown
 				if (element.querySelector('.error') ||
 					element.dataset.displayState === 'error' ||
 					rawIpText === '加载中...' ||
@@ -24510,7 +24510,7 @@
 					return;
 				}
 
-				// 添加可点击样式
+				// Add clickable style
 				element.classList.add('clickable');
 				element.title = '点击查询IP详细信息';
 
@@ -24523,7 +24523,7 @@
 
 					const rawIp = String(this.dataset.rawValue || this.textContent || '').trim();
 
-					// 跳过显示"加载中..."或"未知"的元素
+					// Skip elements showing "Loading..." or "Unknown"
 					if (!rawIp || rawIp === '加载中...' || rawIp === '未知') {
 						return;
 					}
@@ -24533,12 +24533,12 @@
 			});
 		}
 
-		// 将布尔值转换为 emoji
+		// Convert boolean to emoji
 		function boolToEmoji(value, trueEmoji = '✅', falseEmoji = '❌') {
 			return value ? trueEmoji : falseEmoji;
 		}
 
-		// 将 IP 类型转换为中文并添加样式
+		// Convert IP type to localized label and add styling
 		function formatIpType(type) {
 			if (!type) return '<span class="ip-type-unknown">Unknown</span>';
 
@@ -24552,7 +24552,7 @@
 			return `<span class="${typeInfo.class}">${typeInfo.text}</span>`;
 		}
 
-		// 获取威胁等级的样式类
+		// Get the style class for the threat level
 		function getThreatBadgeClass(score) {
 			if (!score) return 'badge-info';
 
@@ -24563,19 +24563,19 @@
 			return 'badge-danger';
 		}
 
-		// 计算综合滥用评分
+		// Compute the combined abuse score
 		function calculateAbuseScore(companyScore, asnScore, securityFlags = {}) {
-			// 如果两个分数都无效，返回null
+			// If both scores are invalid, return null
 			if (!companyScore || companyScore === '未知') companyScore = 0;
 			if (!asnScore || asnScore === '未知') asnScore = 0;
 
 			const company = parseFloat(companyScore) || 0;
 			const asn = parseFloat(asnScore) || 0;
 
-			// 计算基础评分：(company + asn) / 2 * 5
+			// Compute base score: (company + asn) / 2 * 5
 			let baseScore = ((company + asn) / 2) * 5;
 
-			// 计算安全风险附加分：每个安全风险项增加 15%
+			// Compute security risk add-on: +15% for each risk item
 			let riskAddition = 0;
 			const riskFlags = [
 				securityFlags.is_crawler,   // 爬虫
@@ -24585,25 +24585,25 @@
 				securityFlags.is_abuser     // 滥用 IP
 			];
 
-			// 统计为 true 的风险项数量
+			// Count how many risk items are true
 			const riskCount = riskFlags.filter(flag => flag === true).length;
 			riskAddition = riskCount * 0.15; // 每个风险项增加 15%
 
-			// 最终评分 = 基础评分 + 风险附加分
+			// Final score = base score + risk add-on
 			let finalScore = baseScore + riskAddition;
 
-			// 如果是虚假IP (蜜罐)，则风险值增加100%
+			// If it's a fake IP (honeypot), increase the risk value by 100%
 			if (securityFlags.is_bogon === true) {
 				finalScore += 1.0; // 增加100%
 			}
 
-			// 如果基础评分和风险附加分都是0且不是虚假IP，返回null
+			// If base score and risk add-on are both 0 and it's not a fake IP, return null
 			if (baseScore === 0 && riskAddition === 0 && securityFlags.is_bogon !== true) return null;
 
 			return finalScore;
 		}
 
-		// 获取滥用评分的颜色等级
+		// Get the color level for the abuse score
 		function getAbuseScoreBadgeClass(percentage) {
 			if (percentage === null || percentage === undefined) return 'badge-info';
 
@@ -24614,7 +24614,7 @@
 			return 'badge-verylow';                              // 绿色 < 0.25%
 		}
 
-		// 格式化滥用评分为百分比
+		// Format abuse score as a percentage
 		function formatAbuseScorePercentage(score) {
 			if (score === null || score === undefined) return '未知';
 
@@ -24622,20 +24622,20 @@
 			return percentage.toFixed(2) + '%';
 		}
 
-		// 切换评分算法说明气泡
+		// Toggle scoring algorithm explanation bubble
 		function toggleScoreTooltip(helpIcon) {
 			const tooltip = helpIcon.nextElementSibling;
 			const isShowing = tooltip.classList.contains('show');
 
-			// 隐藏所有其他气泡
+			// Hide all other bubbles
 			document.querySelectorAll('.score-tooltip.show').forEach(t => {
 				if (t !== tooltip) t.classList.remove('show');
 			});
 
-			// 切换当前气泡
+			// Toggle current bubble
 			tooltip.classList.toggle('show');
 
-			// 如果显示气泡，调整位置并添加点击事件监听器来关闭它
+			// If showing the bubble, adjust its position and add a click listener to close it
 			if (!isShowing) {
 				setTimeout(() => {
 					positionTooltipNearMouse(tooltip, helpIcon);
@@ -24651,7 +24651,7 @@
 			}
 		}
 
-		// 将气泡位置设置在鼠标附近
+		// Set bubble position near the mouse
 		function positionTooltipNearMouse(tooltip, helpIcon) {
 			const iconRect = helpIcon.getBoundingClientRect();
 			const tooltipWidth = tooltip.offsetWidth;
@@ -24663,17 +24663,17 @@
 			let left = iconRect.right + padding;
 			let top = iconRect.top - tooltipHeight / 2;
 
-			// 如果气泡超出右边界，显示在左边
+			// If the bubble overflows the right edge, show it on the left
 			if (left + tooltipWidth > windowWidth - padding) {
 				left = iconRect.left - tooltipWidth - padding;
 			}
 
-			// 如果气泡超出顶部，调整到下方
+			// If the bubble overflows the top, adjust downward
 			if (top < padding) {
 				top = iconRect.top + padding;
 			}
 
-			// 如果气泡超出底部，调整到上方
+			// If the bubble overflows the bottom, adjust upward
 			if (top + tooltipHeight > windowHeight - padding) {
 				top = windowHeight - tooltipHeight - padding;
 			}
@@ -24683,17 +24683,17 @@
 			tooltip.style.top = top + 'px';
 		}
 
-		// 显示 IP 详情弹窗
+		// Show IP detail popup
 		function showIpDetailModal(data) {
-			// 首先移除旧的弹窗（如果存在）
+			// First remove the old popup (if it exists)
 			const existingModal = document.querySelector('.ip-detail-modal');
 			if (existingModal) existingModal.remove();
 
-			// 创建弹窗
+			// Create popup
 			const modal = document.createElement('div');
 			modal.className = 'ip-detail-modal';
 
-			// 计算评分和等级
+			// Compute score and level
 			const companyScore = data.company?.abuser_score;
 			const asnScore = data.asn?.abuser_score;
 			const securityFlags = {
@@ -24724,7 +24724,7 @@
 				riskControlHTML = `<span class="ip-detail-badge ${badgeClass}">${formattedScore} ${riskLevel}</span>`;
 			}
 
-			// 构建 HTML 结构
+			// Build HTML structure
 			modal.innerHTML = `
 				<div class="ip-detail-content">
 					<div class="ip-detail-header">
@@ -24735,14 +24735,14 @@
 						<button class="ip-detail-close" title="Close">&times;</button>
 					</div>
 					<div class="ip-detail-body">
-						<!-- 地图展示区 -->
+						<!-- Map display area -->
 						<div class="ip-detail-map-container">
 							<div id="ip-detail-map"></div>
 						</div>
 
-						<!-- 数据网格区 -->
+						<!-- Data grid area -->
 						<div class="ip-detail-grid-container">
-							<!-- 左栏: 基本信息 (整合地理、运营商信息) -->
+							<!-- Left column: basic info (combined geo/ISP info) -->
 							<div class="ip-detail-left-col">
 								<div class="ip-detail-card" style="height: 100%;">
 									<div class="ip-detail-section-title">📍 Basic Info</div>
@@ -24769,9 +24769,9 @@
 								</div>
 							</div>
 
-							<!-- 右栏: 安全检测 -->
+							<!-- Right column: security check -->
 							<div class="ip-detail-right-col">
-								<!-- 安全检测内容保持不变 -->
+								<!-- Security check content unchanged -->
 								<div class="ip-detail-card" style="height: 100%;">
 									<div class="ip-detail-section-title">🛡️ Security Check</div>
 									<div class="ip-detail-security-grid">
@@ -24821,12 +24821,12 @@
 
 			document.body.appendChild(modal);
 
-			// 初始化弹窗内的地图
+			// Init the map inside the popup
 			if (data.location?.latitude && data.location?.longitude) {
 				const lat = parseFloat(data.location.latitude);
 				const lng = parseFloat(data.location.longitude);
 
-				// 给 DOM 渲染留出一点点时间
+				// Give the DOM a moment to render
 				setTimeout(() => {
 					const detailMap = L.map('ip-detail-map', {
 						zoomControl: false,
@@ -24868,16 +24868,16 @@
 						.bindPopup(popupHTML, { closeButton: false, offset: [0, -32] })
 						.openPopup();
 
-					// 偶尔地图布局会出问题，强制刷新
+					// The map layout occasionally breaks, force a refresh
 					detailMap.invalidateSize();
 				}, 400);
 			} else {
-				// 如果没有经纬度，隐藏地图容器
+				// If no lat/lng, hide the map container
 				const mapContainer = modal.querySelector('.ip-detail-map-container');
 				if (mapContainer) mapContainer.style.display = 'none';
 			}
 
-			// 关闭逻辑
+			// Close logic
 			const closeBtn = modal.querySelector('.ip-detail-close');
 			const closeFunc = () => {
 				modal.style.opacity = '0';
@@ -24888,7 +24888,7 @@
 			closeBtn.onclick = closeFunc;
 			modal.onclick = (e) => { if (e.target === modal) closeFunc(); };
 
-			// ESC 键关闭
+			// Close on ESC key
 			const escHandler = (e) => {
 				if (e.key === 'Escape') {
 					closeFunc();
@@ -24898,11 +24898,11 @@
 			document.addEventListener('keydown', escHandler);
 		}
 
-		// ==================== 获取更多 PROXYIP 相关函数 ====================
+		// ==================== Get more PROXYIP related functions ====================
 
 		function showGetMoreProxyIPModal() {
 			showExploreProxyModal('proxyip');
-			// 重置已选
+			// Reset the selection count
 			selectedProxyIPs = [];
 			updateSelectedProxyIPsUI();
 		}
@@ -24921,7 +24921,7 @@
 
 			if (signal && signal.aborted) return;
 
-			// 设置15秒超时
+			// Set a 15-second timeout
 			const timeoutId = setTimeout(() => {
 				window[config.verificationStatus][proxyIp] = {
 					status: 'timeout',
@@ -24998,12 +24998,12 @@
 			container.innerHTML = '';
 
 			selectedProxyIPs.forEach(ip => {
-				// 查找对应的国家 emoji
+				// Look up the matching country emoji
 				const dataList = window.proxyIPListData || [];
 				const proxyData = dataList.find(p => p.ip === ip);
 				const emoji = proxyData?.country_emoji || '🌐';
 
-				// 构建 title 信息
+				// Build title info
 				let titleText = '';
 				if (proxyData) {
 					const city = proxyData.city || '未知';
@@ -25044,7 +25044,7 @@
 
 			closeGetMoreProxyIPModal();
 
-			// 如果勾选了自动获取，取消勾选
+			// If auto-fetch is checked, uncheck it
 			const autoProxyCheck = document.getElementById('autoProxy');
 			if (autoProxyCheck && autoProxyCheck.checked) {
 				autoProxyCheck.checked = false;
@@ -25057,16 +25057,16 @@
 				config.abortController = null;
 			}
 
-			// 亮起保存和取消按钮
+			// Highlight save and cancel buttons
 			const saveBtn = document.getElementById('saveProxyBtn');
 			const cancelBtn = document.getElementById('cancelProxyBtn');
 			if (saveBtn) saveBtn.disabled = false;
 			if (cancelBtn) cancelBtn.disabled = false;
 		}
 
-		// ==================== SOCKS5 相关函数 ====================
+		// ==================== SOCKS5 related functions ====================
 
-		// 代理类型配置
+		// Proxy type config
 		const proxyConfigs = {
 			socks5: {
 				modalId: 'exploreSocks5Modal',
@@ -25134,13 +25134,13 @@
 			}
 		};
 
-		// 存储SOCKS5数据
+		// Store SOCKS5 data
 		let socks5ListData = [];
 		let socks5CountryMap = {};
 		let socks5VerificationStatus = {}; // 存储验证状态
 		let socks5VerificationTimeouts = {}; // 存储超时计时器
 
-		// 存储 ProxyIP 数据
+		// Store ProxyIP data
 		let proxyIPListData = [];
 		let proxyIPCountryMap = {};
 		let proxyIPVerificationStatus = {};
@@ -25162,7 +25162,7 @@
 		function buildCountryMap(listData, countryMap) {
 			countryMap = {};
 
-			// 统计每个国家的代理数量
+			// Count proxies per country
 			listData.forEach(item => {
 				const country = item.country;
 				if (!countryMap[country]) {
@@ -25171,7 +25171,7 @@
 				countryMap[country].push(item);
 			});
 
-			// 按数量排序（多到少）
+			// Sort by count (high to low)
 			countryMap = Object.fromEntries(
 				Object.entries(countryMap).sort((a, b) => b[1].length - a[1].length)
 			);
@@ -25211,26 +25211,26 @@
 			updateProxyConfirmButton('socks5');
 		}
 
-		// 通用代理选择器填充函数
+		// Generic proxy selector populate function
 		function populateProxySelect(selectedCountry, selectId, countryMap, verificationStatus, type) {
 			const select = document.getElementById(selectId);
 			const proxies = countryMap[selectedCountry] || [];
 
-			// 保存当前选中的值
+			// Save currently selected value
 			const currentValue = select.value;
 
-			// 检查是否所有代理都验证完成
+			// Check whether all proxies finished verifying
 			const allVerified = proxies.every(p => {
 				const status = verificationStatus[p.proxy];
 				return status && status.status !== 'pending';
 			});
 
-			// 获取当前地区的所有代理，并按状态和延迟排序
+			// Get all proxies for the current region, sorted by status and latency
 			const sortedProxies = [...proxies].sort((a, b) => {
 				const statusA = verificationStatus[a.proxy] || { status: 'pending' };
 				const statusB = verificationStatus[b.proxy] || { status: 'pending' };
 
-				// 可用的在前面，且按延迟从低到高
+				// Available ones first, sorted by latency low to high
 				if (statusA.status === 'success' && statusB.status === 'success') {
 					return (statusA.responseTime || 0) - (statusB.responseTime || 0);
 				}
@@ -25240,10 +25240,10 @@
 				return 0;
 			});
 
-			// 检查是否有成功的代理
+			// Check whether there's a successful proxy
 			const successfulProxies = sortedProxies.filter(proxy => verificationStatus[proxy.proxy]?.status === 'success');
 
-			// 辅助函数：生成代理选项HTML
+			// Helper function: generate proxy option HTML
 			function generateProxyOption(proxy, isSelectable = false) {
 				const status = verificationStatus[proxy.proxy] || { status: 'pending' };
 				let emoji = '⏳';
@@ -25275,28 +25275,28 @@
 					statusText = '不可用';
 				}
 
-				// ProxyIP 模式下 label 稍微不同，不包含协议前缀
+				// Label is slightly different in ProxyIP mode, doesn't include protocol prefix
 				const label = type === 'proxyip'
 					? `${emoji}[${statusText}]${proxy.ip}${proxy.city ? ` - ${proxy.city}` : ''},AS${proxy.asn}`
 					: `${emoji}[${statusText}]${proxy.city},AS${proxy.asn},${proxy.asOrganization}`;
 
 				const disabled = !isSelectable || status.status !== 'success';
-				// ProxyIP 不需要默认选中，因为是多选触发
+				// ProxyIP doesn't need a default selection, since it's multi-select triggered
 				const selected = type !== 'proxyip' && isSelectable && status.status === 'success' && successfulProxies.indexOf(proxy) === 0 ? 'selected' : '';
 				return `<option value="${proxy.proxy}" ${disabled ? 'disabled' : ''} ${selected}>${label}</option>`;
 			}
 
 			let html = type === 'proxyip' ? '<option value="">-- Select a proxy --</option>' : '';
 			if (successfulProxies.length > 0) {
-				// 有成功的代理，显示所有代理
+				// If there's a successful proxy, show all proxies
 				sortedProxies.forEach(proxy => {
 					html += generateProxyOption(proxy, true);
 				});
 			} else if (allVerified) {
-				// 验证完成但没有成功的代理
+				// Verification finished but no successful proxy
 				html = '<option value="">Sorry, no proxy is available for this region, please switch regions.</option>';
 			} else {
-				// 验证中，显示代理列表
+				// Verifying, show proxy list
 				html = (type === 'proxyip' ? '<option value="">Checking availability, please wait...</option>' : '<option value="">Checking availability, please wait...</option>');
 				sortedProxies.forEach(proxy => {
 					html += generateProxyOption(proxy, false);
@@ -25305,7 +25305,7 @@
 
 			select.innerHTML = html;
 
-			// 恢复用户的选择 (ProxyIP 模式下如果当前选中的仍然有效，也恢复)
+			// Restore the user's selection (in ProxyIP mode, also restore if the current selection is still valid)
 			if (successfulProxies.length > 0) {
 				if (currentValue && successfulProxies.some(p => p.proxy === currentValue)) {
 					select.value = currentValue;
@@ -25315,23 +25315,23 @@
 			}
 		}
 
-		// 通用代理验证函数
-		// Fisher-Yates 打乱算法 - 随机打乱数组顺序
+		// Generic proxy verification function
+		// Fisher-Yates shuffle algorithm - randomly shuffle array order
 		function shuffleArray(array) {
 			const shuffled = [...array]; // 创建副本，不修改原数组
 			for (let i = shuffled.length - 1; i > 0; i--) {
 				const j = Math.floor(Math.random() * (i + 1));
-				// 交换元素
+				// Swap elements
 				[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
 			}
 			return shuffled;
 		}
 
 		function verifyProxies(proxies, verifySingleFunction, onProgress, signal) {
-			// 打乱代理列表的顺序，避免多个用户同时测试时都从头开始
+			// Shuffle the proxy list order, so multiple concurrent users don't all start from the same point
 			const shuffledProxies = shuffleArray(proxies);
 
-			// 并发控制：最多8个并发请求
+			// Concurrency control: max 8 concurrent requests
 			const maxConcurrent = 8;
 			let currentIndex = 0;
 			let activeRequests = 0;
@@ -25352,19 +25352,19 @@
 				});
 			}
 
-			// 启动初始8个请求
+			// Kick off the initial 8 requests
 			for (let i = 0; i < Math.min(maxConcurrent, shuffledProxies.length); i++) {
 				startNextProxy();
 			}
 		}
 
-		// 通用代理探索函数
+		// Generic proxy exploration function
 		function showExploreProxyModal(type) {
 			const config = proxyConfigs[type];
 			const modal = document.getElementById(config.modalId);
 			if (!modal) return;
 
-			// 重置状态
+			// Reset state
 			window[config.listData] = [];
 			window[config.countryMap] = {};
 			window[config.verificationStatus] = {};
@@ -25376,15 +25376,15 @@
 			document.getElementById(config.proxySelectGroupId).style.display = 'block';
 			document.getElementById(config.confirmBtnId).disabled = true;
 
-			// 初始化下拉框 focus/blur 监听（首次生效）
+			// Init dropdown focus/blur listener (effective on first load)
 			ensureProxySelectListeners(type);
-			// 重置节流状态
+			// Reset throttle state
 			resetProxyDisplayUpdateState(type);
 
-			// 加载列表
+			// Load list
 			loadProxyList(type);
 
-			// 初始化或更新地图容器
+			// Init or update map container
 			setTimeout(() => {
 				initProxyMap(type);
 			}, 300);
@@ -25409,7 +25409,7 @@
 			const container = document.getElementById(containerId);
 			if (!container) return;
 
-			// 如果地图已存在，先刷新布局
+			// If the map already exists, refresh its layout first
 			if (proxyMaps[type] && proxyMaps[type].map) {
 				proxyMaps[type].map.invalidateSize();
 				return;
@@ -25417,7 +25417,7 @@
 
 			if (!proxyMaps[type]) proxyMaps[type] = { map: null, marker: null };
 
-			// 创建地图
+			// Create map
 			const map = L.map(containerId, {
 				zoomControl: false, // 隐藏缩放控制，让界面更清爽
 				attributionControl: false
@@ -25438,11 +25438,11 @@
 			const selectedProxyUrl = select.value;
 			if (!selectedProxyUrl || !proxyMaps[type].map) return;
 
-			// 如果该代理已经显示在地图上了，就不再重复加载，避免频繁刷新导致的气泡闪烁
+			// If this proxy is already shown on the map, don't reload it, to avoid bubble flicker from frequent refreshes
 			if (lastMappedProxy[type] === selectedProxyUrl) return;
 			lastMappedProxy[type] = selectedProxyUrl;
 
-			// 从数据列表中找到完整的代理信息
+			// Find the full proxy info from the data list
 			const proxyData = window[config.listData].find(p => p.proxy === selectedProxyUrl);
 			if (!proxyData || proxyData.latitude === null || proxyData.longitude === null) return;
 
@@ -25450,17 +25450,17 @@
 			const lng = parseFloat(proxyData.longitude);
 			const map = proxyMaps[type].map;
 
-			// 更新或创建 Marker
+			// Update or create Marker
 			if (proxyMaps[type].marker) {
 				proxyMaps[type].marker.setLatLng([lat, lng]);
 			} else {
 				proxyMaps[type].marker = L.marker([lat, lng]).addTo(map);
 			}
 
-			// 平滑移动地图 - 将标记点定位到地图的下方60%位置，避免气泡被遮挡
+			// Smoothly pan the map - position the marker at 60% down the map, to avoid the bubble being covered
 			map.setZoom(4);
 
-			// 计算偏移后的中心点，使标记显示在视图的60%处（下方）
+			// Compute the offset center so the marker shows at 60% down the view (lower half)
 			const mapSize = map.getSize();
 			const offsetY = mapSize.y * 0.2; // 向上偏移20%，使标记显示在60%处
 			const point = map.project([lat, lng], 4).subtract([0, offsetY]);
@@ -25474,7 +25474,7 @@
 				});
 			}
 
-			// 添加或更新 Popup
+			// Add or update Popup
 			const isDark = document.documentElement.classList.contains('dark-mode');
 			const textColor = isDark ? '#ffffff' : '#333333';
 			const popupContent = `
@@ -25509,18 +25509,18 @@
 				modal.classList.remove('show');
 			}
 
-			// 停止正在进行的测试
+			// Stop the test in progress
 			if (config.abortController) {
 				config.abortController.abort();
 				config.abortController = null;
 			}
 
-			// 清除所有超时计时器
+			// Clear all timeout timers
 			for (let timeout of Object.values(window[config.verificationTimeouts])) {
 				clearTimeout(timeout);
 			}
 
-			// 清理节流定时器
+			// Clean up the throttle timer
 			resetProxyDisplayUpdateState(type);
 		}
 
@@ -25561,7 +25561,7 @@
 				});
 		}
 
-		// 大洲信息映射
+		// Continent info mapping
 		const continentInfo = {
 			'AS': { emoji: '🌏', name: '亚洲' },
 			'NA': { emoji: '🌎', name: '北美' },
@@ -25577,10 +25577,10 @@
 			const select = document.getElementById(config.regionSelectId);
 			let html = '<option value="">-- Select a region --</option>';
 
-			// 构建按大洲分组的结构
+			// Build the continent-grouped structure
 			const continentMap = {};
 
-			// 遍历所有国家，归类到大洲
+			// Iterate all countries, group them by continent
 			for (const [country, proxies] of Object.entries(window[config.countryMap])) {
 				const proxy = proxies[0]; // 取第一个代理获取大洲信息
 				const continent = proxy.continent || 'Unknown';
@@ -25601,7 +25601,7 @@
 				};
 			}
 
-			// 生成 HTML
+			// Generate HTML
 			for (const [continentCode, continentData] of Object.entries(continentMap)) {
 				const label = `${continentData.emoji} ${continentData.name} / ${continentCode}`;
 				html += `<optgroup label="${label}">`;
@@ -25627,10 +25627,10 @@
 
 			const proxies = window[config.countryMap][selectedCountry] || [];
 
-			// 显示代理选择组
+			// Show proxy selection group
 			document.getElementById(config.proxySelectGroupId).style.display = 'block';
 
-			// 初始化每个代理的验证状态
+			// Init verification state for each proxy
 			proxies.forEach(proxy => {
 				if (!window[config.verificationStatus][proxy.proxy]) {
 					window[config.verificationStatus][proxy.proxy] = {
@@ -25640,28 +25640,28 @@
 				}
 			});
 
-			// 设置select为验证中状态
+			// Set select to "verifying" state
 			const select = document.getElementById(config.proxySelectId);
 			select.innerHTML = '<option value="">Checking availability, please wait...</option>';
 
-			// 显示代理列表
+			// Show proxy list
 			populateProxySelect(selectedCountry, config.proxySelectId, window[config.countryMap], window[config.verificationStatus]);
 
-			// 释放之前的 AbortController 并创建新的
+			// Release the previous AbortController and create a new one
 			if (config.abortController) {
 				config.abortController.abort();
 			}
 			config.abortController = new AbortController();
 
-			// 开始验证所有代理
+			// Start verifying all proxies
 			verifyProxies(proxies, config.verifySingleFunction, () => {
 				updateProxyDisplay(type);
-				// 如果当前选中的是成功的，尝试更新地图
+				// If the current selection is a successful one, try to update the map
 				updateProxyMap(type);
 			}, config.abortController.signal);
 		}
 
-		// ===== 节流更新系统：避免移动端下拉框被频繁刷新 =====
+		// ===== Throttled update system: avoid frequent refresh of mobile dropdown =====
 		const PROXY_DISPLAY_UPDATE_INTERVAL = 6000; // 节流间隔：6秒
 		const proxyDisplayUpdateState = {
 			socks5: { lastUpdate: 0, pending: false, timer: null, selectOpen: false, listenersAdded: false },
@@ -25670,7 +25670,7 @@
 			proxyip: { lastUpdate: 0, pending: false, timer: null, selectOpen: false, listenersAdded: false }
 		};
 
-		// 为代理选择下拉框添加 focus/blur 监听，检测用户是否正在操作下拉框
+		// Add focus/blur listeners to the proxy select dropdown, to detect if the user is interacting with it
 		function ensureProxySelectListeners(type) {
 			const state = proxyDisplayUpdateState[type];
 			if (state.listenersAdded) return;
@@ -25682,7 +25682,7 @@
 			});
 			select.addEventListener('blur', () => {
 				state.selectOpen = false;
-				// 下拉框关闭时，如果有待处理的更新立即执行
+				// When dropdown closes, run any pending update immediately
 				if (state.pending) {
 					_doUpdateProxyDisplay(type);
 				}
@@ -25690,7 +25690,7 @@
 			state.listenersAdded = true;
 		}
 
-		// 检查当前地区所有代理是否全部验证完成
+		// Check whether all proxies for the current region finished verifying
 		function isAllProxiesVerified(type) {
 			const config = proxyConfigs[type];
 			const selectedCountry = document.getElementById(config.regionSelectId).value;
@@ -25702,29 +25702,29 @@
 			});
 		}
 
-		// 节流版 updateProxyDisplay —— 外部统一调用此函数
-		// 策略：下拉框关闭时实时更新；下拉框打开时每 6 秒节流更新一次
+		// Throttled updateProxyDisplay — call this one externally
+		// Strategy: update in real time when the dropdown closes; throttle updates every 6s while the dropdown is open
 		function updateProxyDisplay(type) {
 			const state = proxyDisplayUpdateState[type];
 			const now = Date.now();
 
-			// 下拉框未打开：直接实时更新
+			// Dropdown not open: update in real time
 			if (!state.selectOpen) {
 				if (state.timer) { clearTimeout(state.timer); state.timer = null; }
 				_doUpdateProxyDisplay(type);
 				return;
 			}
 
-			// === 以下为下拉框打开状态的节流逻辑 ===
+			// === Below is the throttle logic for dropdown open state ===
 
-			// 全部验证完成时强制安排一次更新（最终结果）
+			// Force one final update scheduled when all verification completes (final result)
 			if (isAllProxiesVerified(type)) {
 				if (state.timer) { clearTimeout(state.timer); state.timer = null; }
-				// 距上次更新已超过节流间隔，直接更新
+				// More than the throttle interval since last update, update immediately
 				if (now - state.lastUpdate >= PROXY_DISPLAY_UPDATE_INTERVAL) {
 					_doUpdateProxyDisplay(type);
 				} else {
-					// 未到间隔，安排一个定时器确保最终结果会被刷新
+					// Interval not reached, schedule a timer to ensure the final result still gets refreshed
 					state.pending = true;
 					if (!state.timer) {
 						const delay = PROXY_DISPLAY_UPDATE_INTERVAL - (now - state.lastUpdate);
@@ -25739,7 +25739,7 @@
 				return;
 			}
 
-			// 节流：距上次更新不到 6 秒，延迟执行
+			// Throttle: less than 6s since last update, delay execution
 			if (now - state.lastUpdate < PROXY_DISPLAY_UPDATE_INTERVAL) {
 				state.pending = true;
 				if (!state.timer) {
@@ -25754,11 +25754,11 @@
 				return;
 			}
 
-			// 已超过节流间隔，直接更新
+			// Throttle interval exceeded, update immediately
 			_doUpdateProxyDisplay(type);
 		}
 
-		// 实际执行更新的内部函数
+		// Internal function that actually performs the update
 		function _doUpdateProxyDisplay(type) {
 			const state = proxyDisplayUpdateState[type];
 			state.lastUpdate = Date.now();
@@ -25769,7 +25769,7 @@
 			if (selectedCountry) {
 				populateProxySelect(selectedCountry, config.proxySelectId, window[config.countryMap], window[config.verificationStatus], type);
 
-				// 更新确定按钮状态
+				// Update confirm button state
 				const select = document.getElementById(config.proxySelectId);
 				const selectedValue = select.value;
 				const isValidSelected = selectedValue &&
@@ -25779,7 +25779,7 @@
 			}
 		}
 
-		// 重置节流状态（模态框关闭时调用）
+		// Reset throttle state (called when the modal closes)
 		function resetProxyDisplayUpdateState(type) {
 			const state = proxyDisplayUpdateState[type];
 			if (state.timer) { clearTimeout(state.timer); state.timer = null; }
@@ -25798,7 +25798,7 @@
 				return;
 			}
 
-			// 填入代理地址
+			// Fill in proxy address
 			const input = document.getElementById(config.inputId);
 			if (input) {
 				input.value = selectedProxy.replace(/^socks5:\/\/|^http:\/\/|^https:\/\/|^turn:\/\/|^sstp:\/\//, '');
@@ -25808,19 +25808,19 @@
 				markModified('proxy');
 			}
 
-			// 关闭模态框
+			// Close modal
 			const modal = document.getElementById(config.modalId);
 			if (modal) {
 				modal.classList.remove('show');
 			}
 
-			// 确认选择后停止剩余测试
+			// Stop remaining tests once a selection is confirmed
 			if (config.abortController) {
 				config.abortController.abort();
 				config.abortController = null;
 			}
 
-			// 亮起保存和取消按钮
+			// Highlight save and cancel buttons
 			const saveBtn = document.getElementById('saveProxyBtn');
 			const cancelBtn = document.getElementById('cancelProxyBtn');
 			if (saveBtn) saveBtn.disabled = false;
@@ -25833,7 +25833,7 @@
 			const selectedValue = select.value;
 			const confirmBtn = document.getElementById(config.confirmBtnId);
 
-			// 检查选中的代理是否可用
+			// Check whether the selected proxy is available
 			const isValidSelected = selectedValue &&
 				window[config.verificationStatus][selectedValue] &&
 				window[config.verificationStatus][selectedValue].status === 'success';
@@ -25843,7 +25843,7 @@
 			}
 		}
 
-		// 通用单个代理验证函数
+		// Generic single-proxy verification function
 		function verifySingleProxy(proxy, type, signal) {
 			return new Promise((resolve) => {
 				const config = proxyConfigs[type];
@@ -25863,12 +25863,12 @@
 				const checkProtocol = ['https', 'turn', 'sstp'].includes(type) ? type : protocol;
 				const checkUrl = `/admin/check?${checkProtocol}=${encodeURIComponent(cleanProxy)}&_t=${Date.now()}`;
 
-				// 如果已经终止，直接返回
+				// If already terminated, return immediately
 				if (signal && signal.aborted) {
 					return resolve();
 				}
 
-				// 设置15秒超时
+				// Set a 15-second timeout
 				const timeoutId = setTimeout(() => {
 					window[config.verificationStatus][proxyUrl] = {
 						status: 'timeout',
@@ -25914,15 +25914,15 @@
 			});
 		}
 
-		// ==================== HTTP 相关函数 ====================
+		// ==================== HTTP related functions ====================
 
-		// 存储HTTP数据
+		// Store HTTP data
 		let httpListData = [];
 		let httpCountryMap = {};
 		let httpVerificationStatus = {}; // 存储验证状态
 		let httpVerificationTimeouts = {}; // 存储超时计时器
 
-		// 存储HTTPS数据
+		// Store HTTPS data
 		let httpsListData = [];
 		let httpsCountryMap = {};
 		let httpsVerificationStatus = {}; // 存储验证状态
@@ -26017,35 +26017,35 @@
 			updateProxyConfirmButton('https');
 		}
 
-		// ============ HOSTS 检查相关函数 ============
+		// ============ HOSTS check related functions ============
 
-		// 检查当前访问域名是否在 HOSTS 数组中
+		// Check whether the currently accessed domain is in the HOSTS array
 		function checkHostsMismatch() {
 			const currentHostname = window.location.hostname;
 			const hosts = currentConfig.HOSTS || [];
 
-			// 检查当前 hostname 是否存在于 HOSTS 数组中
+			// Check whether the current hostname exists in the HOSTS array
 			const isHostInArray = hosts.some(host => {
-				// 移除端口号后进行比较
+				// Compare after stripping the port number
 				const hostWithoutPort = host.split(':')[0];
 				return hostWithoutPort === currentHostname;
 			});
 
 			if (!isHostInArray && hosts.length > 0) {
-				// 检查缓存，是否在 24 小时内已提示过
+				// Check cache, whether it's already been shown within 24 hours
 				if (shouldShowHostsMismatchNotification()) {
 					showHostsMismatchNotification(currentHostname, hosts);
 				}
 			}
 		}
 
-		// 检查是否应该显示 HOSTS 不匹配提示
+		// Check whether the HOSTS mismatch prompt should be shown
 		function shouldShowHostsMismatchNotification() {
 			const cacheKey = 'hostsMismatchNotificationTime';
 			const cachedTime = localStorage.getItem(cacheKey);
 
 			if (!cachedTime) {
-				// 没有缓存，应该显示
+				// No cache, should show
 				return true;
 			}
 
@@ -26053,13 +26053,13 @@
 			const currentTime = Date.now();
 			const twentyFourHours = 24 * 60 * 60 * 1000; // 24 小时毫秒数
 
-			// 检查是否超过 24 小时
+			// Check whether 24 hours have passed
 			return (currentTime - lastNotificationTime) > twentyFourHours;
 		}
 
-		// 显示 HOSTS 不匹配提示
+		// Show HOSTS mismatch warning
 		function showHostsMismatchNotification(currentHostname, hosts) {
-			// 填充模态框中的内容
+			// Populate modal content
 			const currentHostnameEl = document.getElementById('currentHostname');
 			const hostToAddEl = document.getElementById('hostToAdd');
 			const currentHostsEl = document.getElementById('currentHosts');
@@ -26071,9 +26071,9 @@
 				hostToAddEl.textContent = currentHostname;
 			}
 
-			// 填充当前 HOSTS 列表 - 用 HTML badge 而不是纯文本
+			// Populate current HOSTS list - use an HTML badge instead of plain text
 			if (currentHostsEl) {
-				// 清空并用 HTML 结构重新填充
+				// Clear and refill with the HTML structure
 				currentHostsEl.innerHTML = '';
 
 				hosts.forEach((host) => {
@@ -26084,7 +26084,7 @@
 				});
 			}
 
-			// 显示模态框
+			// Show modal
 			const overlay = document.getElementById('hostsMismatchModal');
 			if (overlay) {
 				const modal = overlay.querySelector('.modal');
@@ -26095,9 +26095,9 @@
 			}
 		}
 
-		// 关闭 HOSTS 不匹配提示模态框
+		// Close HOSTS mismatch prompt modal
 		function closeHostsMismatchModal(event) {
-			// 如果有事件对象且点击的不是 overlay 本身，则返回
+			// If there's an event object and the click target isn't the overlay itself, return
 			if (event && event.target && event.target.id !== 'hostsMismatchModal') {
 				return;
 			}
@@ -26108,18 +26108,18 @@
 			}
 		}
 
-		// 处理"知道了！24小时内不提示"按钮
+		// Handle the "Got it! Don't show for 24 hours" button
 		function dismissHostsMismatchNotification() {
 			const cacheKey = 'hostsMismatchNotificationTime';
 			const currentTime = Date.now();
 
-			// 将当前时间戳保存到 localStorage
+			// Save the current timestamp to localStorage
 			localStorage.setItem(cacheKey, currentTime.toString());
 
-			// 关闭模态框
+			// Close modal
 			closeHostsMismatchModal({ target: { id: 'hostsMismatchModal' } });
 
-			// 显示确认提示
+			// Show confirm prompt
 			showToast('🎉 24小时内不会再提示', 'info');
 		}
 
