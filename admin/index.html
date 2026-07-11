@@ -15526,7 +15526,7 @@
 		let originalConfig = {};
 		let modifiedSections = new Set();
 		let subConfigData = null;
-		let hasMultipleHosts = false; // 标记是否存在多个 HOSTS
+		let hasMultipleHosts = false; // flags whether multiple HOSTS exist
 		let isLowPerformanceMode = false;
 		let pendingSSTLSPreviousValue = null;
 		const LOW_PERF_STORAGE_KEY = 'adminLowPerformanceMode';
@@ -15723,7 +15723,7 @@
 
 		// Latency test config
 		const latencyTestConfig = {
-			count: 16  // 采样和显示数量
+			count: 16  // sample & display count
 		};
 
 		// Track animation state of the latency display
@@ -15878,7 +15878,7 @@
 				const latency = Date.now() - start;
 				return latency;
 			} catch (error) {
-				return -1; // 连接失败
+				return -1; // connection failed
 			} finally {
 				clearTimeout(timeoutId);
 				latencyFetchControllers.delete(controller);
@@ -18586,7 +18586,7 @@
 				}
 
 				// Show warning popup
-				event.target.checked = false; // 先取消勾选
+				event.target.checked = false; // uncheck first
 				document.getElementById('skipVerifyWarningModal').classList.add('show');
 			} else {
 				markModified('config');
@@ -18934,7 +18934,7 @@
 		function populateSubConfigSelect() {
 			const select = document.getElementById('subConfigSelect');
 			const customInput = document.getElementById('subConfigCustomInput');
-			if (!select) return; // 元素还不存在，等待后续调用
+			if (!select) return; // element doesn't exist yet, wait for later call
 
 			// Always add "Custom" as the first option
 			select.innerHTML = '<option value="custom">&nbsp;&nbsp;&nbsp;&nbsp;Custom</option>';
@@ -19249,7 +19249,7 @@
 				} else if (module.id === 'preferredSubscriptionModule') {
 					shouldBeExpanded = true;
 				} else {
-					shouldBeExpanded = isFirstVisit ? false : (states[title] !== false); // 第一次默认折叠，之后按保存的状态
+					shouldBeExpanded = isFirstVisit ? false : (states[title] !== false); // collapsed by default on first visit, saved state afterward
 				}
 
 				const isCurrentlyCollapsed = module.classList.contains('collapsed');
@@ -19543,7 +19543,7 @@
 
 		// Init user mode
 		function initUserMode() {
-			const userMode = localStorage.getItem('userMode') || 'simple'; // 默认为小白模式
+			const userMode = localStorage.getItem('userMode') || 'simple'; // default to beginner mode
 			applyUserMode(userMode);
 		}
 
@@ -20938,7 +20938,7 @@
 
 			if (targetElement) {
 				if (targetElement.classList.contains('is-loading')) {
-					return; // 正在加载中,不重复请求
+					return; // already loading, avoid duplicate requests
 				}
 				targetElement.classList.add('is-loading');
 				targetElement.setAttribute('aria-busy', 'true');
@@ -20946,7 +20946,7 @@
 
 			try {
 				const controller = new AbortController();
-				const timeoutId = setTimeout(() => controller.abort(), 5000); // 5秒超时
+				const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s timeout
 
 				let response;
 				try {
@@ -21807,11 +21807,11 @@
 			const viewportHeight = window.innerHeight;
 
 			// Compute the height of each element (with margin/padding context)
-			const modalPadding = 20; // 模态框内边距
-			const tabsHeight = tabs ? tabs.offsetHeight + 15 : 50; // 选项卡高度 + margin
-			const closeBtnHeight = 40; // 关闭按钮高度
-			const bottomBtnHeight = bottomBtn ? bottomBtn.offsetHeight + 20 : 60; // 底部按钮高度 + margin
-			const headerHeight = 20; // 其他上边距
+			const modalPadding = 20; // modal padding
+			const tabsHeight = tabs ? tabs.offsetHeight + 15 : 50; // tab height + margin
+			const closeBtnHeight = 40; // close button height
+			const bottomBtnHeight = bottomBtn ? bottomBtn.offsetHeight + 20 : 60; // bottom button height + margin
+			const headerHeight = 20; // other top margins
 
 			// Compute the available content height
 			// viewportHeight - (top padding + tabs + bottom button + bottom padding)
@@ -21930,7 +21930,7 @@
 				e.preventDefault();
 
 				const x = e.pageX - tabsContainer.offsetLeft;
-				const walk = (x - startX) * 1; // 拖拽速度
+				const walk = (x - startX) * 1; // drag speed
 
 				if (Math.abs(walk) > 5) {
 					isDragged = true;
@@ -22806,7 +22806,7 @@
 			const now = new Date();
 			const nextMidnightUTC = new Date(now);
 			nextMidnightUTC.setUTCHours(0, 0, 0, 0);
-			nextMidnightUTC.setUTCDate(nextMidnightUTC.getUTCDate() + 1); // 总是设置为明天的0点
+			nextMidnightUTC.setUTCDate(nextMidnightUTC.getUTCDate() + 1); // always set to tomorrow at 00:00
 
 			const diff = nextMidnightUTC - now;
 			const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
@@ -23314,7 +23314,7 @@
 
 		// Start countdown update
 		setInterval(updateCountdown, 1000);
-		updateCountdown(); // 立即执行一次
+		updateCountdown(); // run once immediately
 
 		// ==================== Network info related functions ====================
 
@@ -23510,7 +23510,7 @@
 			}
 		}
 
-		function animateNetworkFieldDisplay(fieldElement, targetText, durationMs = 160) {//逐字符替换速度
+		function animateNetworkFieldDisplay(fieldElement, targetText, durationMs = 160) {//character-by-character replace speed
 			if (!fieldElement) return;
 			stopNetworkFieldAnimation(fieldElement);
 
@@ -24578,23 +24578,23 @@
 			// Compute security risk add-on: +15% for each risk item
 			let riskAddition = 0;
 			const riskFlags = [
-				securityFlags.is_crawler,   // 爬虫
+				securityFlags.is_crawler,   // crawler
 				securityFlags.is_proxy,     // 代理服务器
 				securityFlags.is_vpn,       // VPN
 				securityFlags.is_tor,       // Tor 网络
-				securityFlags.is_abuser     // 滥用 IP
+				securityFlags.is_abuser     // abusive IP
 			];
 
 			// Count how many risk items are true
 			const riskCount = riskFlags.filter(flag => flag === true).length;
-			riskAddition = riskCount * 0.15; // 每个风险项增加 15%
+			riskAddition = riskCount * 0.15; // each risk item adds 15%
 
 			// Final score = base score + risk add-on
 			let finalScore = baseScore + riskAddition;
 
 			// If it's a fake IP (honeypot), increase the risk value by 100%
 			if (securityFlags.is_bogon === true) {
-				finalScore += 1.0; // 增加100%
+				finalScore += 1.0; // increase by 100%
 			}
 
 			// If base score and risk add-on are both 0 and it's not a fake IP, return null
@@ -24607,11 +24607,11 @@
 		function getAbuseScoreBadgeClass(percentage) {
 			if (percentage === null || percentage === undefined) return 'badge-info';
 
-			if (percentage >= 100) return 'badge-critical';      // 危险红色 >= 100%
-			if (percentage >= 20) return 'badge-high';           // 橘黄色 15-99.99%
-			if (percentage >= 5) return 'badge-elevated';     // 黄色 5-14.99%
-			if (percentage >= 0.25) return 'badge-low';          // 淡绿色 0.25-4.99%
-			return 'badge-verylow';                              // 绿色 < 0.25%
+			if (percentage >= 100) return 'badge-critical';      // danger red >= 100%
+			if (percentage >= 20) return 'badge-high';           // orange 15-99.99%
+			if (percentage >= 5) return 'badge-elevated';     // yellow 5-14.99%
+			if (percentage >= 0.25) return 'badge-low';          // light green 0.25-4.99%
+			return 'badge-verylow';                              // green < 0.25%
 		}
 
 		// Format abuse score as a percentage
@@ -24831,7 +24831,7 @@
 					const detailMap = L.map('ip-detail-map', {
 						zoomControl: false,
 						attributionControl: false
-					}).setView([lat + 5, lng], 4); // 向上偏移中心点，使标记在视野内偏下
+					}).setView([lat + 5, lng], 4); // offset the center point up so the marker sits lower in view
 
 					L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
 						subdomains: '1234',
@@ -25137,15 +25137,15 @@
 		// Store SOCKS5 data
 		let socks5ListData = [];
 		let socks5CountryMap = {};
-		let socks5VerificationStatus = {}; // 存储验证状态
-		let socks5VerificationTimeouts = {}; // 存储超时计时器
+		let socks5VerificationStatus = {}; // store verification state
+		let socks5VerificationTimeouts = {}; // store the timeout timer
 
 		// Store ProxyIP data
 		let proxyIPListData = [];
 		let proxyIPCountryMap = {};
 		let proxyIPVerificationStatus = {};
 		let proxyIPVerificationTimeouts = {};
-		let selectedProxyIPs = []; // 存储用户选择的 ProxyIP
+		let selectedProxyIPs = []; // store the user-selected ProxyIP
 
 		function showExploreSocks5Modal() {
 			showExploreProxyModal('socks5');
@@ -25318,7 +25318,7 @@
 		// Generic proxy verification function
 		// Fisher-Yates shuffle algorithm - randomly shuffle array order
 		function shuffleArray(array) {
-			const shuffled = [...array]; // 创建副本，不修改原数组
+			const shuffled = [...array]; // create a copy, don't mutate the original array
 			for (let i = shuffled.length - 1; i > 0; i--) {
 				const j = Math.floor(Math.random() * (i + 1));
 				// Swap elements
@@ -25419,7 +25419,7 @@
 
 			// Create map
 			const map = L.map(containerId, {
-				zoomControl: false, // 隐藏缩放控制，让界面更清爽
+				zoomControl: false, // hide zoom control for a cleaner UI
 				attributionControl: false
 			}).setView([22.2783, 114.1747], 4);
 
@@ -25462,7 +25462,7 @@
 
 			// Compute the offset center so the marker shows at 60% down the view (lower half)
 			const mapSize = map.getSize();
-			const offsetY = mapSize.y * 0.2; // 向上偏移20%，使标记显示在60%处
+			const offsetY = mapSize.y * 0.2; // offset up 20% so the marker shows at 60%
 			const point = map.project([lat, lng], 4).subtract([0, offsetY]);
 			const offsetCenter = map.unproject(point, 4);
 
@@ -25582,7 +25582,7 @@
 
 			// Iterate all countries, group them by continent
 			for (const [country, proxies] of Object.entries(window[config.countryMap])) {
-				const proxy = proxies[0]; // 取第一个代理获取大洲信息
+				const proxy = proxies[0]; // take the first proxy to get continent info
 				const continent = proxy.continent || 'Unknown';
 				const continentData = continentInfo[continent] || { emoji: '🌍', name: continent };
 
@@ -25662,7 +25662,7 @@
 		}
 
 		// ===== Throttled update system: avoid frequent refresh of mobile dropdown =====
-		const PROXY_DISPLAY_UPDATE_INTERVAL = 6000; // 节流间隔：6秒
+		const PROXY_DISPLAY_UPDATE_INTERVAL = 6000; // throttle interval: 6s
 		const proxyDisplayUpdateState = {
 			socks5: { lastUpdate: 0, pending: false, timer: null, selectOpen: false, listenersAdded: false },
 			http: { lastUpdate: 0, pending: false, timer: null, selectOpen: false, listenersAdded: false },
@@ -25919,14 +25919,14 @@
 		// Store HTTP data
 		let httpListData = [];
 		let httpCountryMap = {};
-		let httpVerificationStatus = {}; // 存储验证状态
-		let httpVerificationTimeouts = {}; // 存储超时计时器
+		let httpVerificationStatus = {}; // store verification state
+		let httpVerificationTimeouts = {}; // store the timeout timer
 
 		// Store HTTPS data
 		let httpsListData = [];
 		let httpsCountryMap = {};
-		let httpsVerificationStatus = {}; // 存储验证状态
-		let httpsVerificationTimeouts = {}; // 存储超时计时器
+		let httpsVerificationStatus = {}; // store verification state
+		let httpsVerificationTimeouts = {}; // store the timeout timer
 
 		function showExploreHTTPModal() {
 			showExploreProxyModal('http');
@@ -26051,7 +26051,7 @@
 
 			const lastNotificationTime = parseInt(cachedTime, 10);
 			const currentTime = Date.now();
-			const twentyFourHours = 24 * 60 * 60 * 1000; // 24 小时毫秒数
+			const twentyFourHours = 24 * 60 * 60 * 1000; // 24-hour ms count
 
 			// Check whether 24 hours have passed
 			return (currentTime - lastNotificationTime) > twentyFourHours;
