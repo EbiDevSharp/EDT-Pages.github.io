@@ -1846,13 +1846,13 @@
 		}
 
 		/* 返回顶部图标样式 */
-		.social-link[title="返回顶部"]:hover {
+		.social-link[title="Back to Top"]:hover {
 			color: #10b981;
 			border-color: rgba(16, 185, 129, 0.4);
 			box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25), 0 4px 12px rgba(5, 150, 105, 0.15)
 		}
 
-		.social-link[title="返回顶部"]:hover::before {
+		.social-link[title="Back to Top"]:hover::before {
 			background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(5, 150, 105, 0.04) 100%);
 			opacity: 1
 		}
@@ -2818,7 +2818,7 @@
 			box-shadow: 0 8px 24px rgba(42, 171, 238, 0.3), 0 4px 12px rgba(34, 158, 217, 0.2)
 		}
 
-		html.dark-mode .social-link[title="返回顶部"]:hover {
+		html.dark-mode .social-link[title="Back to Top"]:hover {
 			color: #34d399;
 			border-color: rgba(52, 211, 153, 0.5);
 			box-shadow: 0 8px 24px rgba(52, 211, 153, 0.3), 0 4px 12px rgba(16, 185, 129, 0.2)
@@ -8647,7 +8647,7 @@
 			<!-- Cloudflare Workers/Pages 使用统计模块 -->
 			<div class="module cf-usage-module collapsed" id="cfUsageModule">
 				<div class="module-title" onclick="toggleModule(this)">
-					Workers/Pages 请求使用情况
+					Workers/Pages Request Usage
 					<svg class="collapse-icon" viewBox="0 0 24 24">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -8705,7 +8705,7 @@
 			<!-- 网络信息模块 -->
 			<div class="module network-detail-collapsed">
 				<div class="module-title" onclick="toggleNetworkModule(this)">
-					🌍 当前网络信息
+					🌍 Current Network Info
 					<svg class="collapse-icon" viewBox="0 0 24 24" style="transform: rotate(90deg);">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -8795,7 +8795,7 @@
 			<!-- 模块1: 订阅链接 -->
 			<div class="module">
 				<div class="module-title" onclick="toggleModule(this)">
-					📋 获取节点链接
+					📋 Get Node Link
 					<svg class="collapse-icon" viewBox="0 0 24 24">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -8814,8 +8814,8 @@
 				<div class="form-group">
 					<div class="label-with-hint">
 						<label for="subLink">Adaptive Subscription</label>
-						<button type="button" class="inline-hint-btn" title="查看订阅鉴权 TOKEN 说明"
-							onclick="showAuthTokenHelpModal('token')" aria-label="查看订阅鉴权 TOKEN 说明">!</button>
+						<button type="button" class="inline-hint-btn" title="View Subscription Auth TOKEN Explanation"
+							onclick="showAuthTokenHelpModal('token')" aria-label="View Subscription Auth TOKEN Explanation">!</button>
 					</div>
 					<div class="input-wrapper subscription-link-wrapper">
 						<input type="text" id="subLink" title="Adaptive Subscription" readonly>
@@ -8869,7 +8869,7 @@
 			<!-- 模块2: 编辑订阅生成 -->
 			<div class="module" id="preferredSubscriptionModule">
 				<div class="module-title non-collapsible">
-					⚡️ 优选订阅生成
+					⚡️ Optimized Subscription Generation
 				</div>
 				<div class="module-content">
 
@@ -8884,7 +8884,7 @@
 
 					<div id="randomIPSection" class="form-group">
 						<label for="randomCount">Random Preferred Count</label>
-						<input type="number" id="randomCount" title="随机优选数量 1~99" min="1" max="99" value="16"
+						<input type="number" id="randomCount" title="Random optimized count 1~99" min="1" max="99" value="16"
 							onchange="markModified('sub')" oninput="if(this.value>99){this.value=99;}">
 					</div>
 
@@ -8904,8 +8904,8 @@
 					<div id="customIPSection" class="form-group hidden-section">
 						<div class="label-with-hint">
 							<label for="customIPs">Custom Preferred</label>
-							<button type="button" class="inline-hint-btn" title="查看自定义优选 填写说明"
-								onclick="showAuthTokenHelpModal('customIPs')" aria-label="查看自定义优选 填写说明">!</button>
+							<button type="button" class="inline-hint-btn" title="View instructions for Custom Optimized entries"
+								onclick="showAuthTokenHelpModal('customIPs')" aria-label="View instructions for Custom Optimized entries">!</button>
 						</div>
 						<div class="line-editor line-editor-wrap" id="subCustomEditor">
 							<div class="gutter" aria-hidden="true">
@@ -8915,9 +8915,9 @@
 								<div class="line-shades" aria-hidden="true">
 									<div class="shade-line"></div>
 								</div>
-								<textarea id="customIPs" title="自定义优选地址" wrap="soft" placeholder="www.visa.cn#优选域名
-104.24.0.232:8443#优选IPv4
-[2606:4700::]:2053#优选IPv6" onchange="markModified('sub')"></textarea>
+								<textarea id="customIPs" title="Custom Optimized Address" wrap="soft" placeholder="www.visa.cn#Optimized Domain
+104.24.0.232:8443#Optimized IPv4
+[2606:4700::]:2053#Optimized IPv6" onchange="markModified('sub')"></textarea>
 							</div>
 						</div>
 					</div>
@@ -8948,7 +8948,7 @@
 			<!-- 模块3: 详细配置信息 -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this)">
-					⚙️ 详细配置信息
+					⚙️ Detailed Configuration
 					<svg class="collapse-icon" viewBox="0 0 24 24">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -8968,15 +8968,15 @@
 					<div class="form-group">
 						<div class="label-with-hint">
 							<label for="nodeUUID">UUID</label>
-							<button type="button" class="inline-hint-btn" title="查看 UUID 说明"
-								onclick="showAuthTokenHelpModal('uuid')" aria-label="查看 UUID 说明">!</button>
+							<button type="button" class="inline-hint-btn" title="View UUID Explanation"
+								onclick="showAuthTokenHelpModal('uuid')" aria-label="View UUID Explanation">!</button>
 						</div>
-						<input type="text" id="nodeUUID" title="用于节点验证的UUID 仅可通过 'UUID'环境变量 进行修改" readonly>
+						<input type="text" id="nodeUUID" title="The UUID used for node verification. Can only be changed via the 'UUID' environment variable" readonly>
 					</div>
 
 					<div class="form-group">
 						<label for="nodePATH">PATH</label>
-						<input type="text" id="nodePATH" title="节点的伪装路径 仅可通过 'PATH'环境变量 进行修改">
+						<input type="text" id="nodePATH" title="The node's disguise path. Can only be changed via the 'PATH' environment variable">
 					</div>
 
 					<div class="form-group">
@@ -8988,7 +8988,7 @@
 					</div>
 
 					<div class="form-group" id="ssMethodGroup" style="display: none;"
-						title="Shadowsocks 的加密方式，推荐使用 aes-128-gcm 以获得更好的性能和兼容性。">
+						title="Shadowsocks encryption method; aes-128-gcm is recommended for better performance and compatibility.">
 						<label for="ssMethod">Encryption Method</label>
 						<select id="ssMethod" onchange="markModified('config')">
 							<option value="aes-128-gcm">aes-128-gcm (low CPU usage, fast)</option>
@@ -8996,7 +8996,7 @@
 						</select>
 					</div>
 
-					<div class="form-group" id="ssTLSGroup" style="display: none;" title="传输层TLS加密">
+					<div class="form-group" id="ssTLSGroup" style="display: none;" title="Transport-layer TLS Encryption">
 						<label for="ssTLS">TLS</label>
 						<select id="ssTLS" onchange="handleSSTLSChange(event)">
 							<option value="true">Enable (turning on TLS won't make it faster than VLESS/Trojan, since Shadowsocks already has built-in AEAD encryption)</option>
@@ -9023,11 +9023,11 @@
 
 					<div class="form-group" id="grpcUserAgentGroup" style="display: none;">
 						<label for="grpcUserAgent"
-							title="用于客户端发起 gRPC 请求时的 User-Agent。&#10;Clash/Mihomo 内核使用默认 UA 时，可能被 Cloudflare 误判为 DDoS 异常流量并拦截。&#10;若客户端为 Clash/Mihomo，请务必设置此项。">gRPC
+							title="The User-Agent used when the client makes gRPC requests.&#10;If Clash/Mihomo uses the default UA, Cloudflare may mistake it for DDoS traffic and block it.&#10;Be sure to set this if your client is Clash/Mihomo.">gRPC
 							UA</label>
 						<div class="input-wrapper grpc-ua-wrapper">
 							<input type="text" id="grpcUserAgent"
-								title="用于客户端发起 gRPC 请求时的 User-Agent。&#10;Clash/Mihomo 内核使用默认 UA 时，可能被 Cloudflare 误判为 DDoS 异常流量并拦截。&#10;若客户端为 Clash/Mihomo，请务必设置此项。"
+								title="The User-Agent used when the client makes gRPC requests.&#10;If Clash/Mihomo uses the default UA, Cloudflare may mistake it for DDoS traffic and block it.&#10;Be sure to set this if your client is Clash/Mihomo."
 								onchange="markModified('config')">
 							<button type="button" class="grpc-ua-action" onclick="fillCurrentGrpcUA()">Get Current UA</button>
 						</div>
@@ -9035,7 +9035,7 @@
 
 					<div class="form-group" id="fingerprintGroup">
 						<label for="fingerprint">Fingerprint Spoofing</label>
-						<select id="fingerprint" title="浏览器指纹"
+						<select id="fingerprint" title="Browser Fingerprint"
 							onchange="handleFingerprintChange(); markModified('config')">
 							<option value="chrome">Chrome (ECH supported)</option>
 							<option value="firefox">Firefox (ECH supported)</option>
@@ -9054,10 +9054,10 @@
 						<div class="form-group" id="skipVerifyGroup" style="display: none;">
 							<div class="input-wrapper">
 								<div class="checkbox-group">
-									<input type="checkbox" id="skipVerify" title="Xray v26.1.31+版本 不支持跳过TLS证书验证功能"
+									<input type="checkbox" id="skipVerify" title="Xray v26.1.31+ no longer supports the Skip TLS Certificate Verification feature"
 										onchange="handleSkipVerifyChange(event)">
 									<label for="skipVerify" class="checkbox-label"
-										title="Xray v26.1.31+版本 不支持跳过TLS证书验证功能">Skip Certificate Verification</label>
+										title="Xray v26.1.31+ no longer supports the Skip TLS Certificate Verification feature">Skip Certificate Verification</label>
 								</div>
 							</div>
 						</div>
@@ -9065,9 +9065,9 @@
 						<div class="form-group" id="randomPathGroup" style="display: none;">
 							<div class="input-wrapper">
 								<div class="checkbox-group">
-									<input type="checkbox" id="randomPath" title="随机伪装路径(自慰功能)"
+									<input type="checkbox" id="randomPath" title="Randomize Disguise Path (placebo feature)"
 										onchange="markModified('config')">
-									<label for="randomPath" class="checkbox-label" title="随机伪装路径(自慰功能)">Random Disguise Path</label>
+									<label for="randomPath" class="checkbox-label" title="Randomize Disguise Path (placebo feature)">Random Disguise Path</label>
 								</div>
 							</div>
 						</div>
@@ -9075,10 +9075,10 @@
 						<div class="form-group" id="enable0RTTGroup" style="display: none;">
 							<div class="input-wrapper">
 								<div class="checkbox-group">
-									<input type="checkbox" id="enable0RTT" title="启用0-RTT(小白勿用)"
+									<input type="checkbox" id="enable0RTT" title="Enable 0-RTT (not for beginners)"
 										onchange="markModified('config')">
 									<label for="enable0RTT" class="checkbox-label"
-										title="启用0-RTT(小白勿用)">Enable 0-RTT (ed=2560)</label>
+										title="Enable 0-RTT (not for beginners)">Enable 0-RTT (ed=2560)</label>
 								</div>
 							</div>
 						</div>
@@ -9087,10 +9087,10 @@
 							<div class="input-wrapper">
 								<div class="checkbox-group">
 									<input type="checkbox" id="tlsFragmentShadowrocket"
-										title="Shadowrocket(小火箭)专用的TLS分片功能"
+										title="TLS fragmentation feature exclusive to Shadowrocket"
 										onchange="handleTLSFragmentChange('Shadowrocket'); markModified('config')">
 									<label for="tlsFragmentShadowrocket" class="checkbox-label"
-										title="Shadowrocket(小火箭)专用的TLS分片功能">Enable Fragmentation (Shadowrocket)</label>
+										title="TLS fragmentation feature exclusive to Shadowrocket">Enable Fragmentation (Shadowrocket)</label>
 								</div>
 							</div>
 						</div>
@@ -9098,10 +9098,10 @@
 						<div class="form-group" id="tlsFragmentHappGroup" style="display: none;">
 							<div class="input-wrapper">
 								<div class="checkbox-group">
-									<input type="checkbox" id="tlsFragmentHapp" title="Happ客户端专用的TLS分片功能"
+									<input type="checkbox" id="tlsFragmentHapp" title="TLS fragmentation feature exclusive to the Happ client"
 										onchange="handleTLSFragmentChange('Happ'); markModified('config')">
 									<label for="tlsFragmentHapp" class="checkbox-label"
-										title="Happ客户端专用的TLS分片功能">Enable Fragmentation (Happ)</label>
+										title="TLS fragmentation feature exclusive to the Happ client">Enable Fragmentation (Happ)</label>
 								</div>
 							</div>
 						</div>
@@ -9132,15 +9132,15 @@
 						<div class="input-wrapper">
 							<div class="checkbox-group">
 								<input type="checkbox" id="enableECH"
-									title="启用ECH可以避免域名阻断-1现象！&#10;&#10;支持版本&#10;v2rayN v7.17.0+&#10;v2rayNG v2.0.0+&#10;Clash.Meta(Mihomo)&#10;Singbox"
+									title="Enabling ECH helps avoid the domain-block '-1' issue!&#10;&#10;Supported versions&#10;v2rayN v7.17.0+&#10;v2rayNG v2.0.0+&#10;Clash.Meta (Mihomo)&#10;Singbox"
 									onchange="handleECHEnableChange()">
 								<label for="enableECH" class="checkbox-label"
-									title="启用ECH可以避免域名阻断-1现象！&#10;&#10;支持版本&#10;v2rayN v7.17.0+&#10;v2rayNG v2.0.0+&#10;Clash.Meta(Mihomo)&#10;Singbox">Enable</label>
+									title="Enabling ECH helps avoid the domain-block '-1' issue!&#10;&#10;Supported versions&#10;v2rayN v7.17.0+&#10;v2rayNG v2.0.0+&#10;Clash.Meta (Mihomo)&#10;Singbox">Enable</label>
 							</div>
 						</div>
 					</div>
 
-					<div class="form-group" id="echDNSGroup" title="用于获取 EchConfig 的DNS服务"
+					<div class="form-group" id="echDNSGroup" title="The DNS service used to fetch EchConfig"
 						style="display: none; align-items: start;">
 						<label for="echDNSSelect" style="padding-top: 10px;">EchConfig DNS Service</label>
 						<div class="input-wrapper" style="flex-direction: column; align-items: stretch;">
@@ -9168,15 +9168,15 @@
 									https://doh.onedns.net/dns-query（OneDNS DoH：国内DNS需搭配设置ECH解析域名，是否可用需自行验证）</option>
 								<option value="custom">Custom</option>
 							</select>
-							<input type="text" id="echDNSCustomInput" title="自定义ECH DNS服务"
-								placeholder="udp://... 或 https://..." onchange="onEchDNSCustomInput()"
+							<input type="text" id="echDNSCustomInput" title="Custom ECH DNS Service"
+								placeholder="udp://... or https://..." onchange="onEchDNSCustomInput()"
 								style="display: none; margin-top: 8px;">
 							<input type="hidden" id="echDNSValue">
 						</div>
 					</div>
 
 					<div class="form-group" id="echSNIGroup"
-						title="用于解析 EchConfig 的域名，并非ECH伪装域名！CF ECH伪装域名均为 cloudflare-ech.com ！！！"
+						title="The domain used to resolve EchConfig — this is NOT the ECH disguise domain! Cloudflare's ECH disguise domain is always cloudflare-ech.com!!!"
 						style="display: none; align-items: start;">
 						<label for="echSNISelect" style="padding-top: 10px;">EchConfig Resolution Domain</label>
 						<div class="input-wrapper" style="flex-direction: column; align-items: stretch;">
@@ -9196,7 +9196,7 @@
 								<option value="lido.fi">lido.fi (Lido liquid staking)</option>
 								<option value="custom">Custom</option>
 							</select>
-							<input type="text" id="echSNICustomInput" title="自定义ECH 解析域名"
+							<input type="text" id="echSNICustomInput" title="Custom ECH Resolution Domain"
 								placeholder="cloudflare-ech.com" onchange="onEchSNICustomInput()"
 								style="display: none; margin-top: 8px;">
 							<input type="hidden" id="echSNIValue">
@@ -9205,8 +9205,8 @@
 
 					<div class="module-footer">
 						<button type="button" class="btn btn-ech-help" onclick="showECHHelpModal()"
-							title="了解 ECH 的相关信息">
-							💡 为什么需要ECH？ECH又是什么？
+							title="Learn about ECH">
+							💡 Why do I need ECH? What is ECH?
 						</button>
 						<div class="btn-group">
 							<button type="button" class="btn btn-secondary" onclick="cancelEdit('ech')" disabled
@@ -9221,7 +9221,7 @@
 			<!-- 模块4: 反代落地设置 -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this)">
-					🌐 Cloudflare CDN 访问设置
+					🌐 Cloudflare CDN Access Settings
 					<svg class="collapse-icon" viewBox="0 0 24 24">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -9243,10 +9243,10 @@
 								<input type="text" id="proxyIP" title="PROXYIP" placeholder="proxyip.cmliussss.net"
 									onchange="processProxyIP()" oninput="processProxyIP()">
 								<div class="checkbox-group">
-									<input type="checkbox" id="autoProxy" title="启用自动获取: 使用默认内置的PROXYIP"
+									<input type="checkbox" id="autoProxy" title="Enable Auto-Fetch: use the default built-in PROXYIP"
 										onchange="toggleAutoProxy(); markModified('proxy')">
 									<label for="autoProxy" class="checkbox-label"
-										title="启用自动获取: 使用默认内置的PROXYIP">Enable Auto-fetch</label>
+										title="Enable Auto-Fetch: use the default built-in PROXYIP">Enable Auto-fetch</label>
 								</div>
 							</div>
 						</div>
@@ -9310,38 +9310,38 @@
 								</div>
 
 								<div class="checkbox-group proxy-global-toggle" id="globalSocks5Group">
-									<input type="checkbox" id="globalSocks5" title="启用全局代理: 将非CFCDN站点的流量也走SOCKS5代理"
+									<input type="checkbox" id="globalSocks5" title="Enable Global Proxy: route non-CF-CDN site traffic through the SOCKS5 proxy too"
 										onchange="markModified('proxy')">
 									<label for="globalSocks5" class="checkbox-label"
-										title="启用全局代理: 将非CFCDN站点的流量也走SOCKS5代理">Enable Global Proxy</label>
+										title="Enable Global Proxy: route non-CF-CDN site traffic through the SOCKS5 proxy too">Enable Global Proxy</label>
 								</div>
 
 								<div class="checkbox-group proxy-global-toggle" id="globalHTTPGroup">
-									<input type="checkbox" id="globalHTTP" title="启用全局代理: 将非CFCDN站点的流量也走HTTP代理"
+									<input type="checkbox" id="globalHTTP" title="Enable Global Proxy: route non-CF-CDN site traffic through the HTTP proxy too"
 										onchange="markModified('proxy')">
 									<label for="globalHTTP" class="checkbox-label"
-										title="启用全局代理: 将非CFCDN站点的流量也走HTTP代理">Enable Global Proxy</label>
+										title="Enable Global Proxy: route non-CF-CDN site traffic through the HTTP proxy too">Enable Global Proxy</label>
 								</div>
 
 								<div class="checkbox-group proxy-global-toggle" id="globalHTTPSGroup">
-									<input type="checkbox" id="globalHTTPS" title="启用全局代理: 将非CFCDN站点的流量也走HTTPS代理"
+									<input type="checkbox" id="globalHTTPS" title="Enable Global Proxy: route non-CF-CDN site traffic through the HTTPS proxy too"
 										onchange="markModified('proxy')">
 									<label for="globalHTTPS" class="checkbox-label"
-										title="启用全局代理: 将非CFCDN站点的流量也走HTTPS代理">Enable Global Proxy</label>
+										title="Enable Global Proxy: route non-CF-CDN site traffic through the HTTPS proxy too">Enable Global Proxy</label>
 								</div>
 
 								<div class="checkbox-group proxy-global-toggle" id="globalTURNGroup">
-									<input type="checkbox" id="globalTURN" title="启用全局代理: 将非CFCDN站点的流量也走TURN代理"
+									<input type="checkbox" id="globalTURN" title="Enable Global Proxy: route non-CF-CDN site traffic through the TURN proxy too"
 										onchange="markModified('proxy')">
 									<label for="globalTURN" class="checkbox-label"
-										title="启用全局代理: 将非CFCDN站点的流量也走TURN代理">Enable Global Proxy</label>
+										title="Enable Global Proxy: route non-CF-CDN site traffic through the TURN proxy too">Enable Global Proxy</label>
 								</div>
 
 								<div class="checkbox-group proxy-global-toggle" id="globalSSTPGroup">
-									<input type="checkbox" id="globalSSTP" title="启用全局代理: 将非CFCDN站点的流量也走SSTP代理"
+									<input type="checkbox" id="globalSSTP" title="Enable Global Proxy: route non-CF-CDN site traffic through the SSTP proxy too"
 										onchange="markModified('proxy')">
 									<label for="globalSSTP" class="checkbox-label"
-										title="启用全局代理: 将非CFCDN站点的流量也走SSTP代理">Enable Global Proxy</label>
+										title="Enable Global Proxy: route non-CF-CDN site traffic through the SSTP proxy too">Enable Global Proxy</label>
 								</div>
 							</div>
 						</div>
@@ -9349,33 +9349,33 @@
 
 					<div class="module-footer">
 						<button type="button" class="btn btn-proxyip-help" onclick="showProxyIPHelpModal()"
-							title="了解 ProxyIP 的相关信息">
-							💡 为什么需要反代？PROXYIP又是什么？
+							title="Learn about ProxyIP">
+							💡 Why do I need a reverse proxy? What is PROXYIP?
 						</button>
 						<button type="button" class="btn btn-ech-help btn-path-template-config"
 							id="pathTemplateConfigBtn" onclick="showPathTemplateConfigModal()"
-							style="display: none; padding: 10px 16px;" title="配置路径模板">
-							⚙️ 路径模板配置
+							style="display: none; padding: 10px 16px;" title="Configure Path Template">
+							⚙️ Path Template Configuration
 						</button>
 						<button type="button" class="btn btn-search-proxy" id="getMoreProxyIPBtn"
 							onclick="showGetMoreProxyIPModal()" style="display: none; padding: 10px 16px;"
-							title="从 ProxyIP 列表中选择可用的代理">
-							🗺️ 获取更多 PROXYIP
+							title="Select an available proxy from the ProxyIP list">
+							🗺️ Get More PROXYIPs
 						</button>
 						<button type="button" class="btn btn-search-proxy" id="exploreSocks5Btn"
 							onclick="showExploreSocks5Modal()" style="display: none; padding: 10px 16px;"
-							title="从SOCKS5列表中选择可用的代理">
-							🔒 获取更多 SOCKS5
+							title="Select an available proxy from the SOCKS5 list">
+							🔒 Get More SOCKS5
 						</button>
 						<button type="button" class="btn btn-search-proxy" id="exploreHTTPBtn"
 							onclick="showExploreHTTPModal()" style="display: none; padding: 10px 16px;"
-							title="从HTTP列表中选择可用的代理">
-							🌐 获取更多 HTTP
+							title="Select an available proxy from the HTTP list">
+							🌐 Get More HTTP
 						</button>
 						<button type="button" class="btn btn-search-proxy" id="exploreHTTPSBtn"
 							onclick="showExploreHTTPSModal()" style="display: none; padding: 10px 16px;"
-							title="从HTTPS列表中选择可用的代理">
-							🌐 获取更多 HTTPS
+							title="Select an available proxy from the HTTPS list">
+							🌐 Get More HTTPS
 						</button>
 						<div class="btn-group">
 							<button type="button" class="btn btn-secondary" onclick="cancelEdit('proxy')" disabled
@@ -9390,7 +9390,7 @@
 			<!-- 模块5: 订阅转换配置 -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this)">
-					🔄 订阅转换配置
+					🔄 Subscription Conversion Config
 					<svg class="collapse-icon" viewBox="0 0 24 24">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -9411,7 +9411,7 @@
 							<select id="subConfigSelect" title="Subscription Conversion Config File" style="display: none;">
 								<option value="">Loading...</option>
 							</select>
-							<input type="text" id="subConfigCustomInput" title="自定义订阅转换配置文件URL"
+							<input type="text" id="subConfigCustomInput" title="Custom Subscription Conversion Config File URL"
 								placeholder="https://raw.githubusercontent.com/..." onchange="onSubConfigCustomInput()"
 								style="display: none; margin-top: 8px;">
 							<input type="hidden" id="subConfig">
@@ -9422,45 +9422,45 @@
 						<div class="form-group" id="emojiGroup">
 							<div class="input-wrapper">
 								<div class="checkbox-group">
-									<input type="checkbox" id="emoji" title="在节点名称中匹配并显示 Emoji 旗帜图标"
+									<input type="checkbox" id="emoji" title="Match and display Emoji flag icons in node names"
 										onchange="markModified('convert')">
 									<label for="emoji" class="checkbox-label"
-										title="在节点名称中匹配并显示 Emoji 旗帜图标">Emoji</label>
+										title="Match and display Emoji flag icons in node names">Emoji</label>
 								</div>
 							</div>
 						</div>
 						<div class="form-group" id="subListGroup" style="display: none;">
 							<div class="input-wrapper">
 								<div class="checkbox-group">
-									<input type="checkbox" id="subList" title="仅输出节点信息，不附加规则和策略组"
+									<input type="checkbox" id="subList" title="Output node info only, without rules or proxy groups"
 										onchange="markModified('convert')">
 									<label for="subList" class="checkbox-label"
-										title="仅输出节点信息，不附加规则和策略组">Output node info only</label>
+										title="Output node info only, without rules or proxy groups">Output node info only</label>
 								</div>
 							</div>
 						</div>
 						<div class="form-group" id="udpGroup" style="display: none;">
 							<div class="input-wrapper">
 								<div class="checkbox-group">
-									<input type="checkbox" id="udp" title="启用 UDP" onchange="markModified('convert')">
-									<label for="udp" class="checkbox-label" title="启用 UDP">UDP</label>
+									<input type="checkbox" id="udp" title="Enable UDP" onchange="markModified('convert')">
+									<label for="udp" class="checkbox-label" title="Enable UDP">UDP</label>
 								</div>
 							</div>
 						</div>
 						<div class="form-group" id="xudpGroup" style="display: none;">
 							<div class="input-wrapper">
 								<div class="checkbox-group">
-									<input type="checkbox" id="xudp" title="启用 XUDP" onchange="markModified('convert')">
-									<label for="xudp" class="checkbox-label" title="启用 XUDP">XUDP</label>
+									<input type="checkbox" id="xudp" title="Enable XUDP" onchange="markModified('convert')">
+									<label for="xudp" class="checkbox-label" title="Enable XUDP">XUDP</label>
 								</div>
 							</div>
 						</div>
 						<div class="form-group" id="tls13Group" style="display: none;">
 							<div class="input-wrapper">
 								<div class="checkbox-group">
-									<input type="checkbox" id="tls13" title="开启 TLS 1.3"
+									<input type="checkbox" id="tls13" title="Enable TLS 1.3"
 										onchange="markModified('convert')">
-									<label for="tls13" class="checkbox-label" title="开启 TLS 1.3">TLS 1.3</label>
+									<label for="tls13" class="checkbox-label" title="Enable TLS 1.3">TLS 1.3</label>
 								</div>
 							</div>
 						</div>
@@ -9497,7 +9497,7 @@
 			<!-- 模块6: 消息通知设置 -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this)">
-					🔔 消息通知设置
+					🔔 Notification Settings
 					<svg class="collapse-icon" viewBox="0 0 24 24">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -9507,9 +9507,9 @@
 					<!-- Telegram Bot 通知设置 -->
 					<div class="form-group notification-row">
 						<label>
-							Telegram Bot 通知设置
+							Telegram Bot Notification Settings
 							<div class="checkbox-group">
-								<input type="checkbox" id="telegramEnabled" title="启用TelegramBot通知"
+								<input type="checkbox" id="telegramEnabled" title="Enable Telegram Bot Notifications"
 									onchange="markModified('notification')" disabled>
 								<label for="telegramEnabled" class="checkbox-label">Enable</label>
 							</div>
@@ -9525,7 +9525,7 @@
 					<!-- Cloudflare 可用请求数统计 -->
 					<div class="form-group notification-row">
 						<label>
-							Cloudflare Workers/Pages 可用请求数统计
+							Cloudflare Workers/Pages Available Request Stats
 						</label>
 						<div class="notification-controls">
 							<button type="button" class="btn btn-notification-config"
@@ -9549,7 +9549,7 @@
 			<!-- 模块7: 查看所有日志 -->
 			<div class="module collapsed advanced-module">
 				<div class="module-title" onclick="toggleModule(this); loadLogsOnExpand(this)">
-					📋 查看操作日志
+					📋 View Operation Logs
 					<svg class="collapse-icon" viewBox="0 0 24 24">
 						<path d="M7 10l5 5 5-5z" />
 					</svg>
@@ -9567,7 +9567,7 @@
 
 			<div class="social-links">
 				<!-- 主题切换按钮 -->
-				<button type="button" class="social-link theme-toggle" id="themeToggle" title="切换日间模式"
+				<button type="button" class="social-link theme-toggle" id="themeToggle" title="Switch to Light Mode"
 					onclick="toggleTheme()">
 					<!-- 太阳图标 (日间模式显示) -->
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="theme-icon sun-icon">
@@ -9609,7 +9609,7 @@
 					<span id="versionValue"></span>
 				</div>
 				<!-- 返回顶部按钮 -->
-				<button type="button" class="social-link" title="返回顶部" onclick="scrollToTop()">
+				<button type="button" class="social-link" title="Back to Top" onclick="scrollToTop()">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 						<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
 							stroke-linejoin="round" d="M12 19V5M5 12l7-7l7 7" />
@@ -9759,7 +9759,7 @@
 			</div>
 			<div class="form-group subapi-form-group" id="customSubAPIInputGroup" style="display: none;">
 				<label>Custom Backend Address</label>
-				<input type="text" id="testSubAPIInput" placeholder="输入订阅转换后端地址">
+				<input type="text" id="testSubAPIInput" placeholder="Enter Subscription Conversion Backend Address">
 			</div>
 			<div id="subAPIStatus" class="subapi-status"></div>
 			<div class="subapi-buttons">
@@ -9778,11 +9778,11 @@
 			<h2 class="subapi-modal-title">🤖 TelegramBot Notification Settings</h2>
 			<div class="form-group subapi-form-group">
 				<label>Bot Token</label>
-				<input type="text" id="telegramBotToken" placeholder="输入Telegram Bot Token">
+				<input type="text" id="telegramBotToken" placeholder="Enter Telegram Bot Token">
 			</div>
 			<div class="form-group subapi-form-group">
 				<label>Chat ID</label>
-				<input type="text" id="telegramChatID" placeholder="输入Chat ID">
+				<input type="text" id="telegramChatID" placeholder="Enter Chat ID">
 			</div>
 			<div id="telegramStatus" class="subapi-status"></div>
 			<div class="subapi-buttons">
@@ -9804,7 +9804,7 @@
 			<!-- 请求方案选择 -->
 			<div class="form-group subapi-form-group">
 				<label>Please select a statistics plan</label>
-				<select id="cloudflareAuthMethod" title="请求统计方案" onchange="updateCloudflareAuthMethod()">
+				<select id="cloudflareAuthMethod" title="Request Stats Method" onchange="updateCloudflareAuthMethod()">
 					<option id="usageapiOption" value="usageapi">UsageAPI (supports multi-account stats)</option>
 					<option value="accountid">Account ID + API Token</option>
 					<option value="email">Email + Global API Key</option>
@@ -9815,11 +9815,11 @@
 			<div id="cloudflareEmailSection">
 				<div class="form-group subapi-form-group">
 					<label>Email</label>
-					<input type="text" id="cloudflareEmail" placeholder="输入Cloudflare账户邮箱">
+					<input type="text" id="cloudflareEmail" placeholder="Enter Cloudflare Account Email">
 				</div>
 				<div class="form-group subapi-form-group">
 					<label>Global API Key</label>
-					<input type="password" id="cloudflareGlobalAPIKey" placeholder="输入Global API Key">
+					<input type="password" id="cloudflareGlobalAPIKey" placeholder="Enter Global API Key">
 				</div>
 			</div>
 
@@ -9827,11 +9827,11 @@
 			<div id="cloudflareAccountIDSection" class="hidden-section">
 				<div class="form-group subapi-form-group">
 					<label>Account ID</label>
-					<input type="text" id="cloudflareAccountID" placeholder="输入Account ID">
+					<input type="text" id="cloudflareAccountID" placeholder="Enter Account ID">
 				</div>
 				<div class="form-group subapi-form-group">
 					<label>API Token</label>
-					<input type="password" id="cloudflareAPIToken" placeholder="输入API Token">
+					<input type="password" id="cloudflareAPIToken" placeholder="Enter API Token">
 					<small style="font-size: 12px; color: #9ca3af; margin-top: 6px; display: block;">💡 API令牌权限 开启
 						"Account Analytics > Read" permission is enough</small>
 				</div>
@@ -11718,7 +11718,7 @@
 
 				<div class="layout">
 					<div class="stack">
-						<section class="network-panel" aria-label="网络环境">
+						<section class="network-panel" aria-label="Network Environment">
 							<div class="network-grid">
 								<article class="network-item" id="ipv4Card">
 									<div class="network-kind">IPv4</div>
@@ -11758,13 +11758,13 @@
 											<path d="M7 10l5 5 5-5"></path>
 											<path d="M12 15V3"></path>
 										</svg>
-										IP库导入
+										Import IP Library
 									</button>
 									<button class="btn" id="latencyBtn" type="button" disabled>
 										<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
 											<path d="M5 12h4l3-7 3 14 3-7h1"></path>
 										</svg>
-										优选延迟
+										Optimized Latency
 									</button>
 								</div>
 
@@ -11798,8 +11798,8 @@
 											<div class="field">
 												<div class="label-row">
 													<label for="portInput">Preferred Port</label>
-													<span class="help-tip" tabindex="0" role="img" aria-label="端口说明"
-														data-tip="端口为 0 时，随机设置 443、2053、2083、2087、2096、8443 端口。">!</span>
+													<span class="help-tip" tabindex="0" role="img" aria-label="Port Explanation"
+														data-tip="When the port is 0, it will be randomly set to one of: 443, 2053, 2083, 2087, 2096, 8443.">!</span>
 												</div>
 												<input class="input" id="portInput" type="number" min="0" max="65535"
 													step="1" value="0">
@@ -11811,8 +11811,8 @@
 								<div class="editor">
 									<div class="editor-bar">
 										<span class="editor-count" id="lineCount">0 lines</span>
-										<button class="icon-btn" id="clearBtn" type="button" title="清空列表"
-											aria-label="清空列表">
+										<button class="icon-btn" id="clearBtn" type="button" title="Clear List"
+											aria-label="Clear List">
 											<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
 												<path d="M3 6h18"></path>
 												<path d="M8 6V4h8v2"></path>
@@ -11831,7 +11831,7 @@
 												<div class="shade-line"></div>
 											</div>
 											<textarea id="ipInput" spellcheck="false"
-												placeholder="IP格式:&#10;1.0.0.0:443&#10;[2606:4700::0]:443&#10;&#10;CIDR格式:&#10;103.22.200.0/22&#10;2606:4700::/32&#10;&#10;IP区间:&#10;162.159.152.0-162.159.153.255&#10;2606:4700::1-2606:4700::9999"></textarea>
+												placeholder="IP format:&#10;1.0.0.0:443&#10;[2606:4700::0]:443&#10;&#10;CIDR format:&#10;103.22.200.0/22&#10;2606:4700::/32&#10;&#10;IP range:&#10;162.159.152.0-162.159.153.255&#10;2606:4700::1-2606:4700::9999"></textarea>
 										</div>
 									</div>
 								</div>
@@ -13170,8 +13170,8 @@
 						const selected = state.selectedIds.has(id);
 						const safeAddress = escapeHtml(item.address);
 						return `<tr class="result-row${selected ? " is-selected" : ""}" data-result-id="${escapeHtml(id)}">
-		  <td class="selection-cell"><input type="checkbox" data-select-id="${escapeHtml(id)}" aria-label="选择 ${safeAddress}" ${selected ? "checked" : ""}></td>
-		  <td class="ip-cell"><button class="copy-address-btn" type="button" data-copy-address="${safeAddress}" title="点击复制" aria-label="复制 ${safeAddress}">${safeAddress}</button></td>
+		  <td class="selection-cell"><input type="checkbox" data-select-id="${escapeHtml(id)}" aria-label="Select ${safeAddress}" ${selected ? "checked" : ""}></td>
+		  <td class="ip-cell"><button class="copy-address-btn" type="button" data-copy-address="${safeAddress}" title="Click to Copy" aria-label="Copy ${safeAddress}">${safeAddress}</button></td>
 		  <td>${escapeHtml(item.ipType || "未知")}</td>
 		  <td>${escapeHtml(item.type)}</td>
 		  <td>${renderCountryCell(item.country)}</td>
@@ -13867,14 +13867,14 @@
 					if (item.speedState === "pending") {
 						const pendingTargets = state.speedRun && state.speedRun.batchTargets;
 						if (!pendingTargets || !pendingTargets.has(index)) {
-							return `<button class="link-btn speed-test-btn${isBatchTarget ? " is-speed-batch-target" : ""}" type="button" data-speed-index="${index}" title="点击开始测速" aria-label="点击开始测速">${svgRunIcon()}<span>Speed Test</span></button>`;
+							return `<button class="link-btn speed-test-btn${isBatchTarget ? " is-speed-batch-target" : ""}" type="button" data-speed-index="${index}" title="Click to Start Speed Test" aria-label="Click to Start Speed Test">${svgRunIcon()}<span>Speed Test</span></button>`;
 						}
-						return `<button class="link-btn speed-test-btn is-speed-pending" type="button" data-speed-index="${index}" disabled aria-disabled="true" title="等待测速中" aria-label="等待测速中">${svgRunIcon()}<span>Testing speed</span></button>`;
+						return `<button class="link-btn speed-test-btn is-speed-pending" type="button" data-speed-index="${index}" disabled aria-disabled="true" title="Waiting for speed test" aria-label="Waiting for speed test">${svgRunIcon()}<span>Testing speed</span></button>`;
 					}
 					if (item.speedState === "done") return `<button class="link-btn speed-test-btn${isBatchTarget ? " is-speed-batch-target" : ""}" type="button" data-speed-index="${index}"><strong>${formatSpeedMbps(item.speedMbps)}Mbps</strong></button>`;
-					if (item.speedState === "failed") return `<button class="tag bad speed-retry-tag speed-test-btn${isBatchTarget ? " is-speed-batch-target" : ""}" type="button" data-speed-index="${index}" title="点击重试测速" aria-label="测速失败，点击重试">Failed</button>`;
+					if (item.speedState === "failed") return `<button class="tag bad speed-retry-tag speed-test-btn${isBatchTarget ? " is-speed-batch-target" : ""}" type="button" data-speed-index="${index}" title="Click to Retry Speed Test" aria-label="Speed test failed, click to retry">Failed</button>`;
 					if (item.speedState === "stopped") return '<span class="muted">Speed test stopped</span>';
-					return `<button class="link-btn speed-test-btn${isBatchTarget ? " is-speed-batch-target" : ""}" type="button" data-speed-index="${index}" title="点击开始测速" aria-label="点击开始测速">${svgRunIcon()}<span>Speed Test</span></button>`;
+					return `<button class="link-btn speed-test-btn${isBatchTarget ? " is-speed-batch-target" : ""}" type="button" data-speed-index="${index}" title="Click to Start Speed Test" aria-label="Click to Start Speed Test">${svgRunIcon()}<span>Speed Test</span></button>`;
 				}
 
 				function formatSpeedMbps(speedMbps) {
@@ -14378,8 +14378,8 @@
 			<div class="api-form-group">
 				<div class="api-form-row-item" style="grid-template-columns: auto 1fr;">
 					<label>API URL:</label>
-					<input type="text" id="apiOptimizeURL" placeholder="请输入 优选API地址 或 需要汇聚的订阅地址"
-						title="请输入 优选API地址 或 需要汇聚的订阅地址" oninput="autoConvertGitHubURL(); autoDetectPortFromURL()">
+					<input type="text" id="apiOptimizeURL" placeholder="Enter an Optimized API address or a subscription address to aggregate"
+						title="Enter an Optimized API address or a subscription address to aggregate" oninput="autoConvertGitHubURL(); autoDetectPortFromURL()">
 				</div>
 			</div>
 
@@ -14389,7 +14389,7 @@
 					<div class="api-form-row-item">
 						<label>Default Port:</label>
 						<input type="number" id="apiOptimizePort" value="443" min="1" max="65535" placeholder="1-65535"
-							title="默认端口(1-65535)">
+							title="Default Port (1-65535)">
 					</div>
 					<div class="api-form-row-item checkbox-item">
 						<input type="checkbox" id="useProxyIPCheckbox">
@@ -14409,7 +14409,7 @@
 						<div class="line-shades" aria-hidden="true">
 							<div class="shade-line"></div>
 						</div>
-						<textarea id="apiOptimizeResults" title="API接口结果" placeholder="接口返回结果将显示在这里，每行一个地址"
+						<textarea id="apiOptimizeResults" title="API Endpoint Result" placeholder="The API result will be shown here, one address per line"
 							readonly></textarea>
 					</div>
 				</div>
@@ -14436,23 +14436,23 @@
 			<div class="api-form-group chain-proxy-form">
 				<div class="api-form-row-item">
 					<label for="chainProxyNodeName">Node Name:</label>
-					<input type="text" id="chainProxyNodeName" title="节点名称" placeholder="Chained Proxy">
+					<input type="text" id="chainProxyNodeName" title="Node Name" placeholder="Chained Proxy">
 				</div>
 
 				<div class="api-form-row-item">
 					<label for="chainProxyHost">Preferred:</label>
 					<div class="chain-proxy-preferred-wrapper">
-						<input type="text" id="chainProxyHost" title="Preferred Domain/IP" placeholder="当前网页域名">
+						<input type="text" id="chainProxyHost" title="Preferred Domain/IP" placeholder="Current webpage domain">
 						<span class="proxy-protocol-separator">:</span>
-						<input type="text" id="chainProxyPort" title="优选端口 1~65535，可留空" inputmode="numeric"
-							placeholder="可选" oninput="normalizeChainProxyPortInput()">
+						<input type="text" id="chainProxyPort" title="Optimized port 1~65535, can be left blank" inputmode="numeric"
+							placeholder="Optional" oninput="normalizeChainProxyPortInput()">
 					</div>
 				</div>
 
 				<div class="api-form-row-item chain-proxy-protocol-row">
 					<label for="chainProxyProtocol">Chained Proxy:</label>
 					<div class="chain-proxy-input-wrapper">
-						<select id="chainProxyProtocol" title="链式代理协议" onchange="resetChainProxyValidation()">
+						<select id="chainProxyProtocol" title="Chained Proxy Protocol" onchange="resetChainProxyValidation()">
 							<option value="socks5">socks5</option>
 							<option value="http">http</option>
 							<option value="https">https</option>
@@ -14460,7 +14460,7 @@
 							<option value="sstp">sstp</option>
 						</select>
 						<span class="proxy-protocol-separator">://</span>
-						<input type="text" id="chainProxyAddress" title="链式代理地址" placeholder="user:pass@127.0.0.1:1080"
+						<input type="text" id="chainProxyAddress" title="Chained Proxy Address" placeholder="user:pass@127.0.0.1:1080"
 							oninput="sanitizeChainProxyAddressInput(); updateChainProxyVerifyState()"
 							onchange="sanitizeChainProxyAddressInput(); updateChainProxyVerifyState()">
 					</div>
@@ -14490,7 +14490,7 @@
 			<div class="form-group" style="margin-bottom: 20px;">
 				<label id="proxyVerificationLabel" for="proxyVerificationInput"
 					style="display: block; margin-bottom: 10px; font-weight: 600;"></label>
-				<input type="text" id="proxyVerificationInput" title="代理地址"
+				<input type="text" id="proxyVerificationInput" title="Proxy Address"
 					style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 14px;">
 			</div>
 
@@ -14500,14 +14500,14 @@
 
 			<div class="api-buttons" style="gap: 10px; justify-content: space-between;">
 				<button type="button" class="btn btn-verify-api" onclick="verifyProxyAvailability()">
-					可用性验证
+					Verify Availability
 				</button>
 				<button type="button" class="btn btn-append-api" id="proxyConfirmBtn" onclick="confirmProxyAddress()"
 					style="opacity: 0.5;" disabled>
-					确定
+					Confirm
 				</button>
 				<button type="button" class="btn btn-close-api" onclick="closeProxyVerificationModal()">
-					取消
+					Cancel
 				</button>
 			</div>
 			<!-- 用于移动端布局的占位符 -->
@@ -14521,7 +14521,7 @@
 		<div class="modal" onclick="event.stopPropagation()">
 			<h2 id="uuidSnippetTitle">💎 Generate a custom Snippet.js source</h2>
 			<div class="form-group uuid-snippet-stage" id="uuidSnippetStage" style="margin-bottom: 0;">
-				<textarea id="uuidSnippetTextarea" title="生成专属 Snippet.js 源码" readonly spellcheck="false"></textarea>
+				<textarea id="uuidSnippetTextarea" title="Generate Exclusive Snippet.js Source" readonly spellcheck="false"></textarea>
 				<div id="uuidSnippetDisplay" aria-hidden="true">
 					<div class="uuid-snippet-display-grid"></div>
 					<div class="uuid-snippet-display-scanline"></div>
@@ -14961,7 +14961,7 @@
 						<ul style="margin: 12px 0 16px; padding-left: 20px; line-height: 1.8;">
 							<li style="margin-bottom: 12px; color: var(--text-secondary);">
 								<strong style="color: #28a745;">✅ If the node connects and works normally</strong><br>
-								说明 <strong>ECH is active</strong>, the real blocked domain is hidden and externally only shows as <code
+								Details <strong>ECH is active</strong>, the real blocked domain is hidden and externally only shows as <code
 									style="background: #e9ecef; padding: 2px 4px; border-radius: 3px;">cloudflare-ech.com</code>
 							</li>
 							<li style="color: var(--text-secondary);">
@@ -15089,7 +15089,7 @@
 
 			<div class="hosts-edit-container">
 				<label class="hosts-edit-label">Custom Domain List:</label>
-				<textarea id="hostsEditTextarea" class="hosts-edit-textarea" placeholder="每行输入一个域名"></textarea>
+				<textarea id="hostsEditTextarea" class="hosts-edit-textarea" placeholder="Enter one domain per line"></textarea>
 			</div>
 
 			<div class="hosts-edit-footer">
@@ -15195,10 +15195,10 @@
 			<div class="path-template-buttons">
 				<button type="button" class="btn btn-primary" id="pathTemplateSaveBtn"
 					onclick="savePathTemplateConfig()" disabled>
-					保存并应用
+					Save & Apply
 				</button>
 				<button type="button" class="btn btn-secondary" onclick="closePathTemplateConfigModal()">
-					关闭
+					Close
 				</button>
 			</div>
 		</div>
@@ -15215,8 +15215,8 @@
 					style="cursor: pointer;">×</button>
 				<h2 class="section-title" style="margin-bottom: 10px; text-align: center;">🗺️ Get more PROXYIP</h2>
 				<p style="text-align: center; color: #666; font-size: 13px; margin-bottom: 20px;">
-					反代资源来自 Github、<a href="https://t.me/zip_cm_edu_kg" target="_blank"
-						rel="noopener noreferrer">CM Tech University</a>频道 等开源社区。
+					Reverse-proxy resources sourced from GitHub,<a href="https://t.me/zip_cm_edu_kg" target="_blank"
+						rel="noopener noreferrer">CM Tech University</a> channel and other open-source communities.
 				</p>
 				<div class="proxy-list-container">
 					<div class="form-group">
@@ -15249,10 +15249,10 @@
 					style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: auto; padding-top: 20px;">
 					<button type="button" class="btn btn-primary" id="proxyIPConfirmBtn"
 						onclick="confirmSelectProxyIP()" disabled>
-						确定
+						Confirm
 					</button>
 					<button type="button" class="btn btn-secondary" onclick="closeGetMoreProxyIPModal(event)">
-						取消
+						Cancel
 					</button>
 				</div>
 			</div>
@@ -15270,8 +15270,8 @@
 					style="cursor: pointer;">×</button>
 				<h2 class="section-title" style="margin-bottom: 10px; text-align: center;">🔒 Get more SOCKS5</h2>
 				<p style="text-align: center; color: #666; font-size: 13px; margin-bottom: 20px;">
-					代理资源来自 Github、<a href="https://t.me/Enkelte_notif" target="_blank" rel="noopener noreferrer">Notif
-						💬</a>频道、OTC大佬 等开源社区。
+					Proxy resources sourced from GitHub,<a href="https://t.me/Enkelte_notif" target="_blank" rel="noopener noreferrer">Notif
+						💬</a> channel, OTC contributors, and other open-source communities.
 				</p>
 				<div class="socks5-list-container">
 					<div class="form-group">
@@ -15299,10 +15299,10 @@
 				<div class="btn-group"
 					style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: auto; padding-top: 20px;">
 					<button type="button" class="btn btn-primary" id="socks5ConfirmBtn" onclick="confirmSelectSocks5()">
-						确定
+						Confirm
 					</button>
 					<button type="button" class="btn btn-secondary" onclick="closeExploreSocks5Modal(event)">
-						取消
+						Cancel
 					</button>
 				</div>
 			</div>
@@ -15320,8 +15320,8 @@
 					style="cursor: pointer;">×</button>
 				<h2 class="section-title" style="margin-bottom: 10px; text-align: center;">🌐 Get more HTTP</h2>
 				<p style="text-align: center; color: #666; font-size: 13px; margin-bottom: 20px;">
-					代理资源来自 Github、<a href="https://t.me/Enkelte_notif" target="_blank" rel="noopener noreferrer">Notif
-						💬</a>频道、OTC大佬 等开源社区。
+					Proxy resources sourced from GitHub,<a href="https://t.me/Enkelte_notif" target="_blank" rel="noopener noreferrer">Notif
+						💬</a> channel, OTC contributors, and other open-source communities.
 				</p>
 				<div class="http-list-container">
 					<div class="form-group">
@@ -15348,10 +15348,10 @@
 					style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: auto; padding-top: 20px;">
 					<button type="button" class="btn btn-primary" id="httpConfirmBtn" onclick="confirmSelectHTTP()"
 						disabled>
-						确定
+						Confirm
 					</button>
 					<button type="button" class="btn btn-secondary" onclick="closeExploreHTTPModal(event)">
-						取消
+						Cancel
 					</button>
 				</div>
 			</div>
@@ -15369,8 +15369,8 @@
 					style="cursor: pointer;">×</button>
 				<h2 class="section-title" style="margin-bottom: 10px; text-align: center;">🌐 Get more HTTPS</h2>
 				<p style="text-align: center; color: #666; font-size: 13px; margin-bottom: 20px;">
-					代理资源来自 Github、<a href="https://t.me/Enkelte_notif" target="_blank" rel="noopener noreferrer">Notif
-						💬</a>频道、OTC大佬 等开源社区。
+					Proxy resources sourced from GitHub,<a href="https://t.me/Enkelte_notif" target="_blank" rel="noopener noreferrer">Notif
+						💬</a> channel, OTC contributors, and other open-source communities.
 				</p>
 				<div class="http-list-container">
 					<div class="form-group">
@@ -15398,10 +15398,10 @@
 					style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: auto; padding-top: 20px;">
 					<button type="button" class="btn btn-primary" id="httpsConfirmBtn" onclick="confirmSelectHTTPS()"
 						disabled>
-						确定
+						Confirm
 					</button>
 					<button type="button" class="btn btn-secondary" onclick="closeExploreHTTPSModal(event)">
-						取消
+						Cancel
 					</button>
 				</div>
 			</div>
@@ -21233,7 +21233,7 @@
 							<span class="chain-verify-dot"></span>
 							<span>Verified</span>
 						</div>
-						<span class="chain-verify-badge" title="地区: ${safeLoc} ${safeResponseTime}">地区: ${safeBadgeRegion} ${safeResponseTime}</span>
+						<span class="chain-verify-badge" title="Region: ${safeLoc} ${safeResponseTime}">地区: ${safeBadgeRegion} ${safeResponseTime}</span>
 					</div>
 
 					<div class="chain-verify-body">
@@ -24746,23 +24746,23 @@
 							<div class="ip-detail-left-col">
 								<div class="ip-detail-card" style="height: 100%;">
 									<div class="ip-detail-section-title">📍 Basic Info</div>
-									<div class="ip-detail-item" title="当前查询的公网 IP 地址，用于在互联网上唯一标识设备">
+									<div class="ip-detail-item" title="The public IP address currently queried, used to uniquely identify a device on the internet">
 										<span class="ip-detail-label">IP Address</span>
 										<span class="ip-detail-value">${data.ip || '未知'}</span>
 									</div>
-									<div class="ip-detail-item" title="IP 地址的物理位置，通过 IP 地址段分配数据库推算得出，包括国家/地区、州省和城市信息">
+									<div class="ip-detail-item" title="The physical location of the IP address, derived from IP allocation databases, including country/region, state/province, and city">
 										<span class="ip-detail-label">Location</span>
 										<span class="ip-detail-value">${data.location?.country_code ? `[${data.location.country_code}]` : ''}${data.location?.country || ''} ${[data.location?.state, data.location?.city].filter(Boolean).join('/') || '未知'}</span>
 									</div>
-									<div class="ip-detail-item" title="该 IP 地址所在地区使用的标准时区，格式为洲/城市，如 Asia/Shanghai">
+									<div class="ip-detail-item" title="The standard timezone used by the IP's region, formatted as Continent/City, e.g. Asia/Shanghai">
 										<span class="ip-detail-label">Timezone</span>
 										<span class="ip-detail-value">${data.location?.timezone || '未知'}</span>
 									</div>
-									<div class="ip-detail-item" title="IP 的网络类型:【住宅】家庭宽带、【机房】数据中心或云服务器、【商用】企业专线。左侧为运营商分类，右侧为 ASN (自治系统)分类">
+									<div class="ip-detail-item" title="IP network type: [Residential] home broadband, [Datacenter] data center or cloud server, [Business] enterprise leased line. Left = ISP classification, right = ASN (Autonomous System) classification">
 										<span class="ip-detail-label">ISP / ASN Type</span>
 										<span class="ip-detail-value">${formatIpType(data.company?.type)} / ${formatIpType(data.asn?.type)}</span>
 									</div>
-									<div class="ip-detail-item" title="综合滥用评分，基于运营商/ASN 历史记录和安全风险项计算。评分越低表示 IP 越纯净，越高表示被滥用可能性越大">
+									<div class="ip-detail-item" title="Overall abuse score, calculated from ISP/ASN history and security risk factors. Lower = cleaner IP, higher = greater likelihood of abuse">
 										<span class="ip-detail-label">Risk Rating</span>
 										<span class="ip-detail-value">${riskControlHTML}</span>
 									</div>
@@ -24775,39 +24775,39 @@
 								<div class="ip-detail-card" style="height: 100%;">
 									<div class="ip-detail-section-title">🛡️ Security Check</div>
 									<div class="ip-detail-security-grid">
-										<div class="ip-detail-item" title="该 IP 是否属于数据中心(IDC)、云服务商或主机托管服务。数据中心 IP 常被用于服务器部署，部分网站可能限制此类 IP 访问">
+										<div class="ip-detail-item" title="Whether this IP belongs to a data center (IDC), cloud provider, or hosting service. Datacenter IPs are often used for server deployments; some sites may restrict such IPs">
 											<span class="ip-detail-label">Datacenter</span>
 											<span class="ip-detail-value">${data.is_datacenter ? '<span class="warning-text">🏢 Yes</span>' : '✅ 否'}</span>
 										</div>
-										<div class="ip-detail-item" title="该 IP 是否被识别为公开的代理服务器(如 HTTP/SOCKS 代理)。代理服务器可能被用于隐藏真实 IP，部分服务会限制代理访问">
+										<div class="ip-detail-item" title="Whether this IP is identified as a public proxy server (e.g. HTTP/SOCKS proxy). Proxy servers may be used to hide the real IP; some services restrict proxy access">
 											<span class="ip-detail-label">Proxy Server</span>
 											<span class="ip-detail-value">${data.is_proxy ? '<span class="danger-text">⚠️ Yes</span>' : '✅ 否'}</span>
 										</div>
-										<div class="ip-detail-item" title="该 IP 是否属于已知的 VPN (虚拟私人网络)服务提供商。VPN 用于加密网络流量和隐藏真实位置，部分网站会限制 VPN 访问">
+										<div class="ip-detail-item" title="Whether this IP belongs to a known VPN provider. VPNs encrypt traffic and hide the real location; some sites restrict VPN access">
 											<span class="ip-detail-label">VPN Connection</span>
 											<span class="ip-detail-value">${data.is_vpn ? '<span class="danger-text">⚠️ Yes</span>' : '✅ 否'}</span>
 										</div>
-										<div class="ip-detail-item" title="该 IP 是否属于 Tor (洋葱路由)匿名网络的出口节点。Tor 提供高度匿名性，但也常被用于非法活动，因此大多数网站会限制或禁止 Tor 访问">
+										<div class="ip-detail-item" title="Whether this IP is a Tor (onion routing) exit node. Tor provides high anonymity but is often used for illicit activity, so most sites restrict or block Tor access">
 											<span class="ip-detail-label">Tor Network</span>
 											<span class="ip-detail-value">${data.is_tor ? '<span class="danger-text">⚠️ Yes</span>' : '✅ 否'}</span>
 										</div>
-										<div class="ip-detail-item" title="该 IP 是否被识别为网络爬虫(搜索引擎蜘蛛、数据采集机器人等)。爬虫可能对网站造成额外负担，部分网站会限制或特殊处理爬虫流量">
+										<div class="ip-detail-item" title="Whether this IP is identified as a web crawler (search engine spider, data-scraping bot, etc.). Crawlers can add extra load to a site; some sites restrict or specially handle crawler traffic">
 											<span class="ip-detail-label">Web Crawler</span>
 											<span class="ip-detail-value">${data.is_crawler ? '<span class="danger-text">🤖 Yes</span>' : '✅ 否'}</span>
 										</div>
-										<div class="ip-detail-item" title="该 IP 是否来自移动网络运营商(如 4G/5G 网络)。移动网络 IP 通常动态分配且更换频繁，属于住宅类 IP">
+										<div class="ip-detail-item" title="Whether this IP comes from a mobile network carrier (e.g. 4G/5G). Mobile IPs are usually dynamically allocated and change frequently, and are classified as residential">
 											<span class="ip-detail-label">Mobile Network</span>
 											<span class="ip-detail-value">${data.is_mobile ? '<span class="success-text">📱 Yes</span>' : '否'}</span>
 										</div>
-										<div class="ip-detail-item" title="该 IP 是否来自卫星互联网服务(如 Starlink、OneWeb 等)。卫星网络通常用于偏远地区或移动场景的互联网接入，延迟较高">
+										<div class="ip-detail-item" title="Whether this IP comes from a satellite internet service (e.g. Starlink, OneWeb). Satellite networks are typically used for remote or mobile internet access, with higher latency">
 											<span class="ip-detail-label">Satellite Network</span>
 											<span class="ip-detail-value">${data.is_satellite ? '<span class="success-text">🛰️ Yes</span>' : '否'}</span>
 										</div>
-										<div class="ip-detail-item" title="该 IP 是否存在已知的滥用记录(如垃圾邮件、DDoS 攻击、恶意扫描等)。滥用 IP 通常会被安全系统拦截或限制访问">
+										<div class="ip-detail-item" title="Whether this IP has known abuse records (e.g. spam, DDoS attacks, malicious scanning). Abusive IPs are often blocked or restricted by security systems">
 											<span class="ip-detail-label">Known Abuse</span>
 											<span class="ip-detail-value">${data.is_abuser ? '<span class="danger-text">⚠️ Yes</span>' : '✅ 否'}</span>
 										</div>
-										<div class="ip-detail-item" title="该 IP 是否为虚假 IP (Bogon IP)，即保留地址、私有地址或未分配的地址段。此类 IP 不应出现在公网上，可能表示异常流量或蜜罐">
+										<div class="ip-detail-item" title="Whether this IP is a bogus IP (Bogon), i.e. a reserved, private, or unassigned address range. Such IPs shouldn't appear on the public internet and may indicate abnormal traffic or a honeypot">
 											<span class="ip-detail-label">Bogon IP</span>
 											<span class="ip-detail-value">${data.is_bogon ? '<span class="danger-text">⚠️ Yes</span>' : '✅ 否'}</span>
 										</div>
