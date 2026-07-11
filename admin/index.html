@@ -16512,7 +16512,7 @@
 		async function copyLatestWorkerSourceToClipboard() {
 			const source = String(cachedWorkerVersionRawText || '');
 			if (!source) {
-				showToast('暂无可复制的最新 Worker.js 源码', 'error');
+				showToast('No latest Worker.js source available to copy', 'error');
 				return;
 			}
 
@@ -16534,17 +16534,17 @@
 					if (!success) throw new Error('execCommand copy failed');
 				}
 
-				showToast('✅ 已复制最新 Worker.js 源码到剪贴板', 'success');
+				showToast('✅ Latest Worker.js source copied to clipboard', 'success');
 			} catch (error) {
 				console.error('[Version] 复制最新 Worker.js 源码失败:', error);
-				showToast('复制失败，请手动复制源码', 'error');
+				showToast('Copy failed, please copy the source manually', 'error');
 			}
 		}
 
 		function openLatestPagesZipDownload() {
 			const popup = window.open(PAGES_ZIP_DOWNLOAD_URL, '_blank', 'noopener,noreferrer');
 			if (!popup) {
-				showToast('浏览器拦截了新窗口，请允许弹窗后再试', 'warning');
+				showToast('Browser blocked the new window, please allow pop-ups and try again', 'warning');
 			}
 		}
 
@@ -16933,7 +16933,7 @@
 				} catch (error) {
 					console.error('[请求RAW] 更新日志拉取失败:', error);
 					contentEl.innerHTML = '<p class="version-changelog-placeholder">Failed to fetch changelog, please try again later.</p>';
-					showToast('更新日志加载失败: ' + error.message, 'error');
+					showToast('Failed to load changelog: ' + error.message, 'error');
 				} finally {
 					pendingChangelogLoadPromise = null;
 				}
@@ -17122,7 +17122,7 @@
 				document.title = `${currentConfig.优选订阅生成?.SUBNAME || 'edgetunnel'} 设置页面 - 管理后台`;
 			} catch (error) {
 				updateVersionBadge('');
-				showToast('加载配置失败: ' + error.message, 'error');
+				showToast('Failed to load configuration: ' + error.message, 'error');
 			}
 		}
 
@@ -17403,7 +17403,7 @@
 					textarea.value = '';
 				}
 			} catch (error) {
-				showToast('加载自定义IP失败', 'error');
+				showToast('Failed to load custom IP', 'error');
 				textarea.value = '';
 			} finally {
 				textarea.disabled = false;
@@ -18519,9 +18519,9 @@
 		function copySubscription(elementId) {
 			const element = document.getElementById(elementId);
 			navigator.clipboard.writeText(element.value).then(() => {
-				showToast('📋 已复制到剪贴板', 'success');
+				showToast('📋 Copied to clipboard', 'success');
 			}).catch(() => {
-				showToast('复制失败', 'error');
+				showToast('Copy failed', 'error');
 			});
 		}
 
@@ -18567,7 +18567,7 @@
 			} catch (error) {
 				// If the text is too long, show an error
 				console.error('二维码生成失败:', error);
-				showToast('链接过长，无法生成二维码。联系项目作者修复问题。', 'error');
+				showToast('Link too long to generate a QR code. Contact the project author to fix this.', 'error');
 				container.innerHTML = '<div style="padding:20px;text-align:center;color:#f44336;">QR code generation failed: content too long</div>';
 			}
 		}
@@ -18640,7 +18640,7 @@
 				.filter(item => item.length > 0);
 
 			if (items.length === 0) {
-				showToast('请至少输入一个域名', 'error');
+				showToast('Please enter at least one domain', 'error');
 				return;
 			}
 
@@ -18656,7 +18656,7 @@
 			// Mark config as modified
 			markModified('config');
 
-			showToast('域名列表已更新，请保存配置', 'success');
+			showToast('Domain list updated, please save the configuration', 'success');
 		}
 
 		// Clean up domain format: strip protocol, path, port, keep just the bare domain
@@ -18687,19 +18687,19 @@
 			if (mode === 'random') {
 				const randomCount = document.getElementById('randomCount').value.trim();
 				if (!randomCount) {
-					showToast('随机优选数量不能为空', 'error');
+					showToast('Random preferred count cannot be empty', 'error');
 					return;
 				}
 			} else if (mode === 'custom') {
 				const customIPs = document.getElementById('customIPs').value.trim();
 				if (!customIPs) {
-					showToast('自定义优选地址不能为空', 'error');
+					showToast('Custom preferred address cannot be empty', 'error');
 					return;
 				}
 			} else if (mode === 'generator') {
 				const generatorURL = document.getElementById('generatorURL').value.trim();
 				if (!generatorURL) {
-					showToast('优选订阅生成器地址不能为空', 'error');
+					showToast('Preferred Subscription Generator address cannot be empty', 'error');
 					return;
 				}
 			}
@@ -18725,7 +18725,7 @@
 				try {
 					await fetch('/admin/ADD.txt', { method: 'POST', body: customIPs });
 				} catch (error) {
-					showToast('保存自定义IP失败', 'error');
+					showToast('Failed to save custom IP', 'error');
 					return;
 				}
 			}
@@ -18835,7 +18835,7 @@
 				proxyIP = autoProxy ? 'auto' : document.getElementById('proxyIP').value.trim();
 
 				if (!autoProxy && !proxyIP) {
-					showToast('PROXYIP地址不能为空', 'error');
+					showToast('PROXYIP address cannot be empty', 'error');
 					return;
 				}
 			} else if (mode === 'socks5') {
@@ -18844,7 +18844,7 @@
 				globalProxy = document.getElementById('globalSocks5').checked;
 
 				if (!socksAccount) {
-					showToast('SOCKS5地址不能为空', 'error');
+					showToast('SOCKS5 address cannot be empty', 'error');
 					return;
 				}
 			} else if (mode === 'http') {
@@ -18853,12 +18853,12 @@
 				globalProxy = document.getElementById('globalHTTP').checked;
 
 				if (!socksAccount) {
-					showToast('HTTP地址不能为空', 'error');
+					showToast('HTTP address cannot be empty', 'error');
 					return;
 				}
 			} else if (mode === 'https') {
 				if (!httpsProxyFeatureEnabled) {
-					showToast('当前后端版本暂不支持HTTPS反代', 'error');
+					showToast('Current backend version doesn\'t support HTTPS reverse proxy yet', 'error');
 					return;
 				}
 				socksEnabled = 'https';
@@ -18866,12 +18866,12 @@
 				globalProxy = document.getElementById('globalHTTPS').checked;
 
 				if (!socksAccount) {
-					showToast('HTTPS地址不能为空', 'error');
+					showToast('HTTPS address cannot be empty', 'error');
 					return;
 				}
 			} else if (mode === 'turn') {
 				if (!turnSstpProxyFeatureEnabled) {
-					showToast('当前后端版本暂不支持TURN反代', 'error');
+					showToast('Current backend version doesn\'t support TURN reverse proxy yet', 'error');
 					return;
 				}
 				socksEnabled = 'turn';
@@ -18879,12 +18879,12 @@
 				globalProxy = document.getElementById('globalTURN').checked;
 
 				if (!socksAccount) {
-					showToast('TURN地址不能为空', 'error');
+					showToast('TURN address cannot be empty', 'error');
 					return;
 				}
 			} else if (mode === 'sstp') {
 				if (!turnSstpProxyFeatureEnabled) {
-					showToast('当前后端版本暂不支持SSTP反代', 'error');
+					showToast('Current backend version doesn\'t support SSTP reverse proxy yet', 'error');
 					return;
 				}
 				socksEnabled = 'sstp';
@@ -18892,7 +18892,7 @@
 				globalProxy = document.getElementById('globalSSTP').checked;
 
 				if (!socksAccount) {
-					showToast('SSTP地址不能为空', 'error');
+					showToast('SSTP address cannot be empty', 'error');
 					return;
 				}
 			}
@@ -19113,7 +19113,7 @@
 				});
 
 				if (!response.ok) throw new Error('保存失败');
-				showToast('✅ 配置已保存，请更新订阅，才能获取最新节点内容！', 'success');
+				showToast('✅ Configuration saved, please update the subscription to get the latest node info!', 'success');
 				modifiedSections.delete(section);
 				updateButtonStates();
 			} catch (error) {
@@ -19280,7 +19280,7 @@
 		async function refreshConfig() {
 			await loadConfig();
 			const loadTime = currentConfig.加载时间 || '未知';
-			showToast(`配置已刷新 (加载时间: ${loadTime})`, 'success');
+			showToast(`Configuration refreshed (load time: ${loadTime})`, 'success');
 		}
 
 		function resetConfigWithConfirm() {
@@ -19298,14 +19298,14 @@
 				if (!response.ok) throw new Error('重置失败');
 
 				closeResetModal();
-				showToast('配置已重置为默认值', 'success');
+				showToast('Configuration reset to defaults', 'success');
 
 				// Refresh page after a 1-second delay, so the user sees the success message
 				setTimeout(() => {
 					window.location.reload();
 				}, 1000);
 			} catch (error) {
-				showToast('重置失败: ' + error.message, 'error');
+				showToast('Reset failed: ' + error.message, 'error');
 			}
 		}
 
@@ -20144,7 +20144,7 @@
 			const textarea = document.getElementById('uuidSnippetTextarea');
 			const code = uuidSnippetRawCode || (textarea ? textarea.value : '');
 			if (!code) {
-				showToast('暂无可复制代码', 'error');
+				showToast('No code available to copy', 'error');
 				return;
 			}
 
@@ -20167,9 +20167,9 @@
 					tempTextarea.remove();
 					if (!copied) throw new Error('copy failed');
 				}
-				showToast('📋 Snippet.js 代码已复制', 'success');
+				showToast('📋 Snippet.js code copied', 'success');
 			} catch (error) {
-				showToast('复制失败，请手动复制代码', 'error');
+				showToast('Copy failed, please copy the code manually', 'error');
 			}
 		}
 
@@ -20378,7 +20378,7 @@
 				setUUIDSnippetStageState('');
 				setUUIDSnippetProgress(0);
 				setUUIDSnippetDisplayStatus('等待源码重组完成', '请先填写 UUID 再生成专属源码', 'boot');
-				showToast('UUID为空，无法生成专属代码', 'error');
+				showToast('UUID is empty, cannot generate custom code', 'error');
 				return;
 			}
 
@@ -20437,11 +20437,11 @@
 				}
 
 				finishUUIDSnippetPresentation(indentationRandomizedResult.code, animationToken);
-				showToast('Snippets.js专属代码已生成', 'success');
+				showToast('Snippets.js custom code generated', 'success');
 			} catch (error) {
 				setUUIDSnippetCopyButtonEnabled(false);
 				failUUIDSnippetPresentation(error.message || String(error), animationToken);
-				showToast('生成失败: ' + (error.message || error), 'error');
+				showToast('Generation failed: ' + (error.message || error), 'error');
 			} finally {
 				uuidSnippetLoading = false;
 			}
@@ -20450,14 +20450,14 @@
 		async function copyNodeUUIDValue(nodeUUIDInput) {
 			const uuidValue = (nodeUUIDInput.value || '').trim();
 			if (!uuidValue) {
-				showToast('UUID为空，无法复制', 'error');
+				showToast('UUID is empty, cannot copy', 'error');
 				return;
 			}
 
 			try {
 				if (navigator.clipboard && window.isSecureContext) {
 					await navigator.clipboard.writeText(uuidValue);
-					showToast('📋 已复制UUID的值', 'success');
+					showToast('📋 UUID value copied', 'success');
 					return;
 				}
 
@@ -20477,12 +20477,12 @@
 				tempTextarea.remove();
 
 				if (copied) {
-					showToast('📋 已复制UUID的值', 'success');
+					showToast('📋 UUID value copied', 'success');
 				} else {
-					showToast('复制失败，请手动复制UUID', 'error');
+					showToast('Copy failed, please copy the UUID manually', 'error');
 				}
 			} catch (error) {
-				showToast('复制失败，请手动复制UUID', 'error');
+				showToast('Copy failed, please copy the UUID manually', 'error');
 			}
 		}
 
@@ -20635,7 +20635,7 @@
 				container.innerHTML = html;
 				document.getElementById('logsModal').classList.add('show');
 			} catch (error) {
-				showToast('加载日志失败: ' + error.message, 'error');
+				showToast('Failed to load logs: ' + error.message, 'error');
 			}
 		}
 
@@ -20964,7 +20964,7 @@
 				// Show details popup
 				showIpDetailModal(data);
 			} catch (error) {
-				showToast('❌ 查询IP详细信息失败');
+				showToast('❌ Failed to query IP details');
 				console.error('IP查询错误:', error);
 			} finally {
 				if (targetElement) {
@@ -20996,7 +20996,7 @@
 
 		function openChainProxyModal() {
 			if (!chainProxyFeatureEnabled) {
-				showToast('当前后端版本暂不支持链式代理', 'error');
+				showToast('Current backend version doesn\'t support chained proxy yet', 'error');
 				return;
 			}
 
@@ -21393,11 +21393,11 @@
 			const currentAddress = processProxyAddressForValidation(String(addressInput?.value || '').trim(), currentProtocol);
 			const currentKey = getChainProxyValidationKey(currentProtocol, currentAddress);
 			if (!validProtocol || !validAddress) {
-				showToast('请先点击"可用性验证"按钮通过验证', 'error');
+				showToast('Please pass "Availability Check" first', 'error');
 				return;
 			}
 			if (addBtn?.dataset.validKey !== currentKey) {
-				showToast('链式代理内容已变化，请重新验证', 'error');
+				showToast('Chained proxy content has changed, please verify again', 'error');
 				resetChainProxyValidation();
 				return;
 			}
@@ -21434,7 +21434,7 @@
 
 			markModified('sub');
 			closeChainProxyModal();
-			showToast('✅ 链式代理节点已追加到自定义优选地址', 'success');
+			showToast('✅ Chained proxy node appended to the custom preferred address', 'success');
 		}
 
 		function openSubAPIModal() {
@@ -21608,7 +21608,7 @@
 				});
 			} catch (error) {
 				console.error('加载路径模板预设失败:', error);
-				showToast('加载预设模板失败: ' + error.message, 'error');
+				showToast('Failed to load preset template: ' + error.message, 'error');
 			}
 		}
 
@@ -21708,7 +21708,7 @@
 				if (templates.length > 0) {
 					const hasPlaceholder = templates.every(t => t.includes('{{IP:PORT}}'));
 					if (!hasPlaceholder) {
-						showToast('当前路径模板存在缺失 {{IP:PORT}} 占位符', 'error');
+						showToast('Current path template is missing the {{IP:PORT}} placeholder', 'error');
 						//return;
 					}
 				}
@@ -21738,7 +21738,7 @@
 				closePathTemplateConfigModal();
 			} catch (error) {
 				console.error('保存路径模板失败:', error);
-				showToast('保存路径模板失败: ' + error.message, 'error');
+				showToast('Failed to save path template: ' + error.message, 'error');
 			}
 		}
 
@@ -22137,13 +22137,13 @@
 
 				try {
 					await saveConfigToServer('notification');
-					showToast('Telegram 配置已清除', 'success');
+					showToast('Telegram configuration cleared', 'success');
 					updateTelegramButtonStates(false);
 					const telegramCheckbox = document.getElementById('telegramEnabled');
 					telegramCheckbox.disabled = true;
 					telegramCheckbox.checked = false;
 				} catch (error) {
-					showToast('清除配置失败: ' + error.message, 'error');
+					showToast('Failed to clear configuration: ' + error.message, 'error');
 				}
 			}
 		}
@@ -22181,10 +22181,10 @@
 
 				try {
 					await saveConfigToServer('notification');
-					showToast('Cloudflare 配置已清除', 'success');
+					showToast('Cloudflare configuration cleared', 'success');
 					updateCloudflareButtonStates(false);
 				} catch (error) {
-					showToast('清除配置失败: ' + error.message, 'error');
+					showToast('Failed to clear configuration: ' + error.message, 'error');
 				}
 			}
 		}
@@ -22332,12 +22332,12 @@
 
 			// Check whether the button is disabled (must pass verification first)
 			if (confirmBtn.disabled) {
-				showToast('请先点击"可用性验证"按钮验证配置', 'error');
+				showToast('Please click "Availability Check" to verify the configuration first', 'error');
 				return;
 			}
 
 			if (!token || !chatID) {
-				showToast('请填写完整的Bot Token和Chat ID', 'error');
+				showToast('Please fill in both Bot Token and Chat ID', 'error');
 				return;
 			}
 
@@ -22359,7 +22359,7 @@
 
 				if (response.ok) {
 					const result = await response.json();
-					showToast('✅ TelegramBot 配置已保存', 'success');
+					showToast('✅ TelegramBot configuration saved', 'success');
 					closeTelegramConfigModal();
 
 					// Update button state
@@ -22376,12 +22376,12 @@
 					}, 1000);
 				} else {
 					const errorData = await response.json();
-					showToast('❌ 保存失败: ' + (errorData.error || '未知错误'), 'error');
+					showToast('❌ Save failed: ' + (errorData.error || '未知错误'), 'error');
 					confirmBtn.disabled = false;
 					confirmBtn.textContent = '保存';
 				}
 			} catch (error) {
-				showToast('❌ 保存失败: ' + error.message, 'error');
+				showToast('❌ Save failed: ' + error.message, 'error');
 				confirmBtn.disabled = false;
 				confirmBtn.textContent = '保存';
 			}
@@ -22578,7 +22578,7 @@
 
 			// Check whether verification passed
 			if (confirmBtn.dataset.testPassed !== 'true') {
-				showToast('请先点击"可用性验证"按钮通过验证', 'error');
+				showToast('Please pass "Availability Check" first', 'error');
 				return;
 			}
 
@@ -22623,7 +22623,7 @@
 				});
 
 				if (response.ok) {
-					showToast('✅ Cloudflare 配置已保存', 'success');
+					showToast('✅ Cloudflare configuration saved', 'success');
 					closeCloudflareConfigModal();
 
 					// Refresh page after 1 second
@@ -22632,12 +22632,12 @@
 					}, 1000);
 				} else {
 					const errorData = await response.json();
-					showToast('❌ 保存失败: ' + (errorData.error || '未知错误'), 'error');
+					showToast('❌ Save failed: ' + (errorData.error || '未知错误'), 'error');
 					confirmBtn.disabled = false;
 					confirmBtn.textContent = '保存';
 				}
 			} catch (error) {
-				showToast('❌ 保存失败: ' + error.message, 'error');
+				showToast('❌ Save failed: ' + error.message, 'error');
 				confirmBtn.disabled = false;
 				confirmBtn.textContent = '保存';
 			}
@@ -22659,11 +22659,11 @@
 
 				if (!response.ok) throw new Error('保存失败');
 
-				showToast('✅ 启用状态已保存', 'success');
+				showToast('✅ Enabled state saved', 'success');
 				modifiedSections.delete('notification');
 				updateButtonStates();
 			} catch (error) {
-				showToast('❌ 保存失败: ' + error.message, 'error');
+				showToast('❌ Save failed: ' + error.message, 'error');
 			}
 		}
 
@@ -22691,15 +22691,15 @@
 
 				if (response.ok && data.success) {
 					closeClearTelegramModal();
-					showToast('✅ Telegram 配置已清除，页面即将刷新...', 'success');
+					showToast('✅ Telegram configuration cleared, page will refresh...', 'success');
 					setTimeout(() => {
 						location.reload();
 					}, 1000);
 				} else {
-					showToast('❌ 清除失败: ' + (data.message || '未知错误'), 'error');
+					showToast('❌ Clear failed: ' + (data.message || '未知错误'), 'error');
 				}
 			} catch (error) {
-				showToast('❌ 清除出错: ' + error.message, 'error');
+				showToast('❌ Clear error: ' + error.message, 'error');
 			}
 		}
 
@@ -22726,15 +22726,15 @@
 
 				if (response.ok && data.success) {
 					closeClearCloudflareModal();
-					showToast('✅ Cloudflare 配置已清除，页面即将刷新...', 'success');
+					showToast('✅ Cloudflare configuration cleared, page will refresh...', 'success');
 					setTimeout(() => {
 						location.reload();
 					}, 1000);
 				} else {
-					showToast('❌ 清除失败: ' + (data.message || '未知错误'), 'error');
+					showToast('❌ Clear failed: ' + (data.message || '未知错误'), 'error');
 				}
 			} catch (error) {
-				showToast('❌ 清除出错: ' + error.message, 'error');
+				showToast('❌ Clear error: ' + error.message, 'error');
 			}
 		}
 
@@ -22851,7 +22851,7 @@
 			if (!frame.dataset.loaded) {
 				const template = document.getElementById('onlineOptimizeTemplate');
 				if (!template) {
-					showToast('在线优选模块加载失败', 'error');
+					showToast('Failed to load the online preferred module', 'error');
 					return;
 				}
 				frame.srcdoc = template.innerHTML.trim();
@@ -22880,13 +22880,13 @@
 
 		function appendOnlineOptimizeSelections(lines) {
 			if (!Array.isArray(lines) || lines.length === 0) {
-				showToast('请先勾选需要保存的优选结果', 'warning');
+				showToast('Please check the preferred results you want to save first', 'warning');
 				return false;
 			}
 
 			const textarea = document.getElementById('customIPs');
 			if (!textarea) {
-				showToast('未找到自定义优选地址输入框', 'error');
+				showToast('Custom preferred address input field not found', 'error');
 				return false;
 			}
 
@@ -22895,7 +22895,7 @@
 				.filter(Boolean);
 
 			if (!newLines.length) {
-				showToast('没有可保存的优选结果', 'warning');
+				showToast('No preferred results to save', 'warning');
 				return false;
 			}
 
@@ -22903,7 +22903,7 @@
 			textarea.value = currentValue ? `${currentValue}\n${newLines.join('\n')}` : newLines.join('\n');
 			refreshLineEditor(textarea);
 			markModified('sub');
-			showToast(`✅ 已追加 ${newLines.length} 条优选结果到自定义优选地址`, 'success');
+			showToast(`✅ Appended ${newLines.length} preferred results to the custom preferred address`, 'success');
 			closeOnlineOptimizeModal();
 			return true;
 		}
@@ -23041,7 +23041,7 @@
 			if (convertedURL !== urlInput) {
 				document.getElementById('apiOptimizeURL').value = convertedURL;
 				urlInput = convertedURL;
-				showToast('✅ GitHub链接已自动转换为raw格式', 'info');
+				showToast('✅ GitHub link auto-converted to raw format', 'info');
 			}
 
 			if (!isValidURL(urlInput)) {
@@ -23071,7 +23071,7 @@
 					// Update port input box
 					document.getElementById('apiOptimizePort').value = detectedPort;
 
-					showToast(`✅ 已自动识别URL中的端口号: ${detectedPort}，并已移除port参数`, 'success');
+					showToast(`✅ Auto-detected port ${detectedPort} from the URL and removed the port parameter`, 'success');
 				}
 			} catch (error) {
 				console.log('URL port参数提取失败:', error);
@@ -23118,7 +23118,7 @@
 					}
 					document.getElementById('btnAppendAPI').disabled = false;
 					document.getElementById('btnAppendResults').disabled = false;
-					showToast('✅ API接口验证成功！', 'success');
+					showToast('✅ API endpoint verified successfully!', 'success');
 				} else {
 					// Endpoint unavailable
 					document.getElementById('apiOptimizeResults').value = '❌ 接口不可用，请检查URL和端口是否正确';
@@ -23129,7 +23129,7 @@
 					}
 					document.getElementById('btnAppendAPI').disabled = true;
 					document.getElementById('btnAppendResults').disabled = true;
-					showToast('❌ API接口验证失败，请检查接口', 'error');
+					showToast('❌ API endpoint verification failed, please check the endpoint', 'error');
 				}
 			} catch (error) {
 				console.error('API验证错误:', error);
@@ -23141,7 +23141,7 @@
 				}
 				document.getElementById('btnAppendAPI').disabled = true;
 				document.getElementById('btnAppendResults').disabled = true;
-				showToast('❌ 验证出错，请稍后重试', 'error');
+				showToast('❌ Verification error, please try again later', 'error');
 			} finally {
 				const btn = document.getElementById('btnVerifyAPI');
 				btn.disabled = false;
@@ -23199,7 +23199,7 @@
 			// Mark as modified
 			markModified('sub');
 
-			showToast('✅ API URL已追加到自定义优选地址', 'success');
+			showToast('✅ API URL appended to the custom preferred address', 'success');
 			closeAPIOptimizeModal();
 		}
 
@@ -23231,7 +23231,7 @@
 			// Mark as modified
 			markModified('sub');
 
-			showToast('✅ API结果已追加到自定义优选地址', 'success');
+			showToast('✅ API results appended to the custom preferred address', 'success');
 			closeAPIOptimizeModal();
 		}
 
@@ -24973,12 +24973,12 @@
 			if (!ip) return;
 
 			if (selectedProxyIPs.length >= 8) {
-				showToast('最多只能选择 8 个 ProxyIP', 'warning');
+				showToast('You can select at most 8 ProxyIPs', 'warning');
 				return;
 			}
 
 			if (selectedProxyIPs.includes(ip)) {
-				showToast('该 IP 已在选择列表中', 'warning');
+				showToast('This IP is already in the selection list', 'warning');
 				return;
 			}
 
@@ -25794,7 +25794,7 @@
 			const selectedProxy = select.value;
 
 			if (!selectedProxy) {
-				showToast(`请选择一个有效的${type.toUpperCase()}代理`, 'error');
+				showToast(`Please select a valid ${type.toUpperCase()} proxy`, 'error');
 				return;
 			}
 
@@ -26120,7 +26120,7 @@
 			closeHostsMismatchModal({ target: { id: 'hostsMismatchModal' } });
 
 			// Show confirm prompt
-			showToast('🎉 24小时内不会再提示', 'info');
+			showToast('🎉 Won\'t show again for 24 hours', 'info');
 		}
 
 	</script>
